@@ -1445,7 +1445,6 @@ static void deactivate_child_sched(struct sched_thd *t)
 
 	return;
 }
-
 /* 
  * Set the calling spd to be the child scheduler of this scheduler,
  * and set the current thread to be the child scheduler's control
@@ -1586,7 +1585,41 @@ err:
 	c = -1;
 	goto done;
 }
+int sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff)
+{
+        struct sched_thd *t;
+        int c = 0;
+        u64_t lticks;
 
+        assert(idle == 0);
+        assert(wake_diff == 1);
+
+        cos_sched_lock_take();
+        t = sched_get_current();
+        if (!sched_thd_grp(t) || t->cid != spdid) goto err;
+        t->wakeup_tick = t->tick + wake_diff;
+
+        while (EMPTY_LIST(t, cevt_next, cevt_prev)) {
+                if (t->cevt_flags & SCHED_CEVT_OTHER ||
+                    child_ticks_stale(t)             ||
+                    !idle) {
+                        t->cevt_flags &= ~SCHED_CEVT_OTHER;
+                        lticks = PERCPU_GET(sched_base_state)->ticks;
+                        if (lticks > t->tick) { t->tick = lticks; }
+                        if(!idle) { report_event(PARENT_CHILD_EVT_OTHER); }
+                        goto done;
+                }
+                report_event(PARENT_BLOCK_CHILD);
+                deactivate_child_sched(t);
+        }
+done:
+        t->cevt_flags = 0;
+        cos_sched_lock_release();
+        return c;
+err:
+        c = -1;
+        goto done;
+}
 static void sched_process_cevt(struct sched_child_evt *e)
 {
 	struct sched_thd *t;

@@ -354,6 +354,10 @@ int
 sched_child_get_evt(spdid_t spdid, struct sched_child_evt *e, int idle, unsigned long wake_diff) 
 { BUG(); return 0; }
 
+int
+sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff)
+{ BUG(); return 0; }
+
 int 
 sched_child_cntl_thd(spdid_t spdid) 
 { 
