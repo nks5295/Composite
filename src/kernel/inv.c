@@ -1038,7 +1038,7 @@ switch_thread_slowpath(struct thread *curr, unsigned short int flags, struct spd
 		 * pointers should be non-NULL */
 		child = tsi->scheduler;
 		assert(child);
-		cda = child->sched_shared_page[get_cpuid()];
+		cda = child->kern_sched_shared_page[get_cpuid()];
 		assert(cda);
 		cda->cos_evt_notif.pending_cevt = 1;
 	}

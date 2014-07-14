@@ -1461,6 +1461,7 @@ int sched_child_cntl_thd(spdid_t spdid)
 
 	c->tick = PERCPU_GET(sched_base_state)->ticks;
 
+        printc("<><><>Life doesn't suck\n");
 	return 0;
 }
 
@@ -1585,6 +1586,7 @@ err:
 	c = -1;
 	goto done;
 }
+
 int sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff)
 {
         struct sched_thd *t;
@@ -1612,6 +1614,7 @@ int sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff)
                 report_event(PARENT_BLOCK_CHILD);
                 deactivate_child_sched(t);
         }
+        printc("Good Life 2\n");
 done:
         t->cevt_flags = 0;
         cos_sched_lock_release();
