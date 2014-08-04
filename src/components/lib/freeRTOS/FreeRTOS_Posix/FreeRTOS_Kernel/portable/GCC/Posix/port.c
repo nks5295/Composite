@@ -171,7 +171,8 @@ void vPortYieldFromTick( void )
 	/* Save context, increment tick (vtaskincrementtick()), switch context, restore context */
 	vTaskIncrementTick();
 	freertos_clear_pending_events();
-	vPortCosSwitchThread(COS_SCHED_BRAND_WAIT);
+	//Need to fix!
+        //vPortCosSwitchThread(COS_SCHED_BRAND_WAIT);
 	return;
 }
 /*-----------------------------------------------------------*/
@@ -190,7 +191,7 @@ void timer_tick (void) {
 	while(1) {
 
 		ticks++;
-
+/*
 #ifdef FREERTOS_CHECKPOINT_TEST
 		
 		if (ticks % CHECKPOINT_INTERVAL == 0 && ticks % 32 != 0) {
@@ -221,7 +222,7 @@ void timer_tick (void) {
 			freertos_restore_checkpoint();
 		}
 #endif
-
+*/
 		vPortYieldFromTick();
 	}
 }

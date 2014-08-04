@@ -5,7 +5,6 @@
 #include <bitmap.h>
 #include <cos_debug.h>
 #include <stdio.h>
-#include <checkpoint.h>
 
 #include "../../sched/cos_sched_sync.h"
 #include "../../sched/cos_sched_ds.h"
@@ -71,25 +70,22 @@ int freertos_get_thread_id(void) {
 	return cos_get_thd_id();
 }
 
-int freertos_brand_cntl(int a, int b, int c, int d) {
-	return cos_brand_cntl(a, b, c, d);
-}
-
-int freertos_brand_wire(int a, int b, int c) {
-	return cos_brand_wire(a, b, c);
-}
-
 long freertos_spd_id(void) {
 	return cos_spd_id();
 }
 
-int freertos_checkpoint(void) {
+/****
+ * No checkpoint for you!
+ * Until cbuf implementation that is.
+
+ int freertos_checkpoint(void) {
 	return checkpoint_checkpt(cos_spd_id());
 }
 
 void freertos_restore_checkpoint(void) {
 	checkpoint_restore(cos_spd_id());
 }
+*/
 
 void freertos_clear_pending_events(void) {
 	if (PERCPU_GET(cos_sched_notifications)->cos_evt_notif.pending_event) {
@@ -137,15 +133,15 @@ void freertos_sched_set_evt_urgency(u8_t evt_id, u16_t urgency)
 int create_timer(int timer_init_fn)
 {
 	freertos_print("Creating timer\n");
-	int bid, ret, timer_thread;
+/*	int bid, ret, timer_thread;
 
 
 	bid = freertos_brand_cntl(COS_BRAND_CREATE_HW, 0, 0, freertos_spd_id());
 	
 	timer_thread = freertos_create_thread((int)timer_init_fn, (int)bid, 0);
 
-	/* if (NULL == PERCPU_GET(sched_base_state)->timer) BUG(); */
-	/* if (0 > sched_add_thd_to_brand(cos_spd_id(), bid, PERCPU_GET(sched_base_state)->timer->id)) BUG(); */
+	// if (NULL == PERCPU_GET(sched_base_state)->timer) BUG(); 
+	// if (0 > sched_add_thd_to_brand(cos_spd_id(), bid, PERCPU_GET(sched_base_state)->timer->id)) BUG(); 
 
 	if (freertos_brand_cntl(COS_BRAND_ADD_THD, bid, timer_thread, 0) < 0) {
 		freertos_print("ERROR ADDING THREAD TO BRAND\n");
@@ -177,10 +173,10 @@ int create_timer(int timer_init_fn)
 		}
 	}
 
-	if (i >= NUM_SCHED_EVTS) {
+	if (i >= NUM_SCHED_EVTS) 
 		freertos_print("Found no available event slots...\n");
 	}
-
+*/
 	return timer_thread;
 }
 
@@ -194,6 +190,7 @@ static void freertos_ret_thd(void) {
 
 extern void *prvWaitForStart( void *pvParams);
 extern void timer_tick (void);
+/*
 int sched_init(void);
 void cos_upcall_fn(upcall_type_t t, void *arg1, void *arg2, void *arg3) {
 	switch (t) {
@@ -235,7 +232,7 @@ void cos_upcall_fn(upcall_type_t t, void *arg1, void *arg2, void *arg3) {
 }
 
 #include <sched_hier.h>
-
+*/
 void cos_init(void);
 extern int parent_sched_child_cntl_thd(spdid_t spdid);
 
@@ -247,11 +244,11 @@ sched_exit(void)
 	return;
 }
 
-int sched_isroot(void) { return 0; }
+//int sched_isroot(void) { return 0; }
 
 int
 sched_child_get_evt(spdid_t spdid, struct sched_child_evt *e, int idle, unsigned long wake_diff) { BUG(); return 0; }
-
+/*
 int sched_init(void) {
 	print("sched_init called from freertos component\n");
 	init_thd = cos_get_thd_id();
@@ -275,7 +272,7 @@ int sched_init(void) {
 	(void) cos_init();
 	return 0;
 }
-
+*/
 
 int
 sched_child_cntl_thd(spdid_t spdid)

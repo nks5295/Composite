@@ -149,40 +149,8 @@ void vMainQueueSendPassed( void )
 	return;
 }
 
-int have_restored = 0;
-extern int checkpoint_test_should_fault_again();
-static void vCheckpointTask( void *pvParameters )
-{
-	const char * const pcTaskStartMsg = "Checkpoint task 1 started.\r\n";
-	volatile u64_t x = 0;
-	u64_t tsc;
-
-	freertos_print(pcTaskStartMsg);
-
-	for(;;)
-	{
-		x++;
-		if (x % 1000000 == 0) {
-			freertos_print("x: %llu (u64_t)\n", x);
-		}
-		rdtscll(tsc);
-
-		if (tsc % 12345555 == 0 && (!have_restored)) {
-			freertos_print("About to page fault? TSC was accepted value\n");
-			x = (int)(*((char *)0));
-			/* freertos_print("what?\n"); */
-		}
-	}
-}
-
-
-void vStartCheckpointTask() {
-	xTaskCreate( vCheckpointTask, "Checkpoint1", 512, ( void * ) 0, tskIDLE_PRIORITY + 1, NULL );
-}
-
 int freeRTOS_entry( void )
 {
-	freertos_checkpoint();
 	/* CREATE ALL THE DEMO APPLICATION TASKS. */
 	/* vStartMathTasks( tskIDLE_PRIORITY ); */
 	/* vStartCheckpointTask(); */
