@@ -10,8 +10,8 @@ ASM_SRCS :=
 OBJS := 
 C_DEPS := 
 EXECUTABLES := 
-DIETINC := -I/home/wittrock/research/composite/src/components/lib/dietlibc-0.29/include/
-COS_COMP_INC := -I/home/wittrock/research/composite/src/components/include -I/home/wittrock/research/composite/src/kernel/include/shared -I/home/wittrock/research/composite/src/components/lib/dietlibc-0.29/include/
+DIETINC := -I/home/cos/research/composite/src/components/lib/dietlibc-0.29/include/
+COS_COMP_INC := -I/home/cos/research/composite/src/components/include -I/home/cos/research/composite/src/kernel/include/shared -I/home/cos/research/composite/src/components/lib/dietlibc-0.29/include/
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
