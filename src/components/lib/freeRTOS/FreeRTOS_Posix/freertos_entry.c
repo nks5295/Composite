@@ -142,6 +142,12 @@
 
 extern void print(char *str);
 
+static void vWat (void)
+{
+        freertos_print("eeeessss gud\n");
+        return;
+}
+
 void vMainQueueSendPassed( void )
 {
         /* This is just an example implementation of the "queue send" trace hook. */
@@ -152,8 +158,9 @@ void vMainQueueSendPassed( void )
 int freeRTOS_entry( void )
 {
 	/* CREATE ALL THE DEMO APPLICATION TASKS. */
-	/* vStartMathTasks( tskIDLE_PRIORITY ); */
-	/* vStartCheckpointTask(); */
+//	vStartMathTasks( tskIDLE_PRIORITY ); 
+        /* vStartCheckpointTask(); */
+        xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 	vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 /* 	vCreateBlockTimeTasks(); */
 /* 	vStartSemaphoreTasks( mainSEMAPHORE_TASK_PRIORITY ); */
@@ -168,10 +175,10 @@ int freeRTOS_entry( void )
 /* #endif */
 
 	/* Create the co-routines that communicate with the tick hook. */
-	/* vStartHookCoRoutines(); */
+//	vStartHookCoRoutines();
 
 	/* Create the "Print" task as described at the top of the file. */
-	/* xTaskCreate( vErrorChecks, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL ); */
+	//xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 
 	/* This task has to be created last as it keeps account of the number of tasks
 	it expects to see running. */
@@ -187,7 +194,6 @@ int freeRTOS_entry( void )
 
 	/* Create a Task which waits to receive bytes. */
 	/* xTaskCreate( prvSerialConsoleEchoTask, "SerialRx", configMINIMAL_STACK_SIZE, xSerialRxQueue, tskIDLE_PRIORITY + 4, &hSerialTask ); */
-
 	/* Set the scheduler running.  This function will not return unless a task calls vTaskEndScheduler(). */
 	vTaskStartScheduler();
 	freertos_print("END OF FREERTOS EXECUTION\n");

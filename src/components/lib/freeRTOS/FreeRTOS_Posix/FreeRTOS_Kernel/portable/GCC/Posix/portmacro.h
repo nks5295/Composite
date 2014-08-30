@@ -80,6 +80,7 @@ Changes from V1.2.3
 extern "C" {
 #endif
 
+//#include "task.h"
 #include <jw_freertos.h>
 
 /*-----------------------------------------------------------
@@ -108,6 +109,7 @@ extern "C" {
 	typedef unsigned portLONG portTickType;
 	#define portMAX_DELAY ( portTickType ) 0xffffffff
 #endif
+
 /*-----------------------------------------------------------*/	
 
 /* Critical section management. */

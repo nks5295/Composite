@@ -2,22 +2,60 @@
 #include <cos_component.h>
 #include <jw_freertos.h>
 
+#include <sched.h>
+#include <res_spec.h>
 #include <bitmap.h>
 #include <cos_debug.h>
 #include <stdio.h>
 
+//Hier sched includes
 #include "../../sched/cos_sched_sync.h"
 #include "../../sched/cos_sched_ds.h"
 
+//FreeRTOS API includes
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOSConfig.h"
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/FreeRTOS.h"
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/queue.h"
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/semphr.h"
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/task.h"
+#include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/croutine.h"
+
+#define MAX_FRT_OBJS 255
+
+typedef void (*funcptr)(void);
+
+typedef void * xTaskHandle;
+
+typedef struct taskMapping
+{
+        int thd_id;
+        xTaskHandle task;
+} taskMapping_t;
+
+
+taskMapping_t taskMappings[256];
+
 typedef void (*crt_thd_fn_t)(void *);
 
-static volatile int init_thd = -1;
+static volatile int init_thd = -1, timer_thd = -1;
+
+//Freertos API Types
+typedef enum {
+        FRT_OBJ_SEMA,
+        FRT_OBJ_MUTEX,
+        FRT_OBJ_TASK,
+        FRT_OBJ_QUEUE,
+} frt_object_t;
+
+struct frt_obj_mapping {
+        frt_object_t type;
+        void *obj;
+        int used;
+} frt_obj_array[MAX_FRT_OBJS];
+
+
 
 #define ARG_STRLEN 512
-
-int prints(char *str) {
-	return freertos_print(str);
-}
 
 int __attribute__((format(printf,1,2)))
 freertos_print(const char *fmt, ...)
@@ -50,20 +88,36 @@ void freertos_unlock() {
 	}
 }
 
+int
+freertos_cos_create_thread(spdid_t spdid, int prio) 
+{
+        union sched_param sp;
+        sp.c.type = SCHEDP_PRIO;
+        sp.c.value = prio;
+        return(sched_create_thd(spdid, sp.v, 0, 0));
+}
+
 extern int parent_sched_child_thd_crt(spdid_t spdid, spdid_t dest_spd);
 int freertos_create_thread(int a, int b, int c) {
 	freertos_print("Creating thread in spd %d, current thd %d\n", (int) cos_spd_id(), cos_get_thd_id());
 	//	return cos_create_thread(a, b, c);
+        freertos_print("Func Pointer is: %d\n", a);
 	return parent_sched_child_thd_crt(cos_spd_id(), cos_spd_id());
 }
 
 int freertos_switch_thread(int a, int b) {
 	//this is a hack. my apologies. should also lock here. 
 	freertos_clear_pending_events();
+        int wat = 0;
+	freertos_print("Switching threads from %d to %d\n", cos_get_thd_id(), a);
+	wat = cos_switch_thread(a, b);
+	//freertos_print("Switched threads from %d to %d\n", cos_get_thd_id(), a);
+        printc("wat wat wat: %d\n", wat);
+        cos_get_thd_id();
+        printc("wat wat wat: %d\n", wat);
 
-	//	freertos_print("Switching threads from %d to %d\n", cos_get_thd_id(), a);
-	return cos_switch_thread(a, b);
-	//	freertos_print("Switched threads from %d to %d\n", cos_get_thd_id(), a);
+        if (wat != 0) BUG();
+        return wat;
 }
 
 int freertos_get_thread_id(void) {
@@ -177,7 +231,7 @@ int create_timer(int timer_init_fn)
 		freertos_print("Found no available event slots...\n");
 	}
 */
-	return timer_thread;
+	return timer_thd;
 }
 
 void print(char *str) {
@@ -189,7 +243,7 @@ static void freertos_ret_thd(void) {
 }
 
 extern void *prvWaitForStart( void *pvParams);
-extern void timer_tick (void);
+//extern void timer_tick (void);
 /*
 int sched_init(void);
 void cos_upcall_fn(upcall_type_t t, void *arg1, void *arg2, void *arg3) {
@@ -233,8 +287,111 @@ void cos_upcall_fn(upcall_type_t t, void *arg1, void *arg2, void *arg3) {
 
 #include <sched_hier.h>
 */
+//Exp FreeRTOS api
+int
+freertos_xSemaphoreBinaryCreate (void)
+{
+        int ret = 0;
+        while (frt_obj_array[ret].used != 1) ret++;
+        frt_obj_array[ret].type = FRT_OBJ_SEMA;
+        frt_obj_array[ret].used = 1;
+        vSemaphoreCreateBinary(frt_obj_array[ret].obj);
+
+        return ret;
+}
+
+int
+freertos_xSemaphoreBinaryCreateCounting (int uxMaxCount, int uxInitialCount)
+{
+        int ret = 0;
+        while (frt_obj_array[ret].used != 1) ret++;
+        frt_obj_array[ret].type = FRT_OBJ_SEMA;
+        frt_obj_array[ret].used = 1;
+
+        frt_obj_arrar[ret].obj = xSemaphoreCreateCounting(uxMaxCount, uxInitialCount);
+
+        return ret;
+}
+
+int
+freertos_xSemaphoreCreateMutex (void)
+{
+        int ret = 0;
+        while (frt_obj_array[ret].used != 1) ret++;
+        frt_obj_array[ret].type = FRT_OBJ_SEMA;
+        frt_obj_array[ret].used = 1;
+
+        frt_obj_arrar[ret].obj = xSemaphoreCreateMutex();
+
+        return ret;
+}
+
+int
+freertos_xSemaphoreCreateRecursiveMutex (void)
+{
+        int ret = 0;
+        while (frt_obj_array[ret].used != 1) ret++;
+        frt_obj_array[ret].type = FRT_OBJ_SEMA;
+        frt_obj_array[ret].used = 1;
+
+        frt_obj_array[ret].obj = xSemaphoreCreateRecursiveMutex();
+
+        return ret;
+}
+
+void
+freertos_vSemaphoreDelete (int xSemaphore)
+{
+        assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
+        vSemaphoreDelete(frt_obj_array[xSemaphore].obj);
+        frt_obj_array[xSemaphore].used = 0;
+        frt_obj_array[xSemaphore].type = 0;
+}
+
+int
+freertos_xSemaphoreTake (int xSemaphore, int xTicksToWait)
+{
+        assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
+        return xSemaphoreTake(frt_obj_array[xSemaphore].obj, (TickType_t) xTicksToWait);
+}
+
+int
+freertos_xSemaphoreTakeRecursive (int xMutex, int xTicksToWait)
+{
+        assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
+        return xSemaphoreTakeRecursive(frt_obj_array[xMutex].obj, (TickType_t) xTicksToWait);
+}
+
+int
+freertos_xSemaphoreGive (int xSemaphore)
+{
+        assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
+        return xSemaphoreGive(frt_obj_array[xSemaphore].obj);
+}
+
+int
+freertos_xSemaphoreGiveRecursive (int xMutex)
+{
+        assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
+        return xSemaphoreGiveRecursive(frt_obj_array[xMutex].obj);
+}
+
+int
+freertos_xSemaphoreGetMutexHandler (int xMutex)
+{
+
+        assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
+        return xSemaphoreGetMutexHandler(frt_obj_array[xMutex].obj);
+}
+
+
+
+
 void cos_init(void);
 extern int parent_sched_child_cntl_thd(spdid_t spdid);
+
+extern int
+parent_sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff);
 
 PERCPU_ATTR(static volatile, int, initialized_core); /* record the cores that still depend on us */
 
@@ -274,25 +431,67 @@ int sched_init(void) {
 }
 */
 
-int
-sched_child_cntl_thd(spdid_t spdid)
-{
-	if (parent_sched_child_cntl_thd(cos_spd_id())) BUG();
-	if (cos_sched_cntl(COS_SCHED_PROMOTE_CHLD, 0, spdid)) BUG();
-	if (cos_sched_cntl(COS_SCHED_GRANT_SCHED, cos_get_thd_id(), spdid)) BUG();
-
-	return 0;
+void timer_tick (void) {
+        freertos_print("Freertos timer being called\n");
+        while(1) { 
+                //if (parent_sched_child_timer_int(cos_spd_id(), 0, 1) != 0) BUG();
+                vPortYieldFromTick();
+        }
 }
+
 
 int
 sched_child_thd_crt(spdid_t spdid, spdid_t dest_spd) { BUG(); return 0; }
 
-extern int freeRTOS_entry( void );
-void cos_init(void)
+extern int
+freeRTOS_entry( void );
+
+void
+cos_init(void)
 {
-	freeRTOS_entry();
-	
-	while(1);
-	
+static volatile int a = 1, b = 1, c = 1, i = 0, wat = -1, halp = 1;
+
+	if (a) {
+		a = 0;
+                init_thd = cos_get_thd_id();
+                if ((timer_thd = freertos_cos_create_thread(cos_spd_id(), 15)) == 0) BUG();
+
+                //return;
+		//freeRTOS_entry();
+        } else if (b) {
+                b = 0;
+                if (parent_sched_child_cntl_thd(cos_spd_id())) BUG();
+                if (cos_sched_cntl(COS_SCHED_EVT_REGION, 0, (long)PERCPU_GET(cos_sched_notifications))) BUG();
+                printc("Called cntl_thd\n");
+
+                if (( wat = parent_sched_child_thd_crt(cos_spd_id(), cos_spd_id())) == -1) BUG();
+
+                if (( i = cos_switch_thread(wat, 0))) printc("Switch: %d\n", i);
+
+                while(1) {
+                        if (halp) {
+                                halp = 0;
+                                printc("THD: %d\n", cos_get_thd_id());
+                                freertos_switch_thread(11, 0);
+                        }
+                        timer_tick();
+                }
+        } else if (c) {
+                c = 0;
+                printc("first sched thd\n");
+                freeRTOS_entry();
+                printc("func ptr: %d\n",(int) taskMappings[cos_get_thd_id()].task);
+                while(1);
+
+        } else {
+                printc("1!!!!!!!!!!!!!!!\n");
+                int wat = taskMappings[cos_get_thd_id()].task;
+                printc("pl0x twerk: %d\n", wat);
+                funcptr exe;
+                exe = wat;
+                exe();
+                printc("|||this shouldn't run\n");
+                while(1);
+        }
 	return;
 }

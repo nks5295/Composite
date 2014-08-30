@@ -172,7 +172,7 @@ void vPortYieldFromTick( void )
 	vTaskIncrementTick();
 	freertos_clear_pending_events();
 	//Need to fix!
-        //vPortCosSwitchThread(COS_SCHED_BRAND_WAIT);
+        vPortCosSwitchThread(0);
 	return;
 }
 /*-----------------------------------------------------------*/
@@ -184,54 +184,18 @@ void vPortYieldFromTick( void )
 static void prvSetupTimerInterrupt( void );
 /*-----------------------------------------------------------*/
 
-extern int have_restored;
-void timer_tick (void) {
-	u64_t start, end, total, samples;
-	start = end = total = samples = 0;
-	while(1) {
+extern int
+parent_sched_child_timer_int(spdid_t spdid, int idle, unsigned long wake_diff);
 
-		ticks++;
-/*
-#ifdef FREERTOS_CHECKPOINT_TEST
-		
-		if (ticks % CHECKPOINT_INTERVAL == 0 && ticks % 32 != 0) {
-			rdtscll(start);
-			int ret = freertos_checkpoint();
-			if (ret == 1) {
-				freertos_print("Have returned from a restore.\n");
-			} else {
-				rdtscll(end);
-				if (end > start) {
-					freertos_print("Checkpoint time (cycles): %llu\n", end - start);
-					total += (end - start);
-					samples++;
-					freertos_print("Average checkpoint time: %llu\n", (total / samples));
-				}
-			}
-			//freertos_print("Returned from checkpoint in thread %d\n", freertos_get_thread_id());
-		}
-#endif
-#ifdef FREERTOS_RESTORE_TEST
-		if (ticks == 2) {
-			have_restored = freertos_checkpoint();
-		}
-
-
-		if (ticks % 32 == 0 && ticks > 0) {
-			freertos_print("Ticks = %llu, restoring checkpoint...\n", ticks);
-			freertos_restore_checkpoint();
-		}
-#endif
-*/
-		vPortYieldFromTick();
-	}
-}
+extern void
+timer_tick( void );
 
 void timer_init(void) {
 	freertos_print("Timer init called...\n");
 	ticks = 0;
 	wakeup_time = 0;
 	child_wakeup_time = 0;
+        freertos_print("Calling timer_tick from timer_init\n");
 	timer_tick();
 
 	// should never get here
@@ -243,7 +207,8 @@ void timer_init(void) {
 void *prvWaitForStart( void *pvParams) {
 	freertos_print("In prvWaitForStart\n");
 	if (freertos_get_thread_id() == freertos_timer_thread) {
-		timer_init();
+		printc("nerp\n");
+                timer_init();
 	}
 
 	xParams *pxParams = task_thread_params[freertos_get_thread_id()];
