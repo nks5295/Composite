@@ -24,8 +24,6 @@
 
 typedef void (*funcptr)(void);
 
-typedef void * xTaskHandle;
-
 typedef struct taskMapping
 {
         int thd_id;
@@ -308,7 +306,7 @@ freertos_xSemaphoreBinaryCreateCounting (int uxMaxCount, int uxInitialCount)
         frt_obj_array[ret].type = FRT_OBJ_SEMA;
         frt_obj_array[ret].used = 1;
 
-        frt_obj_arrar[ret].obj = xSemaphoreCreateCounting(uxMaxCount, uxInitialCount);
+        frt_obj_array[ret].obj = xSemaphoreCreateCounting(uxMaxCount, uxInitialCount);
 
         return ret;
 }
@@ -321,7 +319,7 @@ freertos_xSemaphoreCreateMutex (void)
         frt_obj_array[ret].type = FRT_OBJ_SEMA;
         frt_obj_array[ret].used = 1;
 
-        frt_obj_arrar[ret].obj = xSemaphoreCreateMutex();
+        frt_obj_array[ret].obj = xSemaphoreCreateMutex();
 
         return ret;
 }
@@ -339,27 +337,17 @@ freertos_xSemaphoreCreateRecursiveMutex (void)
         return ret;
 }
 
-void
-freertos_vSemaphoreDelete (int xSemaphore)
-{
-        assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
-        vSemaphoreDelete(frt_obj_array[xSemaphore].obj);
-        frt_obj_array[xSemaphore].used = 0;
-        frt_obj_array[xSemaphore].type = 0;
-}
-
-int
 freertos_xSemaphoreTake (int xSemaphore, int xTicksToWait)
 {
         assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
-        return xSemaphoreTake(frt_obj_array[xSemaphore].obj, (TickType_t) xTicksToWait);
+        return xSemaphoreTake(frt_obj_array[xSemaphore].obj, (portTickType) xTicksToWait);
 }
 
 int
 freertos_xSemaphoreTakeRecursive (int xMutex, int xTicksToWait)
 {
         assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
-        return xSemaphoreTakeRecursive(frt_obj_array[xMutex].obj, (TickType_t) xTicksToWait);
+        return xSemaphoreTakeRecursive(frt_obj_array[xMutex].obj, (portTickType) xTicksToWait);
 }
 
 int
@@ -374,14 +362,6 @@ freertos_xSemaphoreGiveRecursive (int xMutex)
 {
         assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
         return xSemaphoreGiveRecursive(frt_obj_array[xMutex].obj);
-}
-
-int
-freertos_xSemaphoreGetMutexHandler (int xMutex)
-{
-
-        assert(frt_obj_array[xMutex].type == FRT_OBJ_SEMA);
-        return xSemaphoreGetMutexHandler(frt_obj_array[xMutex].obj);
 }
 
 
