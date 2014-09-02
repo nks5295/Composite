@@ -36,6 +36,7 @@ taskMapping_t taskMappings[256];
 typedef void (*crt_thd_fn_t)(void *);
 
 static volatile int init_thd = -1, timer_thd = -1;
+volatile int thread_extern_spd = 0;
 
 //Freertos API Types
 typedef enum {
@@ -100,20 +101,23 @@ int freertos_create_thread(int a, int b, int c) {
 	freertos_print("Creating thread in spd %d, current thd %d\n", (int) cos_spd_id(), cos_get_thd_id());
 	//	return cos_create_thread(a, b, c);
         freertos_print("Func Pointer is: %d\n", a);
+        if (thread_extern_spd) parent_sched_child_thd_crt(cos_spd_id(), cos_spd_id() + 1);
 	return parent_sched_child_thd_crt(cos_spd_id(), cos_spd_id());
 }
 
 int freertos_switch_thread(int a, int b) {
 	//this is a hack. my apologies. should also lock here. 
 	freertos_clear_pending_events();
-        int wat = 0;
+        int wat = 0, watl = 0;
+        static volatile int watc = 0;
 	freertos_print("Switching threads from %d to %d\n", cos_get_thd_id(), a);
 	wat = cos_switch_thread(a, b);
 	//freertos_print("Switched threads from %d to %d\n", cos_get_thd_id(), a);
         printc("wat wat wat: %d\n", wat);
-        cos_get_thd_id();
-        printc("wat wat wat: %d\n", wat);
+        watl = cos_get_thd_id();
+        printc("wat wat wat: %d\n", watl);
 
+        printc("Count %d\n", watc++);
         if (wat != 0) BUG();
         return wat;
 }
@@ -142,6 +146,10 @@ void freertos_restore_checkpoint(void) {
 void freertos_clear_pending_events(void) {
 	if (PERCPU_GET(cos_sched_notifications)->cos_evt_notif.pending_event) {
 		PERCPU_GET(cos_sched_notifications)->cos_evt_notif.pending_event = 0;
+
+	}
+        if (PERCPU_GET(cos_sched_notifications)->cos_evt_notif.pending_cevt) {
+		PERCPU_GET(cos_sched_notifications)->cos_evt_notif.pending_cevt = 0;
 
 	}
 }
@@ -286,8 +294,12 @@ void cos_upcall_fn(upcall_type_t t, void *arg1, void *arg2, void *arg3) {
 #include <sched_hier.h>
 */
 //Exp FreeRTOS api
+
+/**********
+ * FreeRTOS Semaphore API
+**********/
 int
-freertos_xSemaphoreBinaryCreate (void)
+freertos_vSemaphoreBinaryCreate (void)
 {
         int ret = 0;
         while (frt_obj_array[ret].used != 1) ret++;
@@ -337,6 +349,7 @@ freertos_xSemaphoreCreateRecursiveMutex (void)
         return ret;
 }
 
+int
 freertos_xSemaphoreTake (int xSemaphore, int xTicksToWait)
 {
         assert(frt_obj_array[xSemaphore].type == FRT_OBJ_SEMA);
@@ -364,7 +377,41 @@ freertos_xSemaphoreGiveRecursive (int xMutex)
         return xSemaphoreGiveRecursive(frt_obj_array[xMutex].obj);
 }
 
+/********
+ * FreeRTOS Task API
+ ********/
 
+int
+freertos_xTaskCreate (void *pvTaskCode, const char *const pcName, unsigned short usStackDepth, void *pvParameters, int uxPriority, void *pvCreatedTask)
+{
+        return 0;
+}
+
+void
+freertos_vTaskDelete (int xTask)
+{
+        if (xTask == NULL) vTaskDelete((xTaskHandle) xTask);
+
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+
+        vTaskDelete(frt_obj_array[xTask].obj);
+}
+
+int
+freertos_uxTaskPriorityGet(int xTask)
+{
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+
+        return (int) uxTaskPriorityGet(frt_obj_array[xTask].obj);
+}
+
+void
+freertos_vTaskPrioritySet(int xTask, int uxNewPriority)
+{
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+
+        vTaskPrioritySet(frt_obj_array[xTask].obj, (portBASE_TYPE) uxNewPriority);
+}
 
 
 void cos_init(void);
@@ -411,10 +458,11 @@ int sched_init(void) {
 }
 */
 
+
 void timer_tick (void) {
         freertos_print("Freertos timer being called\n");
         while(1) { 
-                //if (parent_sched_child_timer_int(cos_spd_id(), 0, 1) != 0) BUG();
+                if (parent_sched_child_timer_int(cos_spd_id(), 0, 1) != 0) BUG();
                 vPortYieldFromTick();
         }
 }
@@ -429,7 +477,7 @@ freeRTOS_entry( void );
 void
 cos_init(void)
 {
-static volatile int a = 1, b = 1, c = 1, i = 0, wat = -1, halp = 1;
+static volatile int a = 1, b = 1, c = 1, i = 0, wat = -1, halp = 0;
 
 	if (a) {
 		a = 0;
@@ -467,10 +515,12 @@ static volatile int a = 1, b = 1, c = 1, i = 0, wat = -1, halp = 1;
                 printc("1!!!!!!!!!!!!!!!\n");
                 int wat = taskMappings[cos_get_thd_id()].task;
                 printc("pl0x twerk: %d\n", wat);
-                funcptr exe;
+                prvWaitForStart(NULL);
+               /* funcptr exe;
                 exe = wat;
                 exe();
-                printc("|||this shouldn't run\n");
+               */ printc("THD %d done executing, setting to lowest priority.\n", cos_get_thd_id());
+//                vTaskPrioritySet(cos_get_thd_id(), (portBASE_TYPE) 0);
                 while(1);
         }
 	return;
