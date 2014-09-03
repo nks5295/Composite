@@ -146,7 +146,7 @@ extern void print(char *str);
 
 static void vWat (void)
 {
-        freertos_print("eeeessss gud: %d\n", freertos_get_thread_id());
+        freertos_print("eeeessss gud: %d, spdid = %d\n", freertos_get_thread_id(), freertos_spd_id());
         taskYIELD();
 }
 
@@ -171,7 +171,7 @@ int freeRTOS_entry( void )
 //        xTaskCreate( vWat, "wat", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY + 1, NULL );
         vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 /* 	vCreateBlockTimeTasks(); */
- 	vStartSemaphoreTasks( mainSEMAPHORE_TASK_PRIORITY ); 
+ 	//vStartSemaphoreTasks( mainSEMAPHORE_TASK_PRIORITY ); 
 /* 	vStartMultiEventTasks(); */
 /* 	vStartQueuePeekTasks(); */
 /* 	vStartBlockingQueueTasks( mainQUEUE_BLOCK_PRIORITY ); */
@@ -203,6 +203,7 @@ int freeRTOS_entry( void )
 	/* Create a Task which waits to receive bytes. */
 	/* xTaskCreate( prvSerialConsoleEchoTask, "SerialRx", configMINIMAL_STACK_SIZE, xSerialRxQueue, tskIDLE_PRIORITY + 4, &hSerialTask ); */
 	/* Set the scheduler running.  This function will not return unless a task calls vTaskEndScheduler(). */
+        xTaskSpdCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
         vTaskStartScheduler();
 	freertos_print("END OF FREERTOS EXECUTION\n");
 	return 1;

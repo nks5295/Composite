@@ -141,11 +141,13 @@ void vPortCosSwitchThread(int flags) {
 	vTaskSwitchContext();
 	
 	int next_thd = prvGetThreadHandle(xTaskGetCurrentTaskHandle());
+        freertos_print("About to switch to %d\n", next_thd);
+        freertos_print("should twerk: %d\n", xTaskGetCurrentTaskHandle());
 	
 	freertos_unlock();
 
 	if (freertos_get_thread_id() != next_thd) {
-		//		freertos_print("Switching from thd %d to thd %d\n", freertos_get_thread_id(), next_thd);	
+				//freertos_print("Switching from thd %d to thd %d\n", freertos_get_thread_id(), next_thd);	
 		freertos_switch_thread(next_thd, flags);
 	}
 }
@@ -172,6 +174,7 @@ void vPortYieldFromTick( void )
 	vTaskIncrementTick();
 	freertos_clear_pending_events();
 	//Need to fix!
+        freertos_print("About to switch\n");
         vPortCosSwitchThread(0);
 	return;
 }
@@ -303,4 +306,3 @@ portBASE_TYPE xPortStartScheduler( void )
 
 	return 0;
 }
-	
