@@ -1,6 +1,3 @@
-#ifndef FREERTOS_KLIB_H
-#define FREERTOS_KLIB_H
-
 //FreeRTOS API includes
 #include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOSConfig.h"
 #include "../../../lib/freeRTOS/FreeRTOS_Posix/FreeRTOS_Kernel/include/FreeRTOS.h"
@@ -28,20 +25,31 @@ struct frt_obj_mapping {
 /**********
  * FreeRTOS Semaphore API
 **********/
-void
-freertos_vSemaphoreBinaryCreate (int* ret)
+int
+freertos_vSemaphoreBinaryCreate (void)
 {
-        while (frt_obj_array[*ret].used != 1) ret++;
-        frt_obj_array[*ret].type = FRT_OBJ_SEMA;
-        frt_obj_array[*ret].used = 1;
-        vSemaphoreCreateBinary(frt_obj_array[*ret].obj);
+//        printc("In freertos_vSemaphoreBinaryCreate\n %d \n", frt_obj_array[0].used);
+	int ret = 0;
+//        xSemaphoreHandle fak;
+
+        while (frt_obj_array[ret].used != 0 && ret != MAX_FRT_OBJS) {
+                ret++;
+ //               printc("fak\n");
+        }
+	if (ret == MAX_FRT_OBJS) return -1;
+        frt_obj_array[ret].type = FRT_OBJ_SEMA;
+        frt_obj_array[ret].used = 1;
+//        freertos_print("Just before vSemaphoreCreateBinary\n");
+        vSemaphoreCreateBinary(frt_obj_array[ret].obj);
+//        printc("wat made fak %d\n%d\n", frt_obj_array[ret].obj,ret);
+	return ret;
 }
 
 int
 freertos_xSemaphoreBinaryCreateCounting (portBASE_TYPE uxMaxCount, int uxInitialCount)
 {
         int ret = 0;
-        while (frt_obj_array[ret].used != 1) ret++;
+        while (frt_obj_array[ret].used != 0) ret++;
         frt_obj_array[ret].type = FRT_OBJ_SEMA;
         frt_obj_array[ret].used = 1;
 
@@ -54,7 +62,7 @@ int
 freertos_xSemaphoreCreateMutex (void)
 {
         int ret = 0;
-        while (frt_obj_array[ret].used != 1) ret++;
+        while (frt_obj_array[ret].used != 0) ret++;
         frt_obj_array[ret].type = FRT_OBJ_SEMA;
         frt_obj_array[ret].used = 1;
 
@@ -140,5 +148,3 @@ freertos_vTaskPrioritySet(int xTask, int uxNewPriority)
         vTaskPrioritySet(frt_obj_array[xTask].obj, (portBASE_TYPE) uxNewPriority);
 }
 
-
-#endif

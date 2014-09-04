@@ -1,8 +1,8 @@
 C_OBJS=freertos.o
 ASM_OBJS=cos_asm_scheduler.o
 COMPONENT=freeRTOS.o
-INTERFACES=sched_hier
-DEPENDENCIES=printc sched sched_hier
+INTERFACES=sched_hier frt
+DEPENDENCIES=printc sched sched_hier mem_mgr
 FN_PREPEND=parent_
 IF_LIB=./freertos_posix.o
 FREERTOSOBJ=../../../lib/freeRTOS/FreeRTOS_Posix/Release/freertos_posix.o

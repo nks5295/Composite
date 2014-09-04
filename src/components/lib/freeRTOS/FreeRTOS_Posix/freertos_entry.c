@@ -94,9 +94,11 @@
 /* #include <errno.h> */
 /* #include <unistd.h> */
 
+#include <cos_component.h>
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 #include "croutine.h"
 #include <jw_freertos.h>
 /* #include "partest.h" */
@@ -146,7 +148,13 @@ extern void print(char *str);
 
 static void vWat (void)
 {
+        int a = 0, b = 0;
+        xSemaphoreHandle sem;
         freertos_print("eeeessss gud: %d, spdid = %d\n", freertos_get_thread_id(), freertos_spd_id());
+        rdtscll(a);
+        vSemaphoreCreateBinary(sem);
+        rdtscll(b);
+        freertos_print("Sem %d created with %d cycles used\n", sem, (b - a));
         taskYIELD();
 }
 
@@ -167,7 +175,7 @@ int freeRTOS_entry( void )
 	/* CREATE ALL THE DEMO APPLICATION TASKS. */
 	//vStartMathTasks( tskIDLE_PRIORITY ); 
         /* vStartCheckpointTask(); */
-//        xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
+        xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 //        xTaskCreate( vWat, "wat", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY + 1, NULL );
         vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 /* 	vCreateBlockTimeTasks(); */
