@@ -14,5 +14,5 @@ va.o-fprr.o|print.o|mm.o|l.o|boot.o|vm.o;\
 l.o-fprr.o|mm.o|print.o;\
 \
 rtos_app.o-fprr.o|freeRTOS.o|mm.o|boot.o|print.o;\
-freeRTOS.o-[parent_]fprr.o|print.o\
+freeRTOS.o-[parent_]fprr.o|mm.o|print.o\
 " ./gen_client_stub

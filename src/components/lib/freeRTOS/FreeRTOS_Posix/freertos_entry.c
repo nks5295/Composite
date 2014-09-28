@@ -148,13 +148,31 @@ extern void print(char *str);
 
 static void vWat (void)
 {
-        int a = 0, b = 0;
-        xSemaphoreHandle sem;
+        int a = 0, b = 0, give=0, take=0, i = 0;
+        xSemaphoreHandle xSemaphore;
         freertos_print("eeeessss gud: %d, spdid = %d\n", freertos_get_thread_id(), freertos_spd_id());
         rdtscll(a);
-        vSemaphoreCreateBinary(sem);
+        vSemaphoreCreateBinary(xSemaphore);
         rdtscll(b);
-        freertos_print("Sem %d created with %d cycles used\n", sem, (b - a));
+        freertos_print("Sem %d created with %d cycles used\n", xSemaphore, (b - a));
+
+         printc("About to take sem\n");
+         for(i; i < 1000000; i++) {
+                 rdtscll(a);
+                 xSemaphoreTake(xSemaphore, (portTickType) 0);
+                 rdtscll(b);
+                 take+= (b-a);
+                 rdtscll(a);
+                 xSemaphoreGive(xSemaphore);
+                 rdtscll(b);
+                 give+= (b-a);
+         }
+         give = give / i;
+         take = take / i;
+         printc("Native Give avg = %d\n", give);
+         printc("Native Take avg = %d\n", take);
+
+
         taskYIELD();
 }
 
@@ -175,7 +193,7 @@ int freeRTOS_entry( void )
 	/* CREATE ALL THE DEMO APPLICATION TASKS. */
 	//vStartMathTasks( tskIDLE_PRIORITY ); 
         /* vStartCheckpointTask(); */
-        xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
+        //xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 //        xTaskCreate( vWat, "wat", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY + 1, NULL );
         vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 /* 	vCreateBlockTimeTasks(); */
@@ -211,7 +229,7 @@ int freeRTOS_entry( void )
 	/* Create a Task which waits to receive bytes. */
 	/* xTaskCreate( prvSerialConsoleEchoTask, "SerialRx", configMINIMAL_STACK_SIZE, xSerialRxQueue, tskIDLE_PRIORITY + 4, &hSerialTask ); */
 	/* Set the scheduler running.  This function will not return unless a task calls vTaskEndScheduler(). */
-        xTaskSpdCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
+        xTaskSpdCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, 9, NULL );
         vTaskStartScheduler();
 	freertos_print("END OF FREERTOS EXECUTION\n");
 	return 1;

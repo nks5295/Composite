@@ -1,0 +1,3499 @@
+ubuntu# dmesg -c
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 2.6.36CosMC (root@ubuntu) (gcc version 4.4.3 (Ubuntu 4.4.3-4ubuntu5) ) #8 SMP Mon Feb 11 13:13:41 PST 2013
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000]  BIOS-e820: 0000000000000000 - 000000000009f000 (usable)
+[    0.000000]  BIOS-e820: 000000000009f000 - 00000000000a0000 (reserved)
+[    0.000000]  BIOS-e820: 00000000000dc000 - 0000000000100000 (reserved)
+[    0.000000]  BIOS-e820: 0000000000100000 - 00000000bfee0000 (usable)
+[    0.000000]  BIOS-e820: 00000000bfee0000 - 00000000bfeff000 (ACPI data)
+[    0.000000]  BIOS-e820: 00000000bfeff000 - 00000000bff00000 (ACPI NVS)
+[    0.000000]  BIOS-e820: 00000000bff00000 - 00000000c0000000 (usable)
+[    0.000000]  BIOS-e820: 00000000f0000000 - 00000000f8000000 (reserved)
+[    0.000000]  BIOS-e820: 00000000fec00000 - 00000000fec10000 (reserved)
+[    0.000000]  BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+[    0.000000]  BIOS-e820: 00000000fffe0000 - 0000000100000000 (reserved)
+[    0.000000]  BIOS-e820: 0000000100000000 - 00000001c4000000 (usable)
+[    0.000000] Notice: NX (Execute Disable) protection cannot be enabled: non-PAE kernel!
+[    0.000000] DMI present.
+[    0.000000] Phoenix BIOS detected: BIOS may corrupt low RAM, working around it.
+[    0.000000] e820 update range: 0000000000000000 - 0000000000010000 (usable) ==> (reserved)
+[    0.000000] Hypervisor detected: VMware
+[    0.000000] e820 update range: 0000000000000000 - 0000000000001000 (usable) ==> (reserved)
+[    0.000000] e820 remove range: 00000000000a0000 - 0000000000100000 (usable)
+[    0.000000] last_pfn = 0xc0000 max_arch_pfn = 0x100000
+[    0.000000] MTRR default type: uncachable
+[    0.000000] MTRR fixed ranges enabled:
+[    0.000000]   00000-9FFFF write-back
+[    0.000000]   A0000-BFFFF uncachable
+[    0.000000]   C0000-CBFFF write-protect
+[    0.000000]   CC000-EFFFF uncachable
+[    0.000000]   F0000-FFFFF write-protect
+[    0.000000] MTRR variable ranges enabled:
+[    0.000000]   0 base 00C0000000 mask FFC0000000 uncachable
+[    0.000000]   1 base 0000000000 mask FF00000000 write-back
+[    0.000000]   2 base 0100000000 mask FF80000000 write-back
+[    0.000000]   3 base 0180000000 mask FFC0000000 write-back
+[    0.000000]   4 base 01C0000000 mask FFFC000000 write-back
+[    0.000000]   5 disabled
+[    0.000000]   6 disabled
+[    0.000000]   7 disabled
+[    0.000000] x86 PAT enabled: cpu 0, old 0x0, new 0x7010600070106
+[    0.000000] e820 update range: 00000000c0000000 - 0000000100000000 (usable) ==> (reserved)
+[    0.000000] Warning only 895MB will be used.
+[    0.000000] Use a HIGHMEM enabled kernel.
+[    0.000000] initial memory mapped : 0 - 00c00000
+[    0.000000] found SMP MP-table at [c00f6bf0] f6bf0
+[    0.000000] init_memory_mapping: 0000000000000000-0000000037f15000
+[    0.000000]  0000000000 - 0000400000 page 4k
+[    0.000000]  0000400000 - 0037c00000 page 2M
+[    0.000000]  0037c00000 - 0037f15000 page 4k
+[    0.000000] kernel direct mapping tables up to 37f15000 @ 15000-1a000
+[    0.000000] RAMDISK: 378f8000 - 37ff0000
+[    0.000000] Allocated new RAMDISK: 008ef000 - 00fe6f6d
+[    0.000000] Move RAMDISK from 00000000378f8000 - 0000000037feff6c to 008ef000 - 00fe6f6c
+[    0.000000] ACPI: RSDP 000f6b80 00024 (v02 PTLTD )
+[    0.000000] ACPI: XSDT bfeeba0b 0005C (v01 INTEL  440BX    06040000 VMW  01324272)
+[    0.000000] ACPI: FACP bfefee73 000F4 (v04 INTEL  440BX    06040000 PTL  000F4240)
+[    0.000000] ACPI: DSDT bfeec8d4 1259F (v01 PTLTD  Custom   06040000 MSFT 03000001)
+[    0.000000] ACPI: FACS bfefffc0 00040
+[    0.000000] ACPI: BOOT bfeec8ac 00028 (v01 PTLTD  $SBFTBL$ 06040000  LTP 00000001)
+[    0.000000] ACPI: APIC bfeec4ea 003C2 (v01 PTLTD  ? APIC   06040000  LTP 00000000)
+[    0.000000] ACPI: MCFG bfeec4ae 0003C (v01 PTLTD  $PCITBL$ 06040000  LTP 00000001)
+[    0.000000] ACPI: SRAT bfeebb07 004F8 (v02 VMWARE MEMPLUG  06040000 VMW  00000001)
+[    0.000000] ACPI: HPET bfeebacf 00038 (v01 VMWARE VMW HPET 06040000 VMW  00000001)
+[    0.000000] ACPI: WAET bfeebaa7 00028 (v01 VMWARE VMW WAET 06040000 VMW  00000001)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] 895MB LOWMEM available.
+[    0.000000]   mapped low ram: 0 - 37f15000
+[    0.000000]   low ram: 0 - 37f15000
+[    0.000000] Zone PFN ranges:
+[    0.000000]   DMA      0x00000010 -> 0x00001000
+[    0.000000]   Normal   0x00001000 -> 0x00037f15
+[    0.000000] Movable zone start PFN for each node
+[    0.000000] early_node_map[2] active PFN ranges
+[    0.000000]     0: 0x00000010 -> 0x0000009f
+[    0.000000]     0: 0x00000100 -> 0x00037f15
+[    0.000000] On node 0 totalpages: 229028
+[    0.000000] free_area_init_node: node 0, pgdat c0625bc0, node_mem_map c1000200
+[    0.000000]   DMA zone: 32 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 3951 pages, LIFO batch:0
+[    0.000000]   Normal zone: 1759 pages used for memmap
+[    0.000000]   Normal zone: 223286 pages, LIFO batch:31
+[    0.000000] Using APIC driver default
+[    0.000000] ACPI: PM-Timer IO Port: 0x1008
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x01] lapic_id[0x01] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x02] lapic_id[0x02] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x03] lapic_id[0x03] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x04] lapic_id[0x04] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x05] lapic_id[0x05] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x06] lapic_id[0x06] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x07] lapic_id[0x07] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x08] lapic_id[0x08] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x09] lapic_id[0x09] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0a] lapic_id[0x0a] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0b] lapic_id[0x0b] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0c] lapic_id[0x0c] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0d] lapic_id[0x0d] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0e] lapic_id[0x0e] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x0f] lapic_id[0x0f] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x10] lapic_id[0x10] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x11] lapic_id[0x11] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x12] lapic_id[0x12] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x13] lapic_id[0x13] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x14] lapic_id[0x14] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x15] lapic_id[0x15] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x16] lapic_id[0x16] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x17] lapic_id[0x17] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x18] lapic_id[0x18] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x19] lapic_id[0x19] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1a] lapic_id[0x1a] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1b] lapic_id[0x1b] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1c] lapic_id[0x1c] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1d] lapic_id[0x1d] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1e] lapic_id[0x1e] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x1f] lapic_id[0x1f] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x20] lapic_id[0x20] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x21] lapic_id[0x21] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x22] lapic_id[0x22] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x23] lapic_id[0x23] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x24] lapic_id[0x24] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x25] lapic_id[0x25] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x26] lapic_id[0x26] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x27] lapic_id[0x27] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x28] lapic_id[0x28] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x29] lapic_id[0x29] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2a] lapic_id[0x2a] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2b] lapic_id[0x2b] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2c] lapic_id[0x2c] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2d] lapic_id[0x2d] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2e] lapic_id[0x2e] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x2f] lapic_id[0x2f] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x30] lapic_id[0x30] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x31] lapic_id[0x31] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x32] lapic_id[0x32] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x33] lapic_id[0x33] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x34] lapic_id[0x34] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x35] lapic_id[0x35] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x36] lapic_id[0x36] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x37] lapic_id[0x37] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x38] lapic_id[0x38] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x39] lapic_id[0x39] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3a] lapic_id[0x3a] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3b] lapic_id[0x3b] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3c] lapic_id[0x3c] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3d] lapic_id[0x3d] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3e] lapic_id[0x3e] disabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x3f] lapic_id[0x3f] disabled)
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x00] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x01] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x02] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x03] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x04] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x05] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x06] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x07] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x08] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x09] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0a] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0b] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0c] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0d] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0e] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x0f] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x10] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x11] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x12] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x13] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x14] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x15] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x16] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x17] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x18] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x19] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1a] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1b] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1c] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1d] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1e] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x1f] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x20] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x21] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x22] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x23] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x24] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x25] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x26] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x27] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x28] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x29] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2a] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2b] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2c] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2d] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2e] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x2f] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x30] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x31] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x32] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x33] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x34] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x35] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x36] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x37] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x38] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x39] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3a] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3b] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3c] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3d] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3e] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x3f] high edge lint[0x1])
+[    0.000000] ACPI: IOAPIC (id[0x40] address[0xfec00000] gsi_base[0])
+[    0.000000] IOAPIC[0]: apic_id 64, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 high edge)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ2 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086af01 base: 0xfed00000
+[    0.000000] 64 Processors exceeds NR_CPUS limit of 8
+[    0.000000] SMP: Allowing 8 CPUs, 6 hotplug CPUs
+[    0.000000] nr_irqs_gsi: 40
+[    0.000000] early_res array is doubled to 64 at [16000 - 167ff]
+[    0.000000] Allocating PCI resources starting at c0000000 (gap: c0000000:30000000)
+[    0.000000] setup_percpu: NR_CPUS:8 nr_cpumask_bits:8 nr_cpu_ids:8 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 13 pages/cpu @c1800000 s30208 r0 d23040 u524288
+[    0.000000] pcpu-alloc: s30208 r0 d23040 u524288 alloc=1*4194304
+[    0.000000] pcpu-alloc: [0] 0 1 2 3 4 5 6 7 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 227237
+[    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-2.6.36CosMC root=UUID=a18df098-ec65-48a9-b4bc-34c5fdb0af82 ro quiet splash
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Enabling fast FPU save and restore... done.
+[    0.000000] Enabling unmasked SIMD FPU exception support... done.
+[    0.000000] Initializing CPU#0
+[    0.000000] xsave/xrstor: enabled xstate_bv 0x7, cntxt size 0x340
+[    0.000000] allocated 4582500 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Subtract (56 early reservations)
+[    0.000000]   #1 [0000001000 - 0000002000]   EX TRAMPOLINE
+[    0.000000]   #2 [0000100000 - 00008ea744]   TEXT DATA BSS
+[    0.000000]   #3 [00008eb000 - 00008ee1c0]             BRK
+[    0.000000]   #4 [00000f6c00 - 0000100000]   BIOS reserved
+[    0.000000]   #5 [00000f6bf0 - 00000f6c00]    MP-table mpf
+[    0.000000]   #6 [000009f000 - 000009f570]   BIOS reserved
+[    0.000000]   #7 [000009fb64 - 00000f6bf0]   BIOS reserved
+[    0.000000]   #8 [000009f570 - 000009fb64]    MP-table mpc
+[    0.000000]   #9 [0000010000 - 0000011000]      TRAMPOLINE
+[    0.000000]   #10 [0000011000 - 0000015000]     ACPI WAKEUP
+[    0.000000]   #11 [0000015000 - 0000016000]         PGTABLE
+[    0.000000]   #12 [00008ef000 - 0000fe7000]     NEW RAMDISK
+[    0.000000]   #13 [0001000000 - 0001700000]         BOOTMEM
+[    0.000000]   #14 [0001700000 - 0001700004]         BOOTMEM
+[    0.000000]   #15 [0001700040 - 0001700100]         BOOTMEM
+[    0.000000]   #16 [0001700100 - 0001700154]         BOOTMEM
+[    0.000000]   #17 [0001700180 - 0001703180]         BOOTMEM
+[    0.000000]   #18 [0001703180 - 00017031a5]         BOOTMEM
+[    0.000000]   #19 [00017031c0 - 00017031e7]         BOOTMEM
+[    0.000000]   #20 [0001703200 - 000170336c]         BOOTMEM
+[    0.000000]   #21 [0001703380 - 00017033c0]         BOOTMEM
+[    0.000000]   #22 [00017033c0 - 0001703400]         BOOTMEM
+[    0.000000]   #23 [0001703400 - 0001703440]         BOOTMEM
+[    0.000000]   #24 [0001703440 - 0001703480]         BOOTMEM
+[    0.000000]   #25 [0001703480 - 00017034c0]         BOOTMEM
+[    0.000000]   #26 [00017034c0 - 0001703500]         BOOTMEM
+[    0.000000]   #27 [0001703500 - 0001703540]         BOOTMEM
+[    0.000000]   #28 [0001703540 - 0001703580]         BOOTMEM
+[    0.000000]   #29 [0001703580 - 00017035c0]         BOOTMEM
+[    0.000000]   #30 [00017035c0 - 0001703600]         BOOTMEM
+[    0.000000]   #31 [0001703600 - 0001703640]         BOOTMEM
+[    0.000000]   #32 [0001703640 - 0001703680]         BOOTMEM
+[    0.000000]   #33 [0001703680 - 00017036e4]         BOOTMEM
+[    0.000000]   #34 [0001703700 - 0001703764]         BOOTMEM
+[    0.000000]   #35 [0001800000 - 000180d000]         BOOTMEM
+[    0.000000]   #36 [0001880000 - 000188d000]         BOOTMEM
+[    0.000000]   #37 [0001900000 - 000190d000]         BOOTMEM
+[    0.000000]   #38 [0001980000 - 000198d000]         BOOTMEM
+[    0.000000]   #39 [0001a00000 - 0001a0d000]         BOOTMEM
+[    0.000000]   #40 [0001a80000 - 0001a8d000]         BOOTMEM
+[    0.000000]   #41 [0001b00000 - 0001b0d000]         BOOTMEM
+[    0.000000]   #42 [0001b80000 - 0001b8d000]         BOOTMEM
+[    0.000000]   #43 [0001705780 - 0001705784]         BOOTMEM
+[    0.000000]   #44 [00017057c0 - 00017057c4]         BOOTMEM
+[    0.000000]   #45 [0001705800 - 0001705820]         BOOTMEM
+[    0.000000]   #46 [0001705840 - 0001705860]         BOOTMEM
+[    0.000000]   #47 [0001705880 - 0001705918]         BOOTMEM
+[    0.000000]   #48 [0001705940 - 0001705978]         BOOTMEM
+[    0.000000]   #49 [0001705980 - 0001709980]         BOOTMEM
+[    0.000000]   #50 [0001709980 - 0001789980]         BOOTMEM
+[    0.000000]   #51 [0001789980 - 00017c9980]         BOOTMEM
+[    0.000000]   #52 [0001703780 - 000170378c]         BOOTMEM
+[    0.000000]   #53 [00017037c0 - 00017037cc]         BOOTMEM
+[    0.000000]   #54 [0001703800 - 0001703b40]         BOOTMEM
+[    0.000000]   #55 [0001b8d000 - 0001febc64]         BOOTMEM
+[    0.000000] Memory: 887964k/916564k available (3715k kernel code, 28148k reserved, 1577k data, 480k init, 0k highmem)
+[    0.000000] virtual kernel memory layout:
+[    0.000000]     fixmap  : 0xfff17000 - 0xfffff000   ( 928 kB)
+[    0.000000]     vmalloc : 0xf8715000 - 0xfff15000   ( 120 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xf7f15000   ( 895 MB)
+[    0.000000]       .init : 0xc062c000 - 0xc06a4000   ( 480 kB)
+[    0.000000]       .data : 0xc04a0c88 - 0xc062b2e8   (1577 kB)
+[    0.000000]       .text : 0xc0100000 - 0xc04a0c88   (3715 kB)
+[    0.000000] Checking if this processor honours the WP bit even in supervisor mode...Ok.
+[    0.000000] SLUB: Genslabs=13, HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] RCU-based detection of stalled CPUs is disabled.
+[    000000.000000] Verbose stalled-CPUs detection is disabled.
+[    0.000000] NR_CPUS_IRQS:512
+[    0.000000] Extended CMOS year: 2000
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [tty0] enabled
+[    0.000000] hpet clockevent registered
+[    0.000000] TSC freq read from hypervisor : 2392.247 MHz
+[    0.000000] Detected 2392.247 MHz processor.
+[    0.000002] Calibrating delay loop (skipped) preset value.. 4784.49 BogoMIPS (lpj=23922470)
+[    0.000005] pid_max: default: 32768 minimum: 301
+[    0.000023] Mount-cache hash table entries: 512
+[    0.000150] Initializing cgroup subsys ns
+[    0.000153] Initializing cgroup subsys cpuacct
+[    0.000156] Initializing cgroup subsys memory
+[    0.000163] Initializing cgroup subsys devices
+[    0.000164] Initializing cgroup subsys freezer
+[    0.000166] Initializing cgroup subsys net_cls
+[    0.000269] CPU: Physical Processor ID: 0
+[    0.000270] CPU: Processor Core ID: 0
+[    0.000334] mce: CPU supports 0 MCE banks
+[    0.000362] Performance Events: generic architected perfmon, core PMU driver.
+[    0.000373] ... version:                1
+[    0.000374] ... bit width:              48
+[    0.000374] ... generic registers:      4
+[    0.000375] ... value mask:             0000ffffffffffff
+[    0.000376] ... max period:             000000007fffffff
+[    0.000377] ... fixed-purpose events:   0
+[    0.000378] ... event mask:             000000000000000f
+[    0.001863] ACPI: Core revision 20100702
+[    0.013147] Enabling APIC mode:  Flat.  Using 1 I/O APICs
+[    0.013545] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.113610] CPU0: Intel(R) Core(TM) i7-2760QM CPU @ 2.40GHz stepping 07
+[    0.232395] Booting Node   0, Processors  #1
+[    0.242617] Initializing CPU#1
+[    0.243789] mce: CPU supports 0 MCE banks
+[    0.243877] Brought up 2 CPUs
+[    0.243880] Total of 2 processors activated (9568.98 BogoMIPS).
+[    0.244137] x86 PAT enabled: cpu 1, old 0x0, new 0x7010600070106
+[    0.244452] devtmpfs: initialized
+[    0.244683] regulator: core version 0.5
+[    0.244740] NET: Registered protocol family 16
+[    0.244836] EISA bus registered
+[    0.244845] ACPI: bus type pci registered
+[    0.245034] PCI: MMCONFIG for domain 0000 [bus 00-7f] at [mem 0xf0000000-0xf7ffffff] (base 0xf0000000)
+[    0.245037] PCI: MMCONFIG at [mem 0xf0000000-0xf7ffffff] reserved in E820
+[    0.245038] PCI: Using MMCONFIG for extended config space
+[    0.245039] PCI: Using configuration type 1 for base access
+[    0.246112] bio: create slab <bio-0> at 0
+[    0.250121] ACPI: EC: Look up EC in DSDT
+[    0.259337] ACPI: BIOS _OSI(Linux) query ignored
+[    0.266534] ACPI: Interpreter enabled
+[    0.266541] ACPI: (supports S0 S1 S5)
+[    0.266550] ACPI: Using IOAPIC for interrupt routing
+[    0.289362] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.290120] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f])
+[    0.291328] pci_root PNP0A03:00: host bridge window [mem 0x000a0000-0x000bffff]
+[    0.291332] pci_root PNP0A03:00: host bridge window [mem 0x000cc000-0x000cffff]
+[    0.291333] pci_root PNP0A03:00: host bridge window [mem 0x000d0000-0x000d3fff]
+[    0.291335] pci_root PNP0A03:00: host bridge window [mem 0x000d4000-0x000d7fff]
+[    0.291337] pci_root PNP0A03:00: host bridge window [mem 0x000d8000-0x000dbfff]
+[    0.291339] pci_root PNP0A03:00: host bridge window [mem 0xc0000000-0xfebfffff]
+[    0.291342] pci_root PNP0A03:00: host bridge window [io  0x0000-0x0cf7]
+[    0.291349] pci_root PNP0A03:00: host bridge window [io  0x0d00-0xfeff]
+[    0.295379] pci 0000:00:07.1: reg 20: [io  0x1060-0x106f]
+[    0.299663] pci 0000:00:07.3: quirk: [io  0x1000-0x103f] claimed by PIIX4 ACPI
+[    0.299676] pci 0000:00:07.3: quirk: [io  0x1040-0x104f] claimed by PIIX4 SMB
+[    0.300815] pci 0000:00:07.7: reg 10: [io  0x1080-0x10bf]
+[    0.301929] pci 0000:00:07.7: reg 14: [mem 0xfebfe000-0xfebfffff 64bit]
+[    0.309190] pci 0000:00:0f.0: reg 10: [io  0x1070-0x107f]
+[    0.313032] pci 0000:00:0f.0: reg 14: [mem 0xe8000000-0xefffffff pref]
+[    0.316244] pci 0000:00:0f.0: reg 18: [mem 0xfe000000-0xfe7fffff]
+[    0.330488] pci 0000:00:0f.0: reg 30: [mem 0x00000000-0x00007fff pref]
+[    0.331901] pci 0000:00:10.0: reg 10: [io  0x1400-0x14ff]
+[    0.333168] pci 0000:00:10.0: reg 14: [mem 0xfeba0000-0xfebbffff 64bit]
+[    0.334405] pci 0000:00:10.0: reg 1c: [mem 0xfebc0000-0xfebdffff 64bit]
+[    0.336300] pci 0000:00:10.0: reg 30: [mem 0x00000000-0x00003fff pref]
+[    0.337690] pci 0000:00:15.0: PME# supported from D0 D3hot D3cold
+[    0.337721] pci 0000:00:15.0: PME# disabled
+[    0.338706] pci 0000:00:15.1: PME# supported from D0 D3hot D3cold
+[    0.338737] pci 0000:00:15.1: PME# disabled
+[    0.339682] pci 0000:00:15.2: PME# supported from D0 D3hot D3cold
+[    0.339713] pci 0000:00:15.2: PME# disabled
+[    0.340516] pci 0000:00:15.3: PME# supported from D0 D3hot D3cold
+[    0.340539] pci 0000:00:15.3: PME# disabled
+[    0.341339] pci 0000:00:15.4: PME# supported from D0 D3hot D3cold
+[    0.341363] pci 0000:00:15.4: PME# disabled
+[    0.342109] pci 0000:00:15.5: PME# supported from D0 D3hot D3cold
+[    0.342127] pci 0000:00:15.5: PME# disabled
+[    0.342781] pci 0000:00:15.6: PME# supported from D0 D3hot D3cold
+[    0.342800] pci 0000:00:15.6: PME# disabled
+[    0.343521] pci 0000:00:15.7: PME# supported from D0 D3hot D3cold
+[    0.343540] pci 0000:00:15.7: PME# disabled
+[    0.344283] pci 0000:00:16.0: PME# supported from D0 D3hot D3cold
+[    0.344302] pci 0000:00:16.0: PME# disabled
+[    0.345004] pci 0000:00:16.1: PME# supported from D0 D3hot D3cold
+[    0.345038] pci 0000:00:16.1: PME# disabled
+[    0.345772] pci 0000:00:16.2: PME# supported from D0 D3hot D3cold
+[    0.345795] pci 0000:00:16.2: PME# disabled
+[    0.346507] pci 0000:00:16.3: PME# supported from D0 D3hot D3cold
+[    0.346530] pci 0000:00:16.3: PME# disabled
+[    0.347246] pci 0000:00:16.4: PME# supported from D0 D3hot D3cold
+[    0.347266] pci 0000:00:16.4: PME# disabled
+[    0.348111] pci 0000:00:16.5: PME# supported from D0 D3hot D3cold
+[    0.348131] pci 0000:00:16.5: PME# disabled
+[    0.348799] pci 0000:00:16.6: PME# supported from D0 D3hot D3cold
+[    0.348819] pci 0000:00:16.6: PME# disabled
+[    0.349445] pci 0000:00:16.7: PME# supported from D0 D3hot D3cold
+[    0.349463] pci 0000:00:16.7: PME# disabled
+[    0.350089] pci 0000:00:17.0: PME# supported from D0 D3hot D3cold
+[    0.350108] pci 0000:00:17.0: PME# disabled
+[    0.350727] pci 0000:00:17.1: PME# supported from D0 D3hot D3cold
+[    0.350745] pci 0000:00:17.1: PME# disabled
+[    0.351366] pci 0000:00:17.2: PME# supported from D0 D3hot D3cold
+[    0.351385] pci 0000:00:17.2: PME# disabled
+[    0.352003] pci 0000:00:17.3: PME# supported from D0 D3hot D3cold
+[    0.352021] pci 0000:00:17.3: PME# disabled
+[    0.352642] pci 0000:00:17.4: PME# supported from D0 D3hot D3cold
+[    0.352661] pci 0000:00:17.4: PME# disabled
+[    0.353299] pci 0000:00:17.5: PME# supported from D0 D3hot D3cold
+[    0.353317] pci 0000:00:17.5: PME# disabled
+[    0.354038] pci 0000:00:17.6: PME# supported from D0 D3hot D3cold
+[    0.354064] pci 0000:00:17.6: PME# disabled
+[    0.354989] pci 0000:00:17.7: PME# supported from D0 D3hot D3cold
+[    0.355018] pci 0000:00:17.7: PME# disabled
+[    0.355939] pci 0000:00:18.0: PME# supported from D0 D3hot D3cold
+[    0.355969] pci 0000:00:18.0: PME# disabled
+[    0.356819] pci 0000:00:18.1: PME# supported from D0 D3hot D3cold
+[    0.356839] pci 0000:00:18.1: PME# disabled
+[    0.357583] pci 0000:00:18.2: PME# supported from D0 D3hot D3cold
+[    0.357602] pci 0000:00:18.2: PME# disabled
+[    0.358353] pci 0000:00:18.3: PME# supported from D0 D3hot D3cold
+[    0.358375] pci 0000:00:18.3: PME# disabled
+[    0.359036] pci 0000:00:18.4: PME# supported from D0 D3hot D3cold
+[    0.359055] pci 0000:00:18.4: PME# disabled
+[    0.359780] pci 0000:00:18.5: PME# supported from D0 D3hot D3cold
+[    0.359807] pci 0000:00:18.5: PME# disabled
+[    0.360473] pci 0000:00:18.6: PME# supported from D0 D3hot D3cold
+[    0.360499] pci 0000:00:18.6: PME# disabled
+[    0.361152] pci 0000:00:18.7: PME# supported from D0 D3hot D3cold
+[    0.361170] pci 0000:00:18.7: PME# disabled
+[    0.361707] pci 0000:00:01.0: PCI bridge to [bus 01-01]
+[    0.361726] pci 0000:00:01.0:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.361745] pci 0000:00:01.0:   bridge window [mem 0xfff00000-0x000fffff] (disabled)
+[    0.361763] pci 0000:00:01.0:   bridge window [mem 0xfff00000-0x000fffff pref] (disabled)
+[    0.364612] pci 0000:02:00.0: reg 20: [io  0x20c0-0x20df]
+[    0.366269] pci 0000:02:01.0: reg 10: [io  0x2000-0x207f]
+[    0.368861] pci 0000:02:01.0: reg 30: [mem 0x00000000-0x0000ffff pref]
+[    0.369433] pci 0000:02:02.0: reg 10: [io  0x2080-0x20bf]
+[    0.375452] pci 0000:02:03.0: reg 10: [mem 0xfd5ff000-0xfd5fffff]
+[    0.378503] pci 0000:00:11.0: PCI bridge to [bus 02-02] (subtractive decode)
+[    0.378534] pci 0000:00:11.0:   bridge window [io  0x2000-0x3fff]
+[    0.378559] pci 0000:00:11.0:   bridge window [mem 0xfd500000-0xfdffffff]
+[    0.378606] pci 0000:00:11.0:   bridge window [mem 0xe7b00000-0xe7ffffff 64bit pref]
+[    0.378610] pci 0000:00:11.0:   bridge window [mem 0x000a0000-0x000bffff] (subtractive decode)
+[    0.378612] pci 0000:00:11.0:   bridge window [mem 0x000cc000-0x000cffff] (subtractive decode)
+[    0.378614] pci 0000:00:11.0:   bridge window [mem 0x000d0000-0x000d3fff] (subtractive decode)
+[    0.378615] pci 0000:00:11.0:   bridge window [mem 0x000d4000-0x000d7fff] (subtractive decode)
+[    0.378617] pci 0000:00:11.0:   bridge window [mem 0x000d8000-0x000dbfff] (subtractive decode)
+[    0.378619] pci 0000:00:11.0:   bridge window [mem 0xc0000000-0xfebfffff] (subtractive decode)
+[    0.378621] pci 0000:00:11.0:   bridge window [io  0x0000-0x0cf7] (subtractive decode)
+[    0.378623] pci 0000:00:11.0:   bridge window [io  0x0d00-0xfeff] (subtractive decode)
+[    0.379187] pci 0000:00:15.0: PCI bridge to [bus 03-03]
+[    0.379213] pci 0000:00:15.0:   bridge window [io  0x4000-0x4fff]
+[    0.379239] pci 0000:00:15.0:   bridge window [mem 0xfd400000-0xfd4fffff]
+[    0.379287] pci 0000:00:15.0:   bridge window [mem 0xe7a00000-0xe7afffff 64bit pref]
+[    0.379814] pci 0000:00:15.1: PCI bridge to [bus 04-04]
+[    0.379837] pci 0000:00:15.1:   bridge window [io  0x8000-0x8fff]
+[    0.379861] pci 0000:00:15.1:   bridge window [mem 0xfd000000-0xfd0fffff]
+[    0.379907] pci 0000:00:15.1:   bridge window [mem 0xe7600000-0xe76fffff 64bit pref]
+[    0.380413] pci 0000:00:15.2: PCI bridge to [bus 05-05]
+[    0.380437] pci 0000:00:15.2:   bridge window [io  0xc000-0xcfff]
+[    0.380461] pci 0000:00:15.2:   bridge window [mem 0xfcc00000-0xfccfffff]
+[    0.380506] pci 0000:00:15.2:   bridge window [mem 0xe7200000-0xe72fffff 64bit pref]
+[    0.381020] pci 0000:00:15.3: PCI bridge to [bus 06-06]
+[    0.381044] pci 0000:00:15.3:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.381068] pci 0000:00:15.3:   bridge window [mem 0xfc800000-0xfc8fffff]
+[    0.381114] pci 0000:00:15.3:   bridge window [mem 0xe6e00000-0xe6efffff 64bit pref]
+[    0.381618] pci 0000:00:15.4: PCI bridge to [bus 07-07]
+[    0.381642] pci 0000:00:15.4:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.381667] pci 0000:00:15.4:   bridge window [mem 0xfc400000-0xfc4fffff]
+[    0.381713] pci 0000:00:15.4:   bridge window [mem 0xe6a00000-0xe6afffff 64bit pref]
+[    0.382226] pci 0000:00:15.5: PCI bridge to [bus 08-08]
+[    0.382249] pci 0000:00:15.5:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.382273] pci 0000:00:15.5:   bridge window [mem 0xfc000000-0xfc0fffff]
+[    0.382318] pci 0000:00:15.5:   bridge window [mem 0xe6600000-0xe66fffff 64bit pref]
+[    0.382808] pci 0000:00:15.6: PCI bridge to [bus 09-09]
+[    0.382832] pci 0000:00:15.6:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.382856] pci 0000:00:15.6:   bridge window [mem 0xfbc00000-0xfbcfffff]
+[    0.382901] pci 0000:00:15.6:   bridge window [mem 0xe6200000-0xe62fffff 64bit pref]
+[    0.383389] pci 0000:00:15.7: PCI bridge to [bus 0a-0a]
+[    0.383413] pci 0000:00:15.7:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.383436] pci 0000:00:15.7:   bridge window [mem 0xfb800000-0xfb8fffff]
+[    0.383482] pci 0000:00:15.7:   bridge window [mem 0xe5e00000-0xe5efffff 64bit pref]
+[    0.383967] pci 0000:00:16.0: PCI bridge to [bus 0b-0b]
+[    0.383990] pci 0000:00:16.0:   bridge window [io  0x5000-0x5fff]
+[    0.384014] pci 0000:00:16.0:   bridge window [mem 0xfd300000-0xfd3fffff]
+[    0.384060] pci 0000:00:16.0:   bridge window [mem 0xe7900000-0xe79fffff 64bit pref]
+[    0.384546] pci 0000:00:16.1: PCI bridge to [bus 0c-0c]
+[    0.384570] pci 0000:00:16.1:   bridge window [io  0x9000-0x9fff]
+[    0.384594] pci 0000:00:16.1:   bridge window [mem 0xfcf00000-0xfcffffff]
+[    0.384640] pci 0000:00:16.1:   bridge window [mem 0xe7500000-0xe75fffff 64bit pref]
+[    0.385133] pci 0000:00:16.2: PCI bridge to [bus 0d-0d]
+[    0.385157] pci 0000:00:16.2:   bridge window [io  0xd000-0xdfff]
+[    0.385181] pci 0000:00:16.2:   bridge window [mem 0xfcb00000-0xfcbfffff]
+[    0.385226] pci 0000:00:16.2:   bridge window [mem 0xe7100000-0xe71fffff 64bit pref]
+[    0.385713] pci 0000:00:16.3: PCI bridge to [bus 0e-0e]
+[    0.385736] pci 0000:00:16.3:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.385760] pci 0000:00:16.3:   bridge window [mem 0xfc700000-0xfc7fffff]
+[    0.385806] pci 0000:00:16.3:   bridge window [mem 0xe6d00000-0xe6dfffff 64bit pref]
+[    0.386290] pci 0000:00:16.4: PCI bridge to [bus 0f-0f]
+[    0.386313] pci 0000:00:16.4:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.386337] pci 0000:00:16.4:   bridge window [mem 0xfc300000-0xfc3fffff]
+[    0.386382] pci 0000:00:16.4:   bridge window [mem 0xe6900000-0xe69fffff 64bit pref]
+[    0.386891] pci 0000:00:16.5: PCI bridge to [bus 10-10]
+[    0.386915] pci 0000:00:16.5:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.386940] pci 0000:00:16.5:   bridge window [mem 0xfbf00000-0xfbffffff]
+[    0.386988] pci 0000:00:16.5:   bridge window [mem 0xe6500000-0xe65fffff 64bit pref]
+[    0.387543] pci 0000:00:16.6: PCI bridge to [bus 11-11]
+[    0.387569] pci 0000:00:16.6:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.387594] pci 0000:00:16.6:   bridge window [mem 0xfbb00000-0xfbbfffff]
+[    0.387642] pci 0000:00:16.6:   bridge window [mem 0xe6100000-0xe61fffff 64bit pref]
+[    0.388191] pci 0000:00:16.7: PCI bridge to [bus 12-12]
+[    0.388219] pci 0000:00:16.7:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.388245] pci 0000:00:16.7:   bridge window [mem 0xfb700000-0xfb7fffff]
+[    0.388298] pci 0000:00:16.7:   bridge window [mem 0xe5d00000-0xe5dfffff 64bit pref]
+[    0.388865] pci 0000:00:17.0: PCI bridge to [bus 13-13]
+[    0.388884] pci 0000:00:17.0:   bridge window [io  0x6000-0x6fff]
+[    0.388902] pci 0000:00:17.0:   bridge window [mem 0xfd200000-0xfd2fffff]
+[    0.388936] pci 0000:00:17.0:   bridge window [mem 0xe7800000-0xe78fffff 64bit pref]
+[    0.389326] pci 0000:00:17.1: PCI bridge to [bus 14-14]
+[    0.389345] pci 0000:00:17.1:   bridge window [io  0xa000-0xafff]
+[    0.389364] pci 0000:00:17.1:   bridge window [mem 0xfce00000-0xfcefffff]
+[    0.389400] pci 0000:00:17.1:   bridge window [mem 0xe7400000-0xe74fffff 64bit pref]
+[    0.389799] pci 0000:00:17.2: PCI bridge to [bus 15-15]
+[    0.389820] pci 0000:00:17.2:   bridge window [io  0xe000-0xefff]
+[    0.389840] pci 0000:00:17.2:   bridge window [mem 0xfca00000-0xfcafffff]
+[    0.389878] pci 0000:00:17.2:   bridge window [mem 0xe7000000-0xe70fffff 64bit pref]
+[    0.390320] pci 0000:00:17.3: PCI bridge to [bus 16-16]
+[    0.390347] pci 0000:00:17.3:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.390371] pci 0000:00:17.3:   bridge window [mem 0xfc600000-0xfc6fffff]
+[    0.390412] pci 0000:00:17.3:   bridge window [mem 0xe6c00000-0xe6cfffff 64bit pref]
+[    0.390825] pci 0000:00:17.4: PCI bridge to [bus 17-17]
+[    0.390844] pci 0000:00:17.4:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.390863] pci 0000:00:17.4:   bridge window [mem 0xfc200000-0xfc2fffff]
+[    0.390898] pci 0000:00:17.4:   bridge window [mem 0xe6800000-0xe68fffff 64bit pref]
+[    0.391312] pci 0000:00:17.5: PCI bridge to [bus 18-18]
+[    0.391333] pci 0000:00:17.5:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.391352] pci 0000:00:17.5:   bridge window [mem 0xfbe00000-0xfbefffff]
+[    0.391386] pci 0000:00:17.5:   bridge window [mem 0xe6400000-0xe64fffff 64bit pref]
+[    0.391776] pci 0000:00:17.6: PCI bridge to [bus 19-19]
+[    0.391794] pci 0000:00:17.6:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.391812] pci 0000:00:17.6:   bridge window [mem 0xfba00000-0xfbafffff]
+[    0.391849] pci 0000:00:17.6:   bridge window [mem 0xe6000000-0xe60fffff 64bit pref]
+[    0.392238] pci 0000:00:17.7: PCI bridge to [bus 1a-1a]
+[    0.392258] pci 0000:00:17.7:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.392280] pci 0000:00:17.7:   bridge window [mem 0xfb600000-0xfb6fffff]
+[    0.392316] pci 0000:00:17.7:   bridge window [mem 0xe5c00000-0xe5cfffff 64bit pref]
+[    0.392710] pci 0000:00:18.0: PCI bridge to [bus 1b-1b]
+[    0.392729] pci 0000:00:18.0:   bridge window [io  0x7000-0x7fff]
+[    0.392747] pci 0000:00:18.0:   bridge window [mem 0xfd100000-0xfd1fffff]
+[    0.392781] pci 0000:00:18.0:   bridge window [mem 0xe7700000-0xe77fffff 64bit pref]
+[    0.393160] pci 0000:00:18.1: PCI bridge to [bus 1c-1c]
+[    0.393177] pci 0000:00:18.1:   bridge window [io  0xb000-0xbfff]
+[    0.393196] pci 0000:00:18.1:   bridge window [mem 0xfcd00000-0xfcdfffff]
+[    0.393230] pci 0000:00:18.1:   bridge window [mem 0xe7300000-0xe73fffff 64bit pref]
+[    0.393620] pci 0000:00:18.2: PCI bridge to [bus 1d-1d]
+[    0.393639] pci 0000:00:18.2:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.393658] pci 0000:00:18.2:   bridge window [mem 0xfc900000-0xfc9fffff]
+[    0.393693] pci 0000:00:18.2:   bridge window [mem 0xe6f00000-0xe6ffffff 64bit pref]
+[    0.394075] pci 0000:00:18.3: PCI bridge to [bus 1e-1e]
+[    0.394096] pci 0000:00:18.3:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.394114] pci 0000:00:18.3:   bridge window [mem 0xfc500000-0xfc5fffff]
+[    0.394149] pci 0000:00:18.3:   bridge window [mem 0xe6b00000-0xe6bfffff 64bit pref]
+[    0.394547] pci 0000:00:18.4: PCI bridge to [bus 1f-1f]
+[    0.394565] pci 0000:00:18.4:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.394583] pci 0000:00:18.4:   bridge window [mem 0xfc100000-0xfc1fffff]
+[    0.394617] pci 0000:00:18.4:   bridge window [mem 0xe6700000-0xe67fffff 64bit pref]
+[    0.394988] pci 0000:00:18.5: PCI bridge to [bus 20-20]
+[    0.395006] pci 0000:00:18.5:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.395024] pci 0000:00:18.5:   bridge window [mem 0xfbd00000-0xfbdfffff]
+[    0.395059] pci 0000:00:18.5:   bridge window [mem 0xe6300000-0xe63fffff 64bit pref]
+[    0.395425] pci 0000:00:18.6: PCI bridge to [bus 21-21]
+[    0.395442] pci 0000:00:18.6:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.395461] pci 0000:00:18.6:   bridge window [mem 0xfb900000-0xfb9fffff]
+[    0.395495] pci 0000:00:18.6:   bridge window [mem 0xe5f00000-0xe5ffffff 64bit pref]
+[    0.395869] pci 0000:00:18.7: PCI bridge to [bus 22-22]
+[    0.395888] pci 0000:00:18.7:   bridge window [io  0xf000-0x0000] (disabled)
+[    0.395907] pci 0000:00:18.7:   bridge window [mem 0xfb500000-0xfb5fffff]
+[    0.395941] pci 0000:00:18.7:   bridge window [mem 0xe5b00000-0xe5bfffff 64bit pref]
+[    0.397533] pci_bus 0000:00: on NUMA node 0
+[    0.397541] ACPI: PCI Interrupt Routing Table [\_SB_.PCI0._PRT]
+[    0.469560] ACPI: PCI Interrupt Link [LNKA] (IRQs 3 4 5 6 7 *9 10 11 14 15)
+[    0.469634] ACPI: PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 9 10 *11 14 15)
+[    0.469692] ACPI: PCI Interrupt Link [LNKC] (IRQs 3 4 5 6 7 9 *10 11 14 15)
+[    0.469762] ACPI: PCI Interrupt Link [LNKD] (IRQs 3 4 *5 6 7 9 10 11 14 15)
+[    0.469861] vgaarb: device added: PCI:0000:00:0f.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.469872] vgaarb: loaded
+[    0.469962] SCSI subsystem initialized
+[    0.470097] libata version 3.00 loaded.
+[    0.470201] usbcore: registered new interface driver usbfs
+[    0.470214] usbcore: registered new interface driver hub
+[    0.470322] usbcore: registered new device driver usb
+[    0.470534] PCI: Using ACPI for IRQ routing
+[    0.470536] PCI: pci_cache_line_size set to 64 bytes
+[    0.471356] reserve RAM buffer: 000000000009f000 - 000000000009ffff 
+[    0.471358] reserve RAM buffer: 00000000bfee0000 - 00000000bfffffff 
+[    0.471478] Switching to clocksource tsc
+[    0.471567] pnp: PnP ACPI init
+[    0.471573] ACPI: bus type pnp registered
+[    0.483344] pnp: PnP ACPI: found 16 devices
+[    0.483345] ACPI: ACPI bus type pnp unregistered
+[    0.483348] PnPBIOS: Disabled by ACPI PNP
+[    0.483357] system 00:01: [io  0x1000-0x103f] has been reserved
+[    0.483359] system 00:01: [io  0x1040-0x104f] has been reserved
+[    0.483360] system 00:01: [io  0x0cf0-0x0cf1] has been reserved
+[    0.483365] system 00:08: [mem 0xfed00000-0xfed003ff] has been reserved
+[    0.483369] system 00:0d: [io  0xfce0-0xfcff] has been reserved
+[    0.483371] system 00:0d: [mem 0xf0000000-0xf7ffffff] has been reserved
+[    0.483373] system 00:0d: [mem 0xfe800000-0xfe9fffff] has been reserved
+[    0.518923] pci 0000:00:0f.0: BAR 6: assigned [mem 0xc0000000-0xc0007fff pref]
+[    0.518927] pci 0000:00:10.0: BAR 6: assigned [mem 0xc0008000-0xc000bfff pref]
+[    0.518931] pci 0000:00:15.3: BAR 13: can't assign io (size 0x1000)
+[    0.518933] pci 0000:00:15.4: BAR 13: can't assign io (size 0x1000)
+[    0.518936] pci 0000:00:15.5: BAR 13: can't assign io (size 0x1000)
+[    0.518938] pci 0000:00:15.6: BAR 13: can't assign io (size 0x1000)
+[    0.518940] pci 0000:00:15.7: BAR 13: can't assign io (size 0x1000)
+[    0.518943] pci 0000:00:16.3: BAR 13: can't assign io (size 0x1000)
+[    0.518945] pci 0000:00:16.4: BAR 13: can't assign io (size 0x1000)
+[    0.518947] pci 0000:00:16.5: BAR 13: can't assign io (size 0x1000)
+[    0.518950] pci 0000:00:16.6: BAR 13: can't assign io (size 0x1000)
+[    0.518952] pci 0000:00:16.7: BAR 13: can't assign io (size 0x1000)
+[    0.518954] pci 0000:00:17.3: BAR 13: can't assign io (size 0x1000)
+[    0.518956] pci 0000:00:17.4: BAR 13: can't assign io (size 0x1000)
+[    0.518959] pci 0000:00:17.5: BAR 13: can't assign io (size 0x1000)
+[    0.518961] pci 0000:00:17.6: BAR 13: can't assign io (size 0x1000)
+[    0.518963] pci 0000:00:17.7: BAR 13: can't assign io (size 0x1000)
+[    0.518966] pci 0000:00:18.2: BAR 13: can't assign io (size 0x1000)
+[    0.518968] pci 0000:00:18.3: BAR 13: can't assign io (size 0x1000)
+[    0.518970] pci 0000:00:18.4: BAR 13: can't assign io (size 0x1000)
+[    0.518972] pci 0000:00:18.5: BAR 13: can't assign io (size 0x1000)
+[    0.518975] pci 0000:00:18.6: BAR 13: can't assign io (size 0x1000)
+[    0.518977] pci 0000:00:18.7: BAR 13: can't assign io (size 0x1000)
+[    0.518979] pci 0000:00:01.0: PCI bridge to [bus 01-01]
+[    0.518981] pci 0000:00:01.0:   bridge window [io  disabled]
+[    0.519008] pci 0000:00:01.0:   bridge window [mem disabled]
+[    0.519025] pci 0000:00:01.0:   bridge window [mem pref disabled]
+[    0.519060] pci 0000:02:01.0: BAR 6: assigned [mem 0xe7b00000-0xe7b0ffff pref]
+[    0.519063] pci 0000:00:11.0: PCI bridge to [bus 02-02]
+[    0.519073] pci 0000:00:11.0:   bridge window [io  0x2000-0x3fff]
+[    0.519099] pci 0000:00:11.0:   bridge window [mem 0xfd500000-0xfdffffff]
+[    0.519117] pci 0000:00:11.0:   bridge window [mem 0xe7b00000-0xe7ffffff 64bit pref]
+[    0.519151] pci 0000:00:15.0: PCI bridge to [bus 03-03]
+[    0.519162] pci 0000:00:15.0:   bridge window [io  0x4000-0x4fff]
+[    0.519187] pci 0000:00:15.0:   bridge window [mem 0xfd400000-0xfd4fffff]
+[    0.519205] pci 0000:00:15.0:   bridge window [mem 0xe7a00000-0xe7afffff 64bit pref]
+[    0.519270] pci 0000:00:15.1: PCI bridge to [bus 04-04]
+[    0.519281] pci 0000:00:15.1:   bridge window [io  0x8000-0x8fff]
+[    0.519307] pci 0000:00:15.1:   bridge window [mem 0xfd000000-0xfd0fffff]
+[    0.519325] pci 0000:00:15.1:   bridge window [mem 0xe7600000-0xe76fffff 64bit pref]
+[    0.519366] pci 0000:00:15.2: PCI bridge to [bus 05-05]
+[    0.519376] pci 0000:00:15.2:   bridge window [io  0xc000-0xcfff]
+[    0.519402] pci 0000:00:15.2:   bridge window [mem 0xfcc00000-0xfccfffff]
+[    0.519421] pci 0000:00:15.2:   bridge window [mem 0xe7200000-0xe72fffff 64bit pref]
+[    0.519461] pci 0000:00:15.3: PCI bridge to [bus 06-06]
+[    0.519463] pci 0000:00:15.3:   bridge window [io  disabled]
+[    0.519489] pci 0000:00:15.3:   bridge window [mem 0xfc800000-0xfc8fffff]
+[    0.519507] pci 0000:00:15.3:   bridge window [mem 0xe6e00000-0xe6efffff 64bit pref]
+[    0.519547] pci 0000:00:15.4: PCI bridge to [bus 07-07]
+[    0.519548] pci 0000:00:15.4:   bridge window [io  disabled]
+[    0.519574] pci 0000:00:15.4:   bridge window [mem 0xfc400000-0xfc4fffff]
+[    0.519592] pci 0000:00:15.4:   bridge window [mem 0xe6a00000-0xe6afffff 64bit pref]
+[    0.519632] pci 0000:00:15.5: PCI bridge to [bus 08-08]
+[    0.519634] pci 0000:00:15.5:   bridge window [io  disabled]
+[    0.519660] pci 0000:00:15.5:   bridge window [mem 0xfc000000-0xfc0fffff]
+[    0.519678] pci 0000:00:15.5:   bridge window [mem 0xe6600000-0xe66fffff 64bit pref]
+[    0.519725] pci 0000:00:15.6: PCI bridge to [bus 09-09]
+[    0.519727] pci 0000:00:15.6:   bridge window [io  disabled]
+[    0.519751] pci 0000:00:15.6:   bridge window [mem 0xfbc00000-0xfbcfffff]
+[    0.519768] pci 0000:00:15.6:   bridge window [mem 0xe6200000-0xe62fffff 64bit pref]
+[    0.519806] pci 0000:00:15.7: PCI bridge to [bus 0a-0a]
+[    0.519808] pci 0000:00:15.7:   bridge window [io  disabled]
+[    0.519832] pci 0000:00:15.7:   bridge window [mem 0xfb800000-0xfb8fffff]
+[    0.519849] pci 0000:00:15.7:   bridge window [mem 0xe5e00000-0xe5efffff 64bit pref]
+[    0.519886] pci 0000:00:16.0: PCI bridge to [bus 0b-0b]
+[    0.519897] pci 0000:00:16.0:   bridge window [io  0x5000-0x5fff]
+[    0.519921] pci 0000:00:16.0:   bridge window [mem 0xfd300000-0xfd3fffff]
+[    0.519938] pci 0000:00:16.0:   bridge window [mem 0xe7900000-0xe79fffff 64bit pref]
+[    0.519976] pci 0000:00:16.1: PCI bridge to [bus 0c-0c]
+[    0.519986] pci 0000:00:16.1:   bridge window [io  0x9000-0x9fff]
+[    0.520011] pci 0000:00:16.1:   bridge window [mem 0xfcf00000-0xfcffffff]
+[    0.520028] pci 0000:00:16.1:   bridge window [mem 0xe7500000-0xe75fffff 64bit pref]
+[    0.520065] pci 0000:00:16.2: PCI bridge to [bus 0d-0d]
+[    0.520075] pci 0000:00:16.2:   bridge window [io  0xd000-0xdfff]
+[    0.520099] pci 0000:00:16.2:   bridge window [mem 0xfcb00000-0xfcbfffff]
+[    0.520116] pci 0000:00:16.2:   bridge window [mem 0xe7100000-0xe71fffff 64bit pref]
+[    0.520154] pci 0000:00:16.3: PCI bridge to [bus 0e-0e]
+[    0.520155] pci 0000:00:16.3:   bridge window [io  disabled]
+[    0.520184] pci 0000:00:16.3:   bridge window [mem 0xfc700000-0xfc7fffff]
+[    0.520201] pci 0000:00:16.3:   bridge window [mem 0xe6d00000-0xe6dfffff 64bit pref]
+[    0.520240] pci 0000:00:16.4: PCI bridge to [bus 0f-0f]
+[    0.520241] pci 0000:00:16.4:   bridge window [io  disabled]
+[    0.520266] pci 0000:00:16.4:   bridge window [mem 0xfc300000-0xfc3fffff]
+[    0.520283] pci 0000:00:16.4:   bridge window [mem 0xe6900000-0xe69fffff 64bit pref]
+[    0.520331] pci 0000:00:16.5: PCI bridge to [bus 10-10]
+[    0.520333] pci 0000:00:16.5:   bridge window [io  disabled]
+[    0.520368] pci 0000:00:16.5:   bridge window [mem 0xfbf00000-0xfbffffff]
+[    0.520395] pci 0000:00:16.5:   bridge window [mem 0xe6500000-0xe65fffff 64bit pref]
+[    0.520450] pci 0000:00:16.6: PCI bridge to [bus 11-11]
+[    0.520452] pci 0000:00:16.6:   bridge window [io  disabled]
+[    0.520486] pci 0000:00:16.6:   bridge window [mem 0xfbb00000-0xfbbfffff]
+[    0.520509] pci 0000:00:16.6:   bridge window [mem 0xe6100000-0xe61fffff 64bit pref]
+[    0.520552] pci 0000:00:16.7: PCI bridge to [bus 12-12]
+[    0.520554] pci 0000:00:16.7:   bridge window [io  disabled]
+[    0.520579] pci 0000:00:16.7:   bridge window [mem 0xfb700000-0xfb7fffff]
+[    0.520596] pci 0000:00:16.7:   bridge window [mem 0xe5d00000-0xe5dfffff 64bit pref]
+[    0.520633] pci 0000:00:17.0: PCI bridge to [bus 13-13]
+[    0.520644] pci 0000:00:17.0:   bridge window [io  0x6000-0x6fff]
+[    0.520668] pci 0000:00:17.0:   bridge window [mem 0xfd200000-0xfd2fffff]
+[    0.520685] pci 0000:00:17.0:   bridge window [mem 0xe7800000-0xe78fffff 64bit pref]
+[    0.520736] pci 0000:00:17.1: PCI bridge to [bus 14-14]
+[    0.520748] pci 0000:00:17.1:   bridge window [io  0xa000-0xafff]
+[    0.520783] pci 0000:00:17.1:   bridge window [mem 0xfce00000-0xfcefffff]
+[    0.520802] pci 0000:00:17.1:   bridge window [mem 0xe7400000-0xe74fffff 64bit pref]
+[    0.520851] pci 0000:00:17.2: PCI bridge to [bus 15-15]
+[    0.520872] pci 0000:00:17.2:   bridge window [io  0xe000-0xefff]
+[    0.520900] pci 0000:00:17.2:   bridge window [mem 0xfca00000-0xfcafffff]
+[    0.520933] pci 0000:00:17.2:   bridge window [mem 0xe7000000-0xe70fffff 64bit pref]
+[    0.520982] pci 0000:00:17.3: PCI bridge to [bus 16-16]
+[    0.520983] pci 0000:00:17.3:   bridge window [io  disabled]
+[    0.521007] pci 0000:00:17.3:   bridge window [mem 0xfc600000-0xfc6fffff]
+[    0.521025] pci 0000:00:17.3:   bridge window [mem 0xe6c00000-0xe6cfffff 64bit pref]
+[    0.521062] pci 0000:00:17.4: PCI bridge to [bus 17-17]
+[    0.521063] pci 0000:00:17.4:   bridge window [io  disabled]
+[    0.521087] pci 0000:00:17.4:   bridge window [mem 0xfc200000-0xfc2fffff]
+[    0.521103] pci 0000:00:17.4:   bridge window [mem 0xe6800000-0xe68fffff 64bit pref]
+[    0.521140] pci 0000:00:17.5: PCI bridge to [bus 18-18]
+[    0.521141] pci 0000:00:17.5:   bridge window [io  disabled]
+[    0.521165] pci 0000:00:17.5:   bridge window [mem 0xfbe00000-0xfbefffff]
+[    0.521181] pci 0000:00:17.5:   bridge window [mem 0xe6400000-0xe64fffff 64bit pref]
+[    0.521218] pci 0000:00:17.6: PCI bridge to [bus 19-19]
+[    0.521219] pci 0000:00:17.6:   bridge window [io  disabled]
+[    0.521243] pci 0000:00:17.6:   bridge window [mem 0xfba00000-0xfbafffff]
+[    0.521259] pci 0000:00:17.6:   bridge window [mem 0xe6000000-0xe60fffff 64bit pref]
+[    0.521296] pci 0000:00:17.7: PCI bridge to [bus 1a-1a]
+[    0.521297] pci 0000:00:17.7:   bridge window [io  disabled]
+[    0.521321] pci 0000:00:17.7:   bridge window [mem 0xfb600000-0xfb6fffff]
+[    0.521337] pci 0000:00:17.7:   bridge window [mem 0xe5c00000-0xe5cfffff 64bit pref]
+[    0.521374] pci 0000:00:18.0: PCI bridge to [bus 1b-1b]
+[    0.521384] pci 0000:00:18.0:   bridge window [io  0x7000-0x7fff]
+[    0.521407] pci 0000:00:18.0:   bridge window [mem 0xfd100000-0xfd1fffff]
+[    0.521424] pci 0000:00:18.0:   bridge window [mem 0xe7700000-0xe77fffff 64bit pref]
+[    0.521432] pci 0000:00:18.1: PCI bridge to [bus 1c-1c]
+[    0.521442] pci 0000:00:18.1:   bridge window [io  0xb000-0xbfff]
+[    0.521466] pci 0000:00:18.1:   bridge window [mem 0xfcd00000-0xfcdfffff]
+[    0.521484] pci 0000:00:18.1:   bridge window [mem 0xe7300000-0xe73fffff 64bit pref]
+[    0.521516] pci 0000:00:18.2: PCI bridge to [bus 1d-1d]
+[    0.521516] pci 0000:00:18.2:   bridge window [io  disabled]
+[    0.521516] pci 0000:00:18.2:   bridge window [mem 0xfc900000-0xfc9fffff]
+[    0.521536] pci 0000:00:18.2:   bridge window [mem 0xe6f00000-0xe6ffffff 64bit pref]
+[    0.521575] pci 0000:00:18.3: PCI bridge to [bus 1e-1e]
+[    0.521577] pci 0000:00:18.3:   bridge window [io  disabled]
+[    0.521601] pci 0000:00:18.3:   bridge window [mem 0xfc500000-0xfc5fffff]
+[    0.521618] pci 0000:00:18.3:   bridge window [mem 0xe6b00000-0xe6bfffff 64bit pref]
+[    0.521666] pci 0000:00:18.4: PCI bridge to [bus 1f-1f]
+[    0.521668] pci 0000:00:18.4:   bridge window [io  disabled]
+[    0.521693] pci 0000:00:18.4:   bridge window [mem 0xfc100000-0xfc1fffff]
+[    0.521710] pci 0000:00:18.4:   bridge window [mem 0xe6700000-0xe67fffff 64bit pref]
+[    0.521748] pci 0000:00:18.5: PCI bridge to [bus 20-20]
+[    0.521749] pci 0000:00:18.5:   bridge window [io  disabled]
+[    0.521774] pci 0000:00:18.5:   bridge window [mem 0xfbd00000-0xfbdfffff]
+[    0.521791] pci 0000:00:18.5:   bridge window [mem 0xe6300000-0xe63fffff 64bit pref]
+[    0.521829] pci 0000:00:18.6: PCI bridge to [bus 21-21]
+[    0.521831] pci 0000:00:18.6:   bridge window [io  disabled]
+[    0.521855] pci 0000:00:18.6:   bridge window [mem 0xfb900000-0xfb9fffff]
+[    0.521872] pci 0000:00:18.6:   bridge window [mem 0xe5f00000-0xe5ffffff 64bit pref]
+[    0.521910] pci 0000:00:18.7: PCI bridge to [bus 22-22]
+[    0.521911] pci 0000:00:18.7:   bridge window [io  disabled]
+[    0.521936] pci 0000:00:18.7:   bridge window [mem 0xfb500000-0xfb5fffff]
+[    0.521953] pci 0000:00:18.7:   bridge window [mem 0xe5b00000-0xe5bfffff 64bit pref]
+[    0.522019] pci 0000:00:01.0: setting latency timer to 64
+[    0.522100] pci 0000:00:15.0: setting latency timer to 64
+[    0.522156] pci 0000:00:15.1: setting latency timer to 64
+[    0.522212] pci 0000:00:15.2: setting latency timer to 64
+[    0.522268] pci 0000:00:15.3: setting latency timer to 64
+[    0.522323] pci 0000:00:15.4: setting latency timer to 64
+[    0.522379] pci 0000:00:15.5: setting latency timer to 64
+[    0.522434] pci 0000:00:15.6: setting latency timer to 64
+[    0.522490] pci 0000:00:15.7: setting latency timer to 64
+[    0.522545] pci 0000:00:16.0: setting latency timer to 64
+[    0.522611] pci 0000:00:16.1: setting latency timer to 64
+[    0.522670] pci 0000:00:16.2: setting latency timer to 64
+[    0.522729] pci 0000:00:16.3: setting latency timer to 64
+[    0.522788] pci 0000:00:16.4: setting latency timer to 64
+[    0.522847] pci 0000:00:16.5: setting latency timer to 64
+[    0.522906] pci 0000:00:16.6: setting latency timer to 64
+[    0.522965] pci 0000:00:16.7: setting latency timer to 64
+[    0.523024] pci 0000:00:17.0: setting latency timer to 64
+[    0.523083] pci 0000:00:17.1: setting latency timer to 64
+[    0.523142] pci 0000:00:17.2: setting latency timer to 64
+[    0.523200] pci 0000:00:17.3: setting latency timer to 64
+[    0.523260] pci 0000:00:17.4: setting latency timer to 64
+[    0.523318] pci 0000:00:17.5: setting latency timer to 64
+[    0.523377] pci 0000:00:17.6: setting latency timer to 64
+[    0.523436] pci 0000:00:17.7: setting latency timer to 64
+[    0.523495] pci 0000:00:18.0: setting latency timer to 64
+[    0.523554] pci 0000:00:18.1: setting latency timer to 64
+[    0.523620] pci 0000:00:18.2: setting latency timer to 64
+[    0.523675] pci 0000:00:18.3: setting latency timer to 64
+[    0.523731] pci 0000:00:18.4: setting latency timer to 64
+[    0.523786] pci 0000:00:18.5: setting latency timer to 64
+[    0.523842] pci 0000:00:18.6: setting latency timer to 64
+[    0.523897] pci 0000:00:18.7: setting latency timer to 64
+[    0.523908] pci_bus 0000:00: resource 4 [mem 0x000a0000-0x000bffff]
+[    0.523909] pci_bus 0000:00: resource 5 [mem 0x000cc000-0x000cffff]
+[    0.523911] pci_bus 0000:00: resource 6 [mem 0x000d0000-0x000d3fff]
+[    0.523913] pci_bus 0000:00: resource 7 [mem 0x000d4000-0x000d7fff]
+[    0.523915] pci_bus 0000:00: resource 8 [mem 0x000d8000-0x000dbfff]
+[    0.523916] pci_bus 0000:00: resource 9 [mem 0xc0000000-0xfebfffff]
+[    0.523918] pci_bus 0000:00: resource 10 [io  0x0000-0x0cf7]
+[    0.523920] pci_bus 0000:00: resource 11 [io  0x0d00-0xfeff]
+[    0.523922] pci_bus 0000:02: resource 0 [io  0x2000-0x3fff]
+[    0.523924] pci_bus 0000:02: resource 1 [mem 0xfd500000-0xfdffffff]
+[    0.523926] pci_bus 0000:02: resource 2 [mem 0xe7b00000-0xe7ffffff 64bit pref]
+[    0.523927] pci_bus 0000:02: resource 4 [mem 0x000a0000-0x000bffff]
+[    0.523929] pci_bus 0000:02: resource 5 [mem 0x000cc000-0x000cffff]
+[    0.523931] pci_bus 0000:02: resource 6 [mem 0x000d0000-0x000d3fff]
+[    0.523933] pci_bus 0000:02: resource 7 [mem 0x000d4000-0x000d7fff]
+[    0.523934] pci_bus 0000:02: resource 8 [mem 0x000d8000-0x000dbfff]
+[    0.523936] pci_bus 0000:02: resource 9 [mem 0xc0000000-0xfebfffff]
+[    0.523938] pci_bus 0000:02: resource 10 [io  0x0000-0x0cf7]
+[    0.523939] pci_bus 0000:02: resource 11 [io  0x0d00-0xfeff]
+[    0.523941] pci_bus 0000:03: resource 0 [io  0x4000-0x4fff]
+[    0.523943] pci_bus 0000:03: resource 1 [mem 0xfd400000-0xfd4fffff]
+[    0.523945] pci_bus 0000:03: resource 2 [mem 0xe7a00000-0xe7afffff 64bit pref]
+[    0.523947] pci_bus 0000:04: resource 0 [io  0x8000-0x8fff]
+[    0.523948] pci_bus 0000:04: resource 1 [mem 0xfd000000-0xfd0fffff]
+[    0.523950] pci_bus 0000:04: resource 2 [mem 0xe7600000-0xe76fffff 64bit pref]
+[    0.523952] pci_bus 0000:05: resource 0 [io  0xc000-0xcfff]
+[    0.523954] pci_bus 0000:05: resource 1 [mem 0xfcc00000-0xfccfffff]
+[    0.523955] pci_bus 0000:05: resource 2 [mem 0xe7200000-0xe72fffff 64bit pref]
+[    0.523957] pci_bus 0000:06: resource 1 [mem 0xfc800000-0xfc8fffff]
+[    0.523959] pci_bus 0000:06: resource 2 [mem 0xe6e00000-0xe6efffff 64bit pref]
+[    0.523961] pci_bus 0000:07: resource 1 [mem 0xfc400000-0xfc4fffff]
+[    0.523963] pci_bus 0000:07: resource 2 [mem 0xe6a00000-0xe6afffff 64bit pref]
+[    0.523964] pci_bus 0000:08: resource 1 [mem 0xfc000000-0xfc0fffff]
+[    0.523966] pci_bus 0000:08: resource 2 [mem 0xe6600000-0xe66fffff 64bit pref]
+[    0.523968] pci_bus 0000:09: resource 1 [mem 0xfbc00000-0xfbcfffff]
+[    0.523970] pci_bus 0000:09: resource 2 [mem 0xe6200000-0xe62fffff 64bit pref]
+[    0.523972] pci_bus 0000:0a: resource 1 [mem 0xfb800000-0xfb8fffff]
+[    0.523973] pci_bus 0000:0a: resource 2 [mem 0xe5e00000-0xe5efffff 64bit pref]
+[    0.523975] pci_bus 0000:0b: resource 0 [io  0x5000-0x5fff]
+[    0.523977] pci_bus 0000:0b: resource 1 [mem 0xfd300000-0xfd3fffff]
+[    0.523979] pci_bus 0000:0b: resource 2 [mem 0xe7900000-0xe79fffff 64bit pref]
+[    0.523981] pci_bus 0000:0c: resource 0 [io  0x9000-0x9fff]
+[    0.523982] pci_bus 0000:0c: resource 1 [mem 0xfcf00000-0xfcffffff]
+[    0.523984] pci_bus 0000:0c: resource 2 [mem 0xe7500000-0xe75fffff 64bit pref]
+[    0.523986] pci_bus 0000:0d: resource 0 [io  0xd000-0xdfff]
+[    0.523987] pci_bus 0000:0d: resource 1 [mem 0xfcb00000-0xfcbfffff]
+[    0.523989] pci_bus 0000:0d: resource 2 [mem 0xe7100000-0xe71fffff 64bit pref]
+[    0.523991] pci_bus 0000:0e: resource 1 [mem 0xfc700000-0xfc7fffff]
+[    0.523993] pci_bus 0000:0e: resource 2 [mem 0xe6d00000-0xe6dfffff 64bit pref]
+[    0.523995] pci_bus 0000:0f: resource 1 [mem 0xfc300000-0xfc3fffff]
+[    0.523996] pci_bus 0000:0f: resource 2 [mem 0xe6900000-0xe69fffff 64bit pref]
+[    0.523998] pci_bus 0000:10: resource 1 [mem 0xfbf00000-0xfbffffff]
+[    0.524000] pci_bus 0000:10: resource 2 [mem 0xe6500000-0xe65fffff 64bit pref]
+[    0.524002] pci_bus 0000:11: resource 1 [mem 0xfbb00000-0xfbbfffff]
+[    0.524004] pci_bus 0000:11: resource 2 [mem 0xe6100000-0xe61fffff 64bit pref]
+[    0.524006] pci_bus 0000:12: resource 1 [mem 0xfb700000-0xfb7fffff]
+[    0.524007] pci_bus 0000:12: resource 2 [mem 0xe5d00000-0xe5dfffff 64bit pref]
+[    0.524009] pci_bus 0000:13: resource 0 [io  0x6000-0x6fff]
+[    0.524011] pci_bus 0000:13: resource 1 [mem 0xfd200000-0xfd2fffff]
+[    0.524013] pci_bus 0000:13: resource 2 [mem 0xe7800000-0xe78fffff 64bit pref]
+[    0.524014] pci_bus 0000:14: resource 0 [io  0xa000-0xafff]
+[    0.524016] pci_bus 0000:14: resource 1 [mem 0xfce00000-0xfcefffff]
+[    0.524018] pci_bus 0000:14: resource 2 [mem 0xe7400000-0xe74fffff 64bit pref]
+[    0.524020] pci_bus 0000:15: resource 0 [io  0xe000-0xefff]
+[    0.524021] pci_bus 0000:15: resource 1 [mem 0xfca00000-0xfcafffff]
+[    0.524023] pci_bus 0000:15: resource 2 [mem 0xe7000000-0xe70fffff 64bit pref]
+[    0.524025] pci_bus 0000:16: resource 1 [mem 0xfc600000-0xfc6fffff]
+[    0.524027] pci_bus 0000:16: resource 2 [mem 0xe6c00000-0xe6cfffff 64bit pref]
+[    0.524028] pci_bus 0000:17: resource 1 [mem 0xfc200000-0xfc2fffff]
+[    0.524030] pci_bus 0000:17: resource 2 [mem 0xe6800000-0xe68fffff 64bit pref]
+[    0.524032] pci_bus 0000:18: resource 1 [mem 0xfbe00000-0xfbefffff]
+[    0.524034] pci_bus 0000:18: resource 2 [mem 0xe6400000-0xe64fffff 64bit pref]
+[    0.524036] pci_bus 0000:19: resource 1 [mem 0xfba00000-0xfbafffff]
+[    0.524037] pci_bus 0000:19: resource 2 [mem 0xe6000000-0xe60fffff 64bit pref]
+[    0.524039] pci_bus 0000:1a: resource 1 [mem 0xfb600000-0xfb6fffff]
+[    0.524041] pci_bus 0000:1a: resource 2 [mem 0xe5c00000-0xe5cfffff 64bit pref]
+[    0.524043] pci_bus 0000:1b: resource 0 [io  0x7000-0x7fff]
+[    0.524044] pci_bus 0000:1b: resource 1 [mem 0xfd100000-0xfd1fffff]
+[    0.524046] pci_bus 0000:1b: resource 2 [mem 0xe7700000-0xe77fffff 64bit pref]
+[    0.524058] pci_bus 0000:1c: resource 0 [io  0xb000-0xbfff]
+[    0.524061] pci_bus 0000:1c: resource 1 [mem 0xfcd00000-0xfcdfffff]
+[    0.524062] pci_bus 0000:1c: resource 2 [mem 0xe7300000-0xe73fffff 64bit pref]
+[    0.524064] pci_bus 0000:1d: resource 1 [mem 0xfc900000-0xfc9fffff]
+[    0.524066] pci_bus 0000:1d: resource 2 [mem 0xe6f00000-0xe6ffffff 64bit pref]
+[    0.524068] pci_bus 0000:1e: resource 1 [mem 0xfc500000-0xfc5fffff]
+[    0.524070] pci_bus 0000:1e: resource 2 [mem 0xe6b00000-0xe6bfffff 64bit pref]
+[    0.524071] pci_bus 0000:1f: resource 1 [mem 0xfc100000-0xfc1fffff]
+[    0.524073] pci_bus 0000:1f: resource 2 [mem 0xe6700000-0xe67fffff 64bit pref]
+[    0.524075] pci_bus 0000:20: resource 1 [mem 0xfbd00000-0xfbdfffff]
+[    0.524077] pci_bus 0000:20: resource 2 [mem 0xe6300000-0xe63fffff 64bit pref]
+[    0.524079] pci_bus 0000:21: resource 1 [mem 0xfb900000-0xfb9fffff]
+[    0.524080] pci_bus 0000:21: resource 2 [mem 0xe5f00000-0xe5ffffff 64bit pref]
+[    0.524082] pci_bus 0000:22: resource 1 [mem 0xfb500000-0xfb5fffff]
+[    0.524084] pci_bus 0000:22: resource 2 [mem 0xe5b00000-0xe5bfffff 64bit pref]
+[    0.524110] NET: Registered protocol family 2
+[    0.524146] IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.524261] TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.524406] TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.524485] TCP: Hash tables configured (established 131072 bind 65536)
+[    0.524487] TCP reno registered
+[    0.524489] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.524493] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.524552] NET: Registered protocol family 1
+[    0.524558] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.524627] pci 0000:00:0f.0: Boot video device
+[    0.524983] PCI: CLS 32 bytes, default 64
+[    0.525020] Trying to unpack rootfs image as initramfs...
+[    0.621871] Freeing initrd memory: 7136k freed
+[    0.622047] Simple Boot Flag at 0x36 set to 0x1
+[    0.622224] audit: initializing netlink socket (disabled)
+[    0.622246] type=2000 audit(1410114733.500:1): initialized
+[    0.622443] HugeTLB registered 4 MB page size, pre-allocated 0 pages
+[    0.623038] fuse init (API version 7.15)
+[    0.623102] msgmni has been set to 1748
+[    0.624753] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    0.624756] io scheduler noop registered
+[    0.624757] io scheduler deadline registered
+[    0.624765] io scheduler cfq registered (default)
+[    0.624942] pcieport 0000:00:15.0: ACPI _OSC control granted for 0x15
+[    0.625041] pcieport 0000:00:15.0: setting latency timer to 64
+[    0.625056] pcieport 0000:00:15.1: ACPI _OSC control granted for 0x15
+[    0.625113] pcieport 0000:00:15.1: setting latency timer to 64
+[    0.625126] pcieport 0000:00:15.2: ACPI _OSC control granted for 0x15
+[    0.625182] pcieport 0000:00:15.2: setting latency timer to 64
+[    0.625195] pcieport 0000:00:15.3: ACPI _OSC control granted for 0x15
+[    0.625264] pcieport 0000:00:15.3: setting latency timer to 64
+[    0.625278] pcieport 0000:00:15.4: ACPI _OSC control granted for 0x15
+[    0.625338] pcieport 0000:00:15.4: setting latency timer to 64
+[    0.625351] pcieport 0000:00:15.5: ACPI _OSC control granted for 0x15
+[    0.625422] pcieport 0000:00:15.5: setting latency timer to 64
+[    0.625435] pcieport 0000:00:15.6: ACPI _OSC control granted for 0x15
+[    0.625494] pcieport 0000:00:15.6: setting latency timer to 64
+[    0.625508] pcieport 0000:00:15.7: ACPI _OSC control granted for 0x15
+[    0.625566] pcieport 0000:00:15.7: setting latency timer to 64
+[    0.625579] pcieport 0000:00:16.0: ACPI _OSC control granted for 0x15
+[    0.625635] pcieport 0000:00:16.0: setting latency timer to 64
+[    0.625649] pcieport 0000:00:16.1: ACPI _OSC control granted for 0x15
+[    0.625705] pcieport 0000:00:16.1: setting latency timer to 64
+[    0.625718] pcieport 0000:00:16.2: ACPI _OSC control granted for 0x15
+[    0.625797] pcieport 0000:00:16.2: setting latency timer to 64
+[    0.625810] pcieport 0000:00:16.3: ACPI _OSC control granted for 0x15
+[    0.625879] pcieport 0000:00:16.3: setting latency timer to 64
+[    0.625894] pcieport 0000:00:16.4: ACPI _OSC control granted for 0x15
+[    0.625961] pcieport 0000:00:16.4: setting latency timer to 64
+[    0.625974] pcieport 0000:00:16.5: ACPI _OSC control granted for 0x15
+[    0.626030] pcieport 0000:00:16.5: setting latency timer to 64
+[    0.626043] pcieport 0000:00:16.6: ACPI _OSC control granted for 0x15
+[    0.626099] pcieport 0000:00:16.6: setting latency timer to 64
+[    0.626112] pcieport 0000:00:16.7: ACPI _OSC control granted for 0x15
+[    0.626168] pcieport 0000:00:16.7: setting latency timer to 64
+[    0.626180] pcieport 0000:00:17.0: ACPI _OSC control granted for 0x15
+[    0.626236] pcieport 0000:00:17.0: setting latency timer to 64
+[    0.626249] pcieport 0000:00:17.1: ACPI _OSC control granted for 0x15
+[    0.626319] pcieport 0000:00:17.1: setting latency timer to 64
+[    0.626333] pcieport 0000:00:17.2: ACPI _OSC control granted for 0x15
+[    0.626510] pcieport 0000:00:17.2: setting latency timer to 64
+[    0.626599] pcieport 0000:00:17.3: ACPI _OSC control granted for 0x15
+[    0.626776] pcieport 0000:00:17.3: setting latency timer to 64
+[    0.626861] pcieport 0000:00:17.4: ACPI _OSC control granted for 0x15
+[    0.627037] pcieport 0000:00:17.4: setting latency timer to 64
+[    0.627121] pcieport 0000:00:17.5: ACPI _OSC control granted for 0x15
+[    0.627298] pcieport 0000:00:17.5: setting latency timer to 64
+[    0.627382] pcieport 0000:00:17.6: ACPI _OSC control granted for 0x15
+[    0.627558] pcieport 0000:00:17.6: setting latency timer to 64
+[    0.627643] pcieport 0000:00:17.7: ACPI _OSC control granted for 0x15
+[    0.627819] pcieport 0000:00:17.7: setting latency timer to 64
+[    0.627903] pcieport 0000:00:18.0: ACPI _OSC control granted for 0x15
+[    0.628080] pcieport 0000:00:18.0: setting latency timer to 64
+[    0.628164] pcieport 0000:00:18.1: ACPI _OSC control granted for 0x15
+[    0.628341] pcieport 0000:00:18.1: setting latency timer to 64
+[    0.628424] pcieport 0000:00:18.2: ACPI _OSC control granted for 0x15
+[    0.628600] pcieport 0000:00:18.2: setting latency timer to 64
+[    0.628685] pcieport 0000:00:18.3: ACPI _OSC control granted for 0x15
+[    0.628861] pcieport 0000:00:18.3: setting latency timer to 64
+[    0.628946] pcieport 0000:00:18.4: ACPI _OSC control granted for 0x15
+[    0.629122] pcieport 0000:00:18.4: setting latency timer to 64
+[    0.629206] pcieport 0000:00:18.5: ACPI _OSC control granted for 0x15
+[    0.629383] pcieport 0000:00:18.5: setting latency timer to 64
+[    0.629467] pcieport 0000:00:18.6: ACPI _OSC control granted for 0x15
+[    0.629644] pcieport 0000:00:18.6: setting latency timer to 64
+[    0.629708] pcieport 0000:00:18.7: ACPI _OSC control granted for 0x15
+[    0.629768] pcieport 0000:00:18.7: setting latency timer to 64
+[    0.629801] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    0.629819] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    0.630008] ACPI: AC Adapter [ACAD] (on-line)
+[    0.630053] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.630057] ACPI: Power Button [PWRF]
+[    0.630112] ACPI: acpi_idle registered with cpuidle
+[    0.651716] isapnp: Scanning for PnP cards...
+[    1.008686] isapnp: No Plug & Play device found
+[    1.008769] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.031848] serial8250: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[    1.052285] serial8250: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+[    1.072606] 00:0a: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[    1.093063] 00:0b: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+[    1.093239] brd: module loaded
+[    1.093416] loop: module loaded
+[    1.094085] ata_piix 0000:00:07.1: version 2.13
+[    1.094718] scsi0 : ata_piix
+[    1.095158] scsi1 : ata_piix
+[    1.095272] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0x1060 irq 14
+[    1.095281] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0x1068 irq 15
+[    1.095467] Fixed MDIO Bus: probed
+[    1.095560] PPP generic driver version 2.4.2
+[    1.095663] tun: Universal TUN/TAP device driver, 1.6
+[    1.095669] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.095743] console [netcon0] enabled
+[    1.095749] netconsole: network logging started
+[    1.095860] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.096037] ehci_hcd 0000:02:03.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+[    1.096213] ehci_hcd 0000:02:03.0: EHCI Host Controller
+[    1.096310] ehci_hcd 0000:02:03.0: new USB bus registered, assigned bus number 1
+[    1.096487] ehci_hcd 0000:02:03.0: cache line size of 32 is not supported
+[    1.096612] ehci_hcd 0000:02:03.0: irq 17, io mem 0xfd5ff000
+[    1.111566] ehci_hcd 0000:02:03.0: USB 2.0 started, EHCI 1.00
+[    1.111633] hub 1-0:1.0: USB hub found
+[    1.111684] hub 1-0:1.0: 6 ports detected
+[    1.111751] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.111817] uhci_hcd: USB Universal Host Controller Interface driver
+[    1.111884] uhci_hcd 0000:02:00.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[    1.111951] uhci_hcd 0000:02:00.0: UHCI Host Controller
+[    1.112018] uhci_hcd 0000:02:00.0: new USB bus registered, assigned bus number 2
+[    1.112166] uhci_hcd 0000:02:00.0: irq 18, io base 0x000020c0
+[    1.112232] hub 2-0:1.0: USB hub found
+[    1.112283] hub 2-0:1.0: 2 ports detected
+[    1.112349] PNP: PS/2 Controller [PNP0303:KBC,PNP0f13:MOUS] at 0x60,0x64 irq 1,12
+[    1.113002] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.113064] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.113082] mice: PS/2 mouse device common for all mice
+[    1.113349] rtc_cmos 00:04: rtc core: registered rtc_cmos as rtc0
+[    1.113579] rtc0: alarms up to one month, y3k, 114 bytes nvram, hpet irqs
+[    1.113646] device-mapper: uevent: version 1.0.3
+[    1.113886] device-mapper: ioctl: 4.18.0-ioctl (2010-06-29) initialised: dm-devel@redhat.com
+[    1.114203] device-mapper: multipath: version 1.1.1 loaded
+[    1.114214] device-mapper: multipath round-robin: version 1.0.0 loaded
+[    1.114428] EISA: Probing bus 0 at eisa.0
+[    1.114485] EISA: Cannot allocate resource for mainboard
+[    1.114490] Cannot allocate resource for EISA slot 1
+[    1.114565] Cannot allocate resource for EISA slot 2
+[    1.114570] Cannot allocate resource for EISA slot 3
+[    1.114574] Cannot allocate resource for EISA slot 4
+[    1.114579] Cannot allocate resource for EISA slot 5
+[    1.114583] Cannot allocate resource for EISA slot 6
+[    1.114587] Cannot allocate resource for EISA slot 7
+[    1.114592] Cannot allocate resource for EISA slot 8
+[    1.114596] EISA: Detected 0 cards.
+[    1.114601] cpuidle: using governor ladder
+[    1.114601] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    1.114668] TCP cubic registered
+[    1.114777] NET: Registered protocol family 10
+[    1.114919] lo: Disabled Privacy Extensions
+[    1.114986] NET: Registered protocol family 17
+[    1.115041] lib80211: common routines for IEEE802.11 drivers
+[    1.115046] lib80211_crypt: registered algorithm 'NULL'
+[    1.115063] Using IPI No-Shortcut mode
+[    1.115130] registered taskstats version 1
+[    1.135294] rtc_cmos 00:04: setting system clock to 2014-09-07 18:32:14 UTC (1410114734)
+[    1.135297] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    1.135298] EDD information not available.
+[    1.252627] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    1.252860] psmouse serio1: ID: 10 00 64
+[    1.252927] input: ImPS/2 Generic Wheel Mouse as /devices/platform/i8042/serio1/input/input3
+[    1.276264] ata2.00: ATAPI: VMware Virtual IDE CDROM Drive, 00000001, max UDMA/33
+[    1.276579] ata2.00: configured for UDMA/33
+[    1.276994] scsi 1:0:0:0: CD-ROM            NECVMWar VMware IDE CDR10 1.00 PQ: 0 ANSI: 5
+[    1.277947] sr0: scsi3-mmc drive: 1x/1x writer dvd-ram cd/rw xa/form2 cdda tray
+[    1.277951] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    1.278017] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    1.278053] sr 1:0:0:0: Attached scsi generic sg0 type 5
+[    1.278093] Freeing unused kernel memory: 480k freed
+[    1.284624] udev: starting version 151
+[    1.284691] udevd (64): /proc/64/oom_adj is deprecated, please use /proc/64/oom_score_adj instead.
+[    1.326263] Fusion MPT base driver 3.04.17
+[    1.326266] Copyright (c) 1999-2008 LSI Corporation
+[    1.326330] pcnet32: pcnet32.c:v1.35 21.Apr.2008 tsbogend@alpha.franken.de
+[    1.326393] pcnet32 0000:02:01.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+[    1.326460] pcnet32: PCnet/PCI II 79C970A at 0x2000, 00:0c:29:a1:70:01 assigned IRQ 19
+[    1.326527] pcnet32: eth0: registered as PCnet/PCI II 79C970A
+[    1.326592] pcnet32: 1 cards_found
+[    1.326931] Fusion MPT SPI Host driver 3.04.17
+[    1.326961] mptspi 0000:00:10.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+[    1.327105] VMware PVSCSI driver - version 1.0.1.0-k
+[    1.336267] mptbase: ioc0: Initiating bringup
+[    1.441523] usb 2-1: new full speed USB device using uhci_hcd and address 2
+[    1.531510] ioc0: LSI53C1030 B0: Capabilities={Initiator}
+[    2.012027] scsi2 : ioc0: LSI53C1030 B0, FwRev=01032920h, Ports=1, MaxQ=128, IRQ=17
+[    2.221395] usb 2-2: new full speed USB device using uhci_hcd and address 3
+[    2.292507] scsi 2:0:0:0: Direct-Access     VMware,  VMware Virtual S 1.0  PQ: 0 ANSI: 2
+[    2.292627] scsi target2:0:0: Beginning Domain Validation
+[    2.292723] scsi target2:0:0: Domain Validation skipping write tests
+[    2.292768] scsi target2:0:0: Ending Domain Validation
+[    2.292825] scsi target2:0:0: FAST-40 WIDE SCSI 80.0 MB/s ST (25 ns, offset 127)
+[    2.293011] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[    2.293310] sd 2:0:0:0: [sda] 20971520 512-byte logical blocks: (10.7 GB/10.0 GiB)
+[    2.293413] sd 2:0:0:0: [sda] Write Protect is off
+[    2.293451] sd 2:0:0:0: [sda] Mode Sense: 61 00 00 00
+[    2.293573] sd 2:0:0:0: [sda] Cache data unavailable
+[    2.293581] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    2.294154] sd 2:0:0:0: [sda] Cache data unavailable
+[    2.294156] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    2.294455]  sda: sda1 sda2 < sda5 >
+[    2.294639] sd 2:0:0:0: [sda] Cache data unavailable
+[    2.294642] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    2.294700] sd 2:0:0:0: [sda] Attached SCSI disk
+[    2.309068] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    2.374179] hub 2-2:1.0: USB hub found
+[    2.374297] hub 2-2:1.0: 7 ports detected
+[    2.455710] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[    2.455879] udev: starting version 151
+[    2.517835] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    2.536461] Linux agpgart interface v0.103
+[    2.537799] agpgart-intel 0000:00:00.0: Intel 440BX Chipset
+[    2.538061] agpgart-intel 0000:00:00.0: AGP aperture is 256M @ 0x0
+[    2.581488] udev: renamed network interface eth0 to eth2
+[    2.615989] input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.0/input/input4
+[    2.616036] generic-usb 0003:0E0F:0003.0001: input: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input0
+[    2.617786] input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.1/input/input5
+[    2.617826] generic-usb 0003:0E0F:0003.0002: input: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input1
+[    2.617838] usbcore: registered new interface driver usbhid
+[    2.617839] usbhid: USB HID core driver
+[    2.883216] pcnet32 0000:02:01.0: eth2: link up
+[   13.870091] eth2: no IPv6 routers present
+[  235.104591] pcnet32 0000:02:01.0: eth2: link down
+[  245.103528] pcnet32 0000:02:01.0: eth2: link up
+[  259.622759] cos (core 1): Installing the hijack module.
+[  259.622771] IDT at c05ee000:2047, saved state at f8c9a000, both with 255 entries
+[  259.622774] CPU 1: Overriding sysenter handler (c0102c9c) with f8c85000
+[  259.622777] CPU 1: Overriding page_fault handler (c049fea8, dpl 0, int 0) with f8c85110 (via trampoline f5e9f010)
+[  259.622798] CPU 1: Overriding 0 IDT handler (c049fe84, dpl 0, int 0) with f8c850b0, dpl 0, int 0
+[  259.622800] CPU 1: Overriding 233 IDT handler (c01031d4, dpl 0, int 0) with f8c85170, dpl 3, int 0
+[  259.622802] CPU 1: Overriding 7 IDT handler (c049fe28, dpl 0, int 0) with f8c851d0, dpl 0, int 0
+[  259.622804] cos: core 1 enabling Composite IPI IRQ vector e0.
+[  259.622834] CPU 0: Overriding sysenter handler (c0102c9c) with f8c85000
+[  259.622836] CPU 0: Overriding page_fault handler (c049fea8, dpl 0, int 0) with f8c85110 (via trampoline f5e9f010)
+[  259.622838] CPU 0: Overriding 0 IDT handler (c049fe84, dpl 0, int 0) with f8c850b0, dpl 0, int 0
+[  259.622840] CPU 0: Overriding 233 IDT handler (c01031d4, dpl 0, int 0) with f8c85170, dpl 3, int 0
+[  259.622841] CPU 0: Overriding 7 IDT handler (c049fe28, dpl 0, int 0) with f8c851d0, dpl 0, int 0
+[  259.622843] cos: core 0 enabling Composite IPI IRQ vector e0.
+[  259.624722] tun: cos: Universal TUN/TAP device driver, 1.6
+[  259.624724] tun: cos: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[  259.624777] cos: Registering networking callbacks @ f87397a0
+[  259.625694] cos <-> Linux translator: registered successfully.
+[  259.626655] cnet0: Disabled Privacy Extensions
+[  273.480325] cos: info region @ 1073741824(40000000)
+[  273.480328] cos: Mapping of shared region worked: deadbeef.
+[  273.940566] cos core 0: creating thread in spd 0.
+[  273.940587] Setting up boot thread on core 0
+[  273.940625] core 0, sched shared region @40805000, kern @d31ff000
+[  273.940656] Core 0, Low-level booter created threads:
+[  273.940658] 1: alphapha
+[  273.940660] 2: recov
+[  273.940661] 3: init
+[  273.940686] COBJ_SYMB_EXPORTEDj fprr:2 found at 0x40890000:cd64, size 97a94 -> 44800000
+[  273.940695] cobj mm:3 found at 0x4089cd80:6a80, size 18a6fc -> 44c00000
+[  273.940703] cobj print:4 found at 0x408a3800:16b0, size 844b8 -> 45c00000
+[  273.940710] cobj boot:5 found at 0x408a4ec0 -> 46000000
+[  273.940812] h @ 0x40890000, heap ptr @ 0x408d8000
+[  273.940819] header 0x40890000, size 52580, num comps 4, new heap 0x408d8000
+[  273.945837] booter: done creating system.
+[  274.945971] core 0: mm init as thread 3
+[  274.945990] mm expanding 12 MBs @ 0x45000000
+[  274.946599] core 0: mm init done
+[  274.946625] core 0, sched shared region @4480b000, kern @f5f75000
+[  274.946634] Please ensure that the following information is correct.
+[  274.946650] If it is not, edit kernel/include/shared/cos_config.h.
+[  274.946669] CPU_FREQUENCY=2400000000
+[  274.946676] TIMER_FREQUENCY=100
+[  274.946686] USEC_PER_TICK=10000
+[  274.946690] CYC_PER_USEC=2400
+[  274.946701] Total number of CPUs: 1. Composite runs on core 0 - 0. Linux runs on core 0.
+[  274.946763] Core 0: Idle thread has id 4 with priority i.
+[  274.946786] Initialization thread has id 5.
+[  274.946810] Core 0: Timer thread (id 6) has srv_acap 2.
+[  274.946833] Core 0: IPI handling thread created (thread id 7).
+[  274.946850] <<<Core 0, thread 3: sched_init done.>>>
+[  274.946867] Core 0: Starting timer thread (thread id 6)
+[  274.946889] Core 0: Starting IPI handling thread (thread id 7, client acap 3, server acap 4)
+[  274.946934] cobj va:6 found at 0x4608d000:4204, size 87e8c -> 4a000000
+[  274.946955] cobj freeRTOS:7 found at 0x46091240:cbec, size 291414 -> 4a400000
+[  274.946978] cobj l:8 found at 0x4609de40:3898, size 874e8 -> 4a800000
+[  274.946998] cobj mpool:9 found at 0x460a1700:4dcc, size 8bdc4 -> 4ac00000
+[  274.947020] cobj sm:10 found at 0x460a6500:92ec, size b8f40 -> 4b000000
+[  274.947040] cobj vm:11 found at 0x460af800:3a8c, size 88744 -> 4b400000
+[  274.947058] cobj rtos_app:12 found at 0x460b32c0 -> 4b800000
+[  274.947182] h @ 0x4608d000, heap ptr @ 0x460b9000
+[  274.947198] header 0x4608d000, size 16900, num comps 7, new heap 0x460b9000
+[  274.955871] Core 0, sched 2: created default thread 8 in spdid 8 (requested by 5 from 8)
+[  274.955888] Core 0, sched 2: created default thread 8 in spdid 11 (requested by 5 from 11)
+[  274.955899] Core 0, sched 2: created default thread 8 in spdid 6 (requested by 5 from 6)
+[  274.955912] <><><>Life doesn't suck
+[  274.955915] core 0, sched shared region @4a40b000, kern @f6476000
+[  274.955917] Called cntl_thd
+[  274.955923] first sched thd
+[  274.955924] Starting new task
+[  274.955925] Called pvPortMalloc in heap_1.
+[  274.955927] Called pvPortMalloc in heap_1.
+[  274.955928] initialising stack w/OUT MPU wrappers
+[  274.955929] Called pvPortMalloc in heap_1.
+[  274.955930] Creating thread in spd 7, current thd 10
+[  274.955931] Func Pointer is: 1245723184
+[  274.955936] FreeRTOS started thd 11
+[  274.955937] Adding task handle, thread id: 11
+[  274.955938] Have added task to ready queue
+[  274.955939] FreeRTOS started task successfully
+[  274.955940] Called pvPortMalloc in heap_1.
+[  274.955940] Called pvPortMalloc in heap_1.
+[  274.955941] Starting new task
+[  274.955942] Called pvPortMalloc in heap_1.
+[  274.955943] Called pvPortMalloc in heap_1.
+[  274.955944] initialising stack w/OUT MPU wrappers
+[  274.955945] Called pvPortMalloc in heap_1.
+[  274.955946] Creating thread in spd 7, current thd 10
+[  274.955947] Func Pointer is: 1245723184
+[  274.955950] FreeRTOS started thd 12
+[  274.955951] Adding task handle, thread id: 12
+[  274.955952] Have added task to ready queue
+[  274.955953] FreeRTOS started task successfully
+[  274.955954] Starting new task
+[  274.955954] Called pvPortMalloc in heap_1.
+[  274.955955] Called pvPortMalloc in heap_1.
+[  274.955956] initialising stack w/OUT MPU wrappers
+[  274.955957] Called pvPortMalloc in heap_1.
+[  274.955958] Creating thread in spd 7, current thd 10
+[  274.955959] Func Pointer is: 1245723184
+[  274.955962] FreeRTOS started thd 13
+[  274.955963] Adding task handle, thread id: 13
+[  274.955964] Have added task to ready queue
+[  274.955965] FreeRTOS started task successfully
+[  274.955965] Starting new task
+[  274.955966] Called pvPortMalloc in heap_1.
+[  274.955967] Called pvPortMalloc in heap_1.
+[  274.955968] initialising stack w/OUT MPU wrappers
+[  274.955969] Called pvPortMalloc in heap_1.
+[  274.955970] Creating thread in spd 7, current thd 10
+[  274.955971] Func Pointer is: 1245723184
+[  274.955971] ><! Making thd in freertos_app
+[  274.955975] FreeRTOS started thd 14
+[  274.955976] Adding task handle, thread id: 14
+[  274.955976] Have added task to ready queue
+[  274.955977] FreeRTOS started task successfully
+[  274.955978] Starting the idle task....
+[  274.955979] Starting new task
+[  274.955980] Called pvPortMalloc in heap_1.
+[  274.955980] Called pvPortMalloc in heap_1.
+[  274.955981] initialising stack w/OUT MPU wrappers
+[  274.955982] Called pvPortMalloc in heap_1.
+[  274.955983] Creating thread in spd 7, current thd 10
+[  274.955984] Func Pointer is: 1245723184
+[  274.955987] FreeRTOS started thd 15
+[  274.955988] Adding task handle, thread id: 15
+[  274.955989] Have added task to ready queue
+[  274.955990] FreeRTOS started task successfully
+[  274.955991] Starting freeRTOS scheduler
+[  274.955991] Creating timer
+[  274.955992] freertos: Switching to timer thread...
+[  274.955993] Switching threads from 10 to 9
+[  274.955994] Freertos timer being called
+[  274.955996] About to switch
+[  274.955997] About to switch to 11
+[  274.955998] should twerk: 1245770400
+[  274.955999] Switching threads from 9 to 11
+[  274.956001] 1!!!!!!!!!!!!!!!
+[  274.956003] pl0x twerk: 1245770400
+[  274.956004] In prvWaitForStart
+[  274.956005] Running task's function!
+[  274.956006] eeeessss gud: 11, spdid = 7
+[  274.956007] Called pvPortMalloc in heap_1.
+[  274.956008] Called pvPortMalloc in heap_1.
+[  274.956009] Sem 1245771017 created with 5038 cycles used
+[  274.956010] About to take sem
+[  274.961054] wat wat wat: 0
+[  274.961058] wat wat wat: 9
+[  274.961060] Count 0
+[  274.961063] About to switch
+[  274.961064] About to switch to 14
+[  274.961065] should twerk: 1245770833
+[  274.961067] Switching threads from 9 to 14
+[  274.961070] !!!!!!!!!!!! I LIVE !!!!!!!!!!!!0
+[  274.961074] 0
+[  274.961076] Called pvPortMalloc in heap_1.
+[  274.961078] Called pvPortMalloc in heap_1.
+[  274.961080] Sem is 0
+[  274.961082] About to take sem
+[  274.973029] wat wat wat: 0
+[  274.973032] wat wat wat: 9
+[  274.973034] Count 1
+[  274.973035] About to switch
+[  274.973037] About to switch to 11
+[  274.973038] should twerk: 1245770400
+[  274.973039] Switching threads from 9 to 11
+[  274.981037] wat wat wat: 0
+[  274.981039] wat wat wat: 9
+[  274.981041] Count 2
+[  274.981043] About to switch
+[  274.981044] About to switch to 14
+[  274.981045] should twerk: 1245770833
+[  274.981046] Switching threads from 9 to 14
+[  274.990693] wat wat wat: 0
+[  274.990696] wat wat wat: 9
+[  274.990697] Count 3
+[  274.990699] About to switch
+[  274.990700] About to switch to 11
+[  274.990701] should twerk: 1245770400
+[  274.990702] Switching threads from 9 to 11
+[  275.001030] wat wat wat: 0
+[  275.001033] wat wat wat: 9
+[  275.001035] Count 4
+[  275.001037] About to switch
+[  275.001039] About to switch to 14
+[  275.001048] should twerk: 1245770833
+[  275.001049] Switching threads from 9 to 14
+[  275.013032] wat wat wat: 0
+[  275.013043] wat wat wat: 9
+[  275.013044] Count 5
+[  275.013046] About to switch
+[  275.013047] About to switch to 11
+[  275.013048] should twerk: 1245770400
+[  275.013049] Switching threads from 9 to 11
+[  275.021027] wat wat wat: 0
+[  275.021029] wat wat wat: 9
+[  275.021031] Count 6
+[  275.021032] About to switch
+[  275.021033] About to switch to 14
+[  275.021034] should twerk: 1245770833
+[  275.021035] Switching threads from 9 to 14
+[  275.033029] wat wat wat: 0
+[  275.033032] wat wat wat: 9
+[  275.033034] Count 7
+[  275.033036] About to switch
+[  275.033037] About to switch to 11
+[  275.033038] should twerk: 1245770400
+[  275.033039] Switching threads from 9 to 11
+[  275.041026] wat wat wat: 0
+[  275.041028] wat wat wat: 9
+[  275.041030] Count 8
+[  275.041031] About to switch
+[  275.041032] About to switch to 14
+[  275.041033] should twerk: 1245770833
+[  275.041035] Switching threads from 9 to 14
+[  275.053020] wat wat wat: 0
+[  275.053023] wat wat wat: 9
+[  275.053025] Count 9
+[  275.053026] About to switch
+[  275.053028] About to switch to 11
+[  275.053029] should twerk: 1245770400
+[  275.053030] Switching threads from 9 to 11
+[  275.061028] wat wat wat: 0
+[  275.061031] wat wat wat: 9
+[  275.061033] Count 10
+[  275.061035] About to switch
+[  275.061036] About to switch to 14
+[  275.061037] should twerk: 1245770833
+[  275.061038] Switching threads from 9 to 14
+[  275.073024] wat wat wat: 0
+[  275.073027] wat wat wat: 9
+[  275.073029] Count 11
+[  275.073030] About to switch
+[  275.073031] About to switch to 11
+[  275.073032] should twerk: 1245770400
+[  275.073033] Switching threads from 9 to 11
+[  275.081024] wat wat wat: 0
+[  275.081027] wat wat wat: 9
+[  275.081029] Count 12
+[  275.081031] About to switch
+[  275.081032] About to switch to 14
+[  275.081033] should twerk: 1245770833
+[  275.081034] Switching threads from 9 to 14
+[  275.089514] Virt Give avg = 1276
+[  275.089516] Virt Take avg = 1496
+[  275.089518] guddr
+[  275.093013] wat wat wat: 0
+[  275.093015] wat wat wat: 9
+[  275.093017] Count 13
+[  275.093018] About to switch
+[  275.093019] About to switch to 11
+[  275.093020] should twerk: 1245770400
+[  275.093021] Switching threads from 9 to 11
+[  275.101013] wat wat wat: 0
+[  275.101016] wat wat wat: 9
+[  275.101018] Count 14
+[  275.101019] About to switch
+[  275.101021] About to switch to 14
+[  275.101022] should twerk: 1245770833
+[  275.101023] Switching threads from 9 to 14
+[  275.113011] wat wat wat: 0
+[  275.113014] wat wat wat: 9
+[  275.113015] Count 15
+[  275.113017] About to switch
+[  275.113018] About to switch to 11
+[  275.113019] should twerk: 1245770400
+[  275.113020] Switching threads from 9 to 11
+[  275.121011] wat wat wat: 0
+[  275.121013] wat wat wat: 9
+[  275.121015] Count 16
+[  275.121017] About to switch
+[  275.121018] About to switch to 14
+[  275.121019] should twerk: 1245770833
+[  275.121020] Switching threads from 9 to 14
+[  275.133071] wat wat wat: 0
+[  275.133074] wat wat wat: 9
+[  275.133076] Count 17
+[  275.133078] About to switch
+[  275.133079] About to switch to 11
+[  275.133080] should twerk: 1245770400
+[  275.133081] Switching threads from 9 to 11
+[  275.141005] wat wat wat: 0
+[  275.141007] wat wat wat: 9
+[  275.141008] Count 18
+[  275.141010] About to switch
+[  275.141011] About to switch to 14
+[  275.141012] should twerk: 1245770833
+[  275.141013] Switching threads from 9 to 14
+[  275.153004] wat wat wat: 0
+[  275.153006] wat wat wat: 9
+[  275.153008] Count 19
+[  275.153009] About to switch
+[  275.153010] About to switch to 11
+[  275.153011] should twerk: 1245770400
+[  275.153012] Switching threads from 9 to 11
+[  275.161017] wat wat wat: 0
+[  275.161020] wat wat wat: 9
+[  275.161023] Count 20
+[  275.161025] About to switch
+[  275.161028] About to switch to 14
+[  275.161029] should twerk: 1245770833
+[  275.161030] Switching threads from 9 to 14
+[  275.173002] wat wat wat: 0
+[  275.173004] wat wat wat: 9
+[  275.173006] Count 21
+[  275.173008] About to switch
+[  275.173009] About to switch to 11
+[  275.173010] should twerk: 1245770400
+[  275.173010] Switching threads from 9 to 11
+[  275.181009] wat wat wat: 0
+[  275.181011] wat wat wat: 9
+[  275.181013] Count 22
+[  275.181014] About to switch
+[  275.181016] About to switch to 14
+[  275.181017] should twerk: 1245770833
+[  275.181018] Switching threads from 9 to 14
+[  275.190372] wat wat wat: 0
+[  275.190374] wat wat wat: 9
+[  275.190376] Count 23
+[  275.190378] About to switch
+[  275.190378] About to switch to 11
+[  275.190380] should twerk: 1245770400
+[  275.190380] Switching threads from 9 to 11
+[  275.194357] Native Give avg = 164
+[  275.194360] Native Take avg = 307
+[  275.194362] About to switch to 14
+[  275.194363] should twerk: 1245770833
+[  275.194364] Switching threads from 11 to 14
+[  275.200736] wat wat wat: 0
+[  275.200738] wat wat wat: 9
+[  275.200740] Count 24
+[  275.200741] About to switch
+[  275.200742] About to switch to 11
+[  275.200743] should twerk: 1245770400
+[  275.200744] Switching threads from 9 to 11
+[  275.200745] wat wat wat: 0
+[  275.200747] wat wat wat: 11
+[  275.200749] Count 25
+[  275.200750] THD 11 done executing, setting to lowest priority.
+[  275.213018] wat wat wat: 0
+[  275.213022] wat wat wat: 9
+[  275.213024] Count 26
+[  275.213026] About to switch
+[  275.213027] About to switch to 14
+[  275.213028] should twerk: 1245770833
+[  275.213029] Switching threads from 9 to 14
+[  275.221041] wat wat wat: 0
+[  275.221043] wat wat wat: 9
+[  275.221045] Count 27
+[  275.221046] About to switch
+[  275.221047] About to switch to 11
+[  275.221048] should twerk: 1245770400
+[  275.221049] Switching threads from 9 to 11
+[  275.232777] wat wat wat: 0
+[  275.232780] wat wat wat: 9
+[  275.232781] Count 28
+[  275.232783] About to switch
+[  275.232784] About to switch to 14
+[  275.232785] should twerk: 1245770833
+[  275.232786] Switching threads from 9 to 14
+[  275.240996] wat wat wat: 0
+[  275.240998] wat wat wat: 9
+[  275.241000] Count 29
+[  275.241001] About to switch
+[  275.241002] About to switch to 11
+[  275.241003] should twerk: 1245770400
+[  275.241004] Switching threads from 9 to 11
+[  275.252999] wat wat wat: 0
+[  275.253002] wat wat wat: 9
+[  275.253004] Count 30
+[  275.253006] About to switch
+[  275.253007] About to switch to 14
+[  275.253008] should twerk: 1245770833
+[  275.253009] Switching threads from 9 to 14
+[  275.261024] wat wat wat: 0
+[  275.261029] wat wat wat: 9
+[  275.261032] Count 31
+[  275.261035] About to switch
+[  275.261037] About to switch to 11
+[  275.261038] should twerk: 1245770400
+[  275.261040] Switching threads from 9 to 11
+[  275.273010] wat wat wat: 0
+[  275.273014] wat wat wat: 9
+[  275.273016] Count 32
+[  275.273018] About to switch
+[  275.273020] About to switch to 14
+[  275.273021] should twerk: 1245770833
+[  275.273022] Switching threads from 9 to 14
+[  275.280993] wat wat wat: 0
+[  275.280996] wat wat wat: 9
+[  275.280997] Count 33
+[  275.280999] About to switch
+[  275.281000] About to switch to 11
+[  275.281001] should twerk: 1245770400
+[  275.281002] Switching threads from 9 to 11
+[  275.292994] wat wat wat: 0
+[  275.292996] wat wat wat: 9
+[  275.292998] Count 34
+[  275.293000] About to switch
+[  275.293001] About to switch to 14
+[  275.293002] should twerk: 1245770833
+[  275.293003] Switching threads from 9 to 14
+[  275.300991] wat wat wat: 0
+[  275.300993] wat wat wat: 9
+[  275.300995] Count 35
+[  275.300996] About to switch
+[  275.300997] About to switch to 11
+[  275.300998] should twerk: 1245770400
+[  275.300999] Switching threads from 9 to 11
+[  275.312987] wat wat wat: 0
+[  275.312989] wat wat wat: 9
+[  275.312991] Count 36
+[  275.312993] About to switch
+[  275.312994] About to switch to 14
+[  275.312995] should twerk: 1245770833
+[  275.312996] Switching threads from 9 to 14
+[  275.320984] wat wat wat: 0
+[  275.320986] wat wat wat: 9
+[  275.320987] Count 37
+[  275.320989] About to switch
+[  275.320990] About to switch to 11
+[  275.320990] should twerk: 1245770400
+[  275.320991] Switching threads from 9 to 11
+[  275.333012] wat wat wat: 0
+[  275.333016] wat wat wat: 9
+[  275.333018] Count 38
+[  275.333020] About to switch
+[  275.333022] About to switch to 14
+[  275.333023] should twerk: 1245770833
+[  275.333025] Switching threads from 9 to 14
+[  275.340994] wat wat wat: 0
+[  275.340998] wat wat wat: 9
+[  275.341000] Count 39
+[  275.341002] About to switch
+[  275.341003] About to switch to 11
+[  275.341004] should twerk: 1245770400
+[  275.341005] Switching threads from 9 to 11
+[  275.353013] wat wat wat: 0
+[  275.353016] wat wat wat: 9
+[  275.353018] Count 40
+[  275.353020] About to switch
+[  275.353022] About to switch to 14
+[  275.353023] should twerk: 1245770833
+[  275.353024] Switching threads from 9 to 14
+[  275.360985] wat wat wat: 0
+[  275.360988] wat wat wat: 9
+[  275.360989] Count 41
+[  275.360991] About to switch
+[  275.360992] About to switch to 11
+[  275.360993] should twerk: 1245770400
+[  275.360994] Switching threads from 9 to 11
+[  275.372991] wat wat wat: 0
+[  275.372994] wat wat wat: 9
+[  275.372995] Count 42
+[  275.372997] About to switch
+[  275.372998] About to switch to 14
+[  275.372999] should twerk: 1245770833
+[  275.373000] Switching threads from 9 to 14
+[  275.381036] wat wat wat: 0
+[  275.381038] wat wat wat: 9
+[  275.381040] Count 43
+[  275.381041] About to switch
+[  275.381042] About to switch to 11
+[  275.381043] should twerk: 1245770400
+[  275.381044] Switching threads from 9 to 11
+[  275.391093] wat wat wat: 0
+[  275.391095] wat wat wat: 9
+[  275.391096] Count 44
+[  275.391098] About to switch
+[  275.391099] About to switch to 14
+[  275.391100] should twerk: 1245770833
+[  275.391101] Switching threads from 9 to 14
+[  275.400985] wat wat wat: 0
+[  275.400988] wat wat wat: 9
+[  275.400989] Count 45
+[  275.400991] About to switch
+[  275.400992] About to switch to 11
+[  275.400993] should twerk: 1245770400
+[  275.400994] Switching threads from 9 to 11
+[  275.412976] wat wat wat: 0
+[  275.412978] wat wat wat: 9
+[  275.412980] Count 46
+[  275.412982] About to switch
+[  275.412983] About to switch to 14
+[  275.412983] should twerk: 1245770833
+[  275.412984] Switching threads from 9 to 14
+[  275.420987] wat wat wat: 0
+[  275.420989] wat wat wat: 9
+[  275.420991] Count 47
+[  275.420993] About to switch
+[  275.420994] About to switch to 11
+[  275.420995] should twerk: 1245770400
+[  275.420996] Switching threads from 9 to 11
+[  275.432977] wat wat wat: 0
+[  275.432979] wat wat wat: 9
+[  275.432981] Count 48
+[  275.432983] About to switch
+[  275.432984] About to switch to 14
+[  275.432985] should twerk: 1245770833
+[  275.432986] Switching threads from 9 to 14
+[  275.440970] wat wat wat: 0
+[  275.440972] wat wat wat: 9
+[  275.440974] Count 49
+[  275.440975] About to switch
+[  275.440976] About to switch to 11
+[  275.440977] should twerk: 1245770400
+[  275.440978] Switching threads from 9 to 11
+[  275.452974] wat wat wat: 0
+[  275.452976] wat wat wat: 9
+[  275.452978] Count 50
+[  275.452980] About to switch
+[  275.452981] About to switch to 14
+[  275.452982] should twerk: 1245770833
+[  275.452983] Switching threads from 9 to 14
+[  275.461000] wat wat wat: 0
+[  275.461005] wat wat wat: 9
+[  275.461008] Count 51
+[  275.461010] About to switch
+[  275.461012] About to switch to 11
+[  275.461014] should twerk: 1245770400
+[  275.461015] Switching threads from 9 to 11
+[  275.472999] wat wat wat: 0
+[  275.473002] wat wat wat: 9
+[  275.473004] Count 52
+[  275.473007] About to switch
+[  275.473008] About to switch to 14
+[  275.473009] should twerk: 1245770833
+[  275.473010] Switching threads from 9 to 14
+[  275.480984] wat wat wat: 0
+[  275.480987] wat wat wat: 9
+[  275.480989] Count 53
+[  275.480992] About to switch
+[  275.480993] About to switch to 11
+[  275.480994] should twerk: 1245770400
+[  275.480995] Switching threads from 9 to 11
+[  275.491252] wat wat wat: 0
+[  275.491256] wat wat wat: 9
+[  275.491258] Count 54
+[  275.491261] About to switch
+[  275.491262] About to switch to 14
+[  275.491263] should twerk: 1245770833
+[  275.491264] Switching threads from 9 to 14
+[  275.500355] wat wat wat: 0
+[  275.500362] wat wat wat: 9
+[  275.500364] Count 55
+[  275.500369] About to switch
+[  275.500372] About to switch to 11
+[  275.500372] should twerk: 1245770400
+[  275.500374] Switching threads from 9 to 11
+[  275.512748] wat wat wat: 0
+[  275.512752] wat wat wat: 9
+[  275.512754] Count 56
+[  275.512756] About to switch
+[  275.512757] About to switch to 14
+[  275.512758] should twerk: 1245770833
+[  275.512759] Switching threads from 9 to 14
+[  275.520959] wat wat wat: 0
+[  275.520961] wat wat wat: 9
+[  275.520963] Count 57
+[  275.520964] About to switch
+[  275.520965] About to switch to 11
+[  275.520966] should twerk: 1245770400
+[  275.520967] Switching threads from 9 to 11
+[  275.532963] wat wat wat: 0
+[  275.532965] wat wat wat: 9
+[  275.532967] Count 58
+[  275.532969] About to switch
+[  275.532970] About to switch to 14
+[  275.532971] should twerk: 1245770833
+[  275.532972] Switching threads from 9 to 14
+[  275.540958] wat wat wat: 0
+[  275.540959] wat wat wat: 9
+[  275.540961] Count 59
+[  275.540962] About to switch
+[  275.540963] About to switch to 11
+[  275.540964] should twerk: 1245770400
+[  275.540965] Switching threads from 9 to 11
+[  275.552962] wat wat wat: 0
+[  275.552964] wat wat wat: 9
+[  275.552966] Count 60
+[  275.552968] About to switch
+[  275.552969] About to switch to 14
+[  275.552970] should twerk: 1245770833
+[  275.552970] Switching threads from 9 to 14
+[  275.560963] wat wat wat: 0
+[  275.560965] wat wat wat: 9
+[  275.560967] Count 61
+[  275.560968] About to switch
+[  275.560969] About to switch to 11
+[  275.560970] should twerk: 1245770400
+[  275.560971] Switching threads from 9 to 11
+[  275.571461] wat wat wat: 0
+[  275.571465] wat wat wat: 9
+[  275.571476] Count 62
+[  275.571479] About to switch
+[  275.571480] About to switch to 14
+[  275.571481] should twerk: 1245770833
+[  275.571482] Switching threads from 9 to 14
+[  275.580584] wat wat wat: 0
+[  275.580586] wat wat wat: 9
+[  275.580588] Count 63
+[  275.580589] About to switch
+[  275.580590] About to switch to 11
+[  275.580591] should twerk: 1245770400
+[  275.580592] Switching threads from 9 to 11
+[  275.592955] wat wat wat: 0
+[  275.592957] wat wat wat: 9
+[  275.592959] Count 64
+[  275.592960] About to switch
+[  275.592971] About to switch to 14
+[  275.592972] should twerk: 1245770833
+[  275.592973] Switching threads from 9 to 14
+[  275.600951] wat wat wat: 0
+[  275.600953] wat wat wat: 9
+[  275.600955] Count 65
+[  275.600957] About to switch
+[  275.600957] About to switch to 11
+[  275.600958] should twerk: 1245770400
+[  275.600959] Switching threads from 9 to 11
+[  275.611666] wat wat wat: 0
+[  275.611670] wat wat wat: 9
+[  275.611672] Count 66
+[  275.611674] About to switch
+[  275.611676] About to switch to 14
+[  275.611677] should twerk: 1245770833
+[  275.611678] Switching threads from 9 to 14
+[  275.620690] wat wat wat: 0
+[  275.620694] wat wat wat: 9
+[  275.620696] Count 67
+[  275.620698] About to switch
+[  275.620699] About to switch to 11
+[  275.620700] should twerk: 1245770400
+[  275.620701] Switching threads from 9 to 11
+[  275.633034] wat wat wat: 0
+[  275.633037] wat wat wat: 9
+[  275.633039] Count 68
+[  275.633042] About to switch
+[  275.633043] About to switch to 14
+[  275.633044] should twerk: 1245770833
+[  275.633045] Switching threads from 9 to 14
+[  275.640952] wat wat wat: 0
+[  275.640954] wat wat wat: 9
+[  275.640956] Count 69
+[  275.640958] About to switch
+[  275.640958] About to switch to 11
+[  275.640959] should twerk: 1245770400
+[  275.640960] Switching threads from 9 to 11
+[  275.652957] wat wat wat: 0
+[  275.652961] wat wat wat: 9
+[  275.652962] Count 70
+[  275.652965] About to switch
+[  275.652966] About to switch to 14
+[  275.652967] should twerk: 1245770833
+[  275.652968] Switching threads from 9 to 14
+[  275.660949] wat wat wat: 0
+[  275.660951] wat wat wat: 9
+[  275.660953] Count 71
+[  275.660954] About to switch
+[  275.660955] About to switch to 11
+[  275.660956] should twerk: 1245770400
+[  275.660965] Switching threads from 9 to 11
+[  275.672955] wat wat wat: 0
+[  275.672957] wat wat wat: 9
+[  275.672959] Count 72
+[  275.672960] About to switch
+[  275.672961] About to switch to 14
+[  275.672962] should twerk: 1245770833
+[  275.672963] Switching threads from 9 to 14
+[  275.680945] wat wat wat: 0
+[  275.680947] wat wat wat: 9
+[  275.680949] Count 73
+[  275.680950] About to switch
+[  275.680951] About to switch to 11
+[  275.680952] should twerk: 1245770400
+[  275.680953] Switching threads from 9 to 11
+[  275.692949] wat wat wat: 0
+[  275.692952] wat wat wat: 9
+[  275.692954] Count 74
+[  275.692956] About to switch
+[  275.692957] About to switch to 14
+[  275.692958] should twerk: 1245770833
+[  275.692959] Switching threads from 9 to 14
+[  275.700947] wat wat wat: 0
+[  275.700949] wat wat wat: 9
+[  275.700951] Count 75
+[  275.700952] About to switch
+[  275.700953] About to switch to 11
+[  275.700954] should twerk: 1245770400
+[  275.700955] Switching threads from 9 to 11
+[  275.712541] wat wat wat: 0
+[  275.712543] wat wat wat: 9
+[  275.712545] Count 76
+[  275.712546] About to switch
+[  275.712547] About to switch to 14
+[  275.712548] should twerk: 1245770833
+[  275.712549] Switching threads from 9 to 14
+[  275.720940] wat wat wat: 0
+[  275.720942] wat wat wat: 9
+[  275.720944] Count 77
+[  275.720946] About to switch
+[  275.720947] About to switch to 11
+[  275.720947] should twerk: 1245770400
+[  275.720948] Switching threads from 9 to 11
+[  275.732943] wat wat wat: 0
+[  275.732946] wat wat wat: 9
+[  275.732948] Count 78
+[  275.732949] About to switch
+[  275.732950] About to switch to 14
+[  275.732951] should twerk: 1245770833
+[  275.732952] Switching threads from 9 to 14
+[  275.740933] wat wat wat: 0
+[  275.740935] wat wat wat: 9
+[  275.740936] Count 79
+[  275.740938] About to switch
+[  275.740938] About to switch to 11
+[  275.740939] should twerk: 1245770400
+[  275.740940] Switching threads from 9 to 11
+[  275.752937] wat wat wat: 0
+[  275.752939] wat wat wat: 9
+[  275.752941] Count 80
+[  275.752943] About to switch
+[  275.752944] About to switch to 14
+[  275.752945] should twerk: 1245770833
+[  275.752946] Switching threads from 9 to 14
+[  275.760938] wat wat wat: 0
+[  275.760940] wat wat wat: 9
+[  275.760942] Count 81
+[  275.760944] About to switch
+[  275.760945] About to switch to 11
+[  275.760945] should twerk: 1245770400
+[  275.760946] Switching threads from 9 to 11
+[  275.772934] wat wat wat: 0
+[  275.772936] wat wat wat: 9
+[  275.772938] Count 82
+[  275.772940] About to switch
+[  275.772941] About to switch to 14
+[  275.772942] should twerk: 1245770833
+[  275.772942] Switching threads from 9 to 14
+[  275.780931] wat wat wat: 0
+[  275.780933] wat wat wat: 9
+[  275.780935] Count 83
+[  275.780936] About to switch
+[  275.780937] About to switch to 11
+[  275.780938] should twerk: 1245770400
+[  275.780939] Switching threads from 9 to 11
+[  275.792931] wat wat wat: 0
+[  275.792933] wat wat wat: 9
+[  275.792935] Count 84
+[  275.792936] About to switch
+[  275.792937] About to switch to 14
+[  275.792938] should twerk: 1245770833
+[  275.792939] Switching threads from 9 to 14
+[  275.800926] wat wat wat: 0
+[  275.800928] wat wat wat: 9
+[  275.800930] Count 85
+[  275.800931] About to switch
+[  275.800932] About to switch to 11
+[  275.800933] should twerk: 1245770400
+[  275.800934] Switching threads from 9 to 11
+[  275.812935] wat wat wat: 0
+[  275.812937] wat wat wat: 9
+[  275.812939] Count 86
+[  275.812940] About to switch
+[  275.812941] About to switch to 14
+[  275.812942] should twerk: 1245770833
+[  275.812943] Switching threads from 9 to 14
+[  275.820839] wat wat wat: 0
+[  275.820841] wat wat wat: 9
+[  275.820843] Count 87
+[  275.820844] About to switch
+[  275.820846] About to switch to 11
+[  275.820847] should twerk: 1245770400
+[  275.820848] Switching threads from 9 to 11
+[  275.829892] wat wat wat: 0
+[  275.829894] wat wat wat: 9
+[  275.829896] Count 88
+[  275.829897] About to switch
+[  275.829898] About to switch to 14
+[  275.829899] should twerk: 1245770833
+[  275.829900] Switching threads from 9 to 14
+[  275.840947] wat wat wat: 0
+[  275.840949] wat wat wat: 9
+[  275.840951] Count 89
+[  275.840952] About to switch
+[  275.840953] About to switch to 11
+[  275.840954] should twerk: 1245770400
+[  275.840955] Switching threads from 9 to 11
+[  275.852937] wat wat wat: 0
+[  275.852939] wat wat wat: 9
+[  275.852941] Count 90
+[  275.852942] About to switch
+[  275.852943] About to switch to 14
+[  275.852944] should twerk: 1245770833
+[  275.852945] Switching threads from 9 to 14
+[  275.872932] wat wat wat: 0
+[  275.872935] wat wat wat: 9
+[  275.872937] Count 91
+[  275.872939] About to switch
+[  275.872941] About to switch to 11
+[  275.872942] should twerk: 1245770400
+[  275.872943] Switching threads from 9 to 11
+[  275.880970] wat wat wat: 0
+[  275.880971] wat wat wat: 9
+[  275.880973] Count 92
+[  275.880974] About to switch
+[  275.880975] About to switch to 14
+[  275.880976] should twerk: 1245770833
+[  275.880977] Switching threads from 9 to 14
+[  275.892919] wat wat wat: 0
+[  275.892921] wat wat wat: 9
+[  275.892923] Count 93
+[  275.892925] About to switch
+[  275.892926] About to switch to 11
+[  275.892927] should twerk: 1245770400
+[  275.892928] Switching threads from 9 to 11
+[  275.899777] wat wat wat: 0
+[  275.899779] wat wat wat: 9
+[  275.899781] Count 94
+[  275.899782] About to switch
+[  275.899783] About to switch to 14
+[  275.899784] should twerk: 1245770833
+[  275.899785] Switching threads from 9 to 14
+[  275.912919] wat wat wat: 0
+[  275.912921] wat wat wat: 9
+[  275.912922] Count 95
+[  275.912924] About to switch
+[  275.912925] About to switch to 11
+[  275.912926] should twerk: 1245770400
+[  275.912927] Switching threads from 9 to 11
+[  275.920911] wat wat wat: 0
+[  275.920913] wat wat wat: 9
+[  275.920914] Count 96
+[  275.920916] About to switch
+[  275.920916] About to switch to 14
+[  275.920917] should twerk: 1245770833
+[  275.920918] Switching threads from 9 to 14
+[  275.930485] wat wat wat: 0
+[  275.930487] wat wat wat: 9
+[  275.930489] Count 97
+[  275.930491] About to switch
+[  275.930492] About to switch to 11
+[  275.930493] should twerk: 1245770400
+[  275.930494] Switching threads from 9 to 11
+[  275.940929] wat wat wat: 0
+[  275.940931] wat wat wat: 9
+[  275.940933] Count 98
+[  275.940935] About to switch
+[  275.940936] About to switch to 14
+[  275.940937] should twerk: 1245770833
+[  275.940938] Switching threads from 9 to 14
+[  275.952913] wat wat wat: 0
+[  275.952915] wat wat wat: 9
+[  275.952917] Count 99
+[  275.952918] About to switch
+[  275.952920] About to switch to 11
+[  275.952921] should twerk: 1245770400
+[  275.952921] Switching threads from 9 to 11
+[  275.960912] wat wat wat: 0
+[  275.960914] wat wat wat: 9
+[  275.960916] Count 100
+[  275.960917] About to switch
+[  275.960918] About to switch to 14
+[  275.960919] should twerk: 1245770833
+[  275.960920] Switching threads from 9 to 14
+[  275.972917] wat wat wat: 0
+[  275.972919] wat wat wat: 9
+[  275.972921] Count 101
+[  275.972923] About to switch
+[  275.972924] About to switch to 11
+[  275.972925] should twerk: 1245770400
+[  275.972926] Switching threads from 9 to 11
+[  275.980909] wat wat wat: 0
+[  275.980911] wat wat wat: 9
+[  275.980913] Count 102
+[  275.980914] About to switch
+[  275.980915] About to switch to 14
+[  275.980916] should twerk: 1245770833
+[  275.980917] Switching threads from 9 to 14
+[  275.992907] wat wat wat: 0
+[  275.992909] wat wat wat: 9
+[  275.992911] Count 103
+[  275.992912] About to switch
+[  275.992913] About to switch to 11
+[  275.992914] should twerk: 1245770400
+[  275.992915] Switching threads from 9 to 11
+[  276.000903] wat wat wat: 0
+[  276.000906] wat wat wat: 9
+[  276.000907] Count 104
+[  276.000909] About to switch
+[  276.000910] About to switch to 14
+[  276.000911] should twerk: 1245770833
+[  276.000912] Switching threads from 9 to 14
+[  276.012907] wat wat wat: 0
+[  276.012910] wat wat wat: 9
+[  276.012911] Count 105
+[  276.012913] About to switch
+[  276.012914] About to switch to 11
+[  276.012915] should twerk: 1245770400
+[  276.012916] Switching threads from 9 to 11
+[  276.020906] wat wat wat: 0
+[  276.020908] wat wat wat: 9
+[  276.020910] Count 106
+[  276.020911] About to switch
+[  276.020912] About to switch to 14
+[  276.020913] should twerk: 1245770833
+[  276.020914] Switching threads from 9 to 14
+[  276.032905] wat wat wat: 0
+[  276.032907] wat wat wat: 9
+[  276.032909] Count 107
+[  276.032911] About to switch
+[  276.032912] About to switch to 11
+[  276.032913] should twerk: 1245770400
+[  276.032913] Switching threads from 9 to 11
+[  276.040998] wat wat wat: 0
+[  276.041001] wat wat wat: 9
+[  276.041002] Count 108
+[  276.041004] About to switch
+[  276.041005] About to switch to 14
+[  276.041006] should twerk: 1245770833
+[  276.041007] Switching threads from 9 to 14
+[  276.052904] wat wat wat: 0
+[  276.052906] wat wat wat: 9
+[  276.052908] Count 109
+[  276.052910] About to switch
+[  276.052911] About to switch to 11
+[  276.052912] should twerk: 1245770400
+[  276.052913] Switching threads from 9 to 11
+[  276.060895] wat wat wat: 0
+[  276.060897] wat wat wat: 9
+[  276.060899] Count 110
+[  276.060900] About to switch
+[  276.060901] About to switch to 14
+[  276.060902] should twerk: 1245770833
+[  276.060903] Switching threads from 9 to 14
+[  276.072906] wat wat wat: 0
+[  276.072908] wat wat wat: 9
+[  276.072910] Count 111
+[  276.072912] About to switch
+[  276.072912] About to switch to 11
+[  276.072913] should twerk: 1245770400
+[  276.072914] Switching threads from 9 to 11
+[  276.080904] wat wat wat: 0
+[  276.080906] wat wat wat: 9
+[  276.080907] Count 112
+[  276.080909] About to switch
+[  276.080910] About to switch to 14
+[  276.080911] should twerk: 1245770833
+[  276.080912] Switching threads from 9 to 14
+[  276.092906] wat wat wat: 0
+[  276.092909] wat wat wat: 9
+[  276.092910] Count 113
+[  276.092912] About to switch
+[  276.092913] About to switch to 11
+[  276.092914] should twerk: 1245770400
+[  276.092915] Switching threads from 9 to 11
+[  276.100892] wat wat wat: 0
+[  276.100894] wat wat wat: 9
+[  276.100896] Count 114
+[  276.100897] About to switch
+[  276.100898] About to switch to 14
+[  276.100899] should twerk: 1245770833
+[  276.100900] Switching threads from 9 to 14
+[  276.112892] wat wat wat: 0
+[  276.112894] wat wat wat: 9
+[  276.112896] Count 115
+[  276.112897] About to switch
+[  276.112898] About to switch to 11
+[  276.112899] should twerk: 1245770400
+[  276.112900] Switching threads from 9 to 11
+[  276.120888] wat wat wat: 0
+[  276.120890] wat wat wat: 9
+[  276.120891] Count 116
+[  276.120893] About to switch
+[  276.120893] About to switch to 14
+[  276.120894] should twerk: 1245770833
+[  276.120895] Switching threads from 9 to 14
+[  276.130367] wat wat wat: 0
+[  276.130369] wat wat wat: 9
+[  276.130370] Count 117
+[  276.130379] About to switch
+[  276.130380] About to switch to 11
+[  276.130381] should twerk: 1245770400
+[  276.130382] Switching threads from 9 to 11
+[  276.140890] wat wat wat: 0
+[  276.140892] wat wat wat: 9
+[  276.140893] Count 118
+[  276.140895] About to switch
+[  276.140896] About to switch to 14
+[  276.140896] should twerk: 1245770833
+[  276.140897] Switching threads from 9 to 14
+[  276.152890] wat wat wat: 0
+[  276.152892] wat wat wat: 9
+[  276.152894] Count 119
+[  276.152895] About to switch
+[  276.152896] About to switch to 11
+[  276.152897] should twerk: 1245770400
+[  276.152898] Switching threads from 9 to 11
+[  276.160885] wat wat wat: 0
+[  276.160887] wat wat wat: 9
+[  276.160888] Count 120
+[  276.160890] About to switch
+[  276.160891] About to switch to 14
+[  276.160892] should twerk: 1245770833
+[  276.160893] Switching threads from 9 to 14
+[  276.172887] wat wat wat: 0
+[  276.172889] wat wat wat: 9
+[  276.172890] Count 121
+[  276.172892] About to switch
+[  276.172893] About to switch to 11
+[  276.172894] should twerk: 1245770400
+[  276.172895] Switching threads from 9 to 11
+[  276.180902] wat wat wat: 0
+[  276.180905] wat wat wat: 9
+[  276.180907] Count 122
+[  276.180909] About to switch
+[  276.180910] About to switch to 14
+[  276.180911] should twerk: 1245770833
+[  276.180912] Switching threads from 9 to 14
+[  276.192906] wat wat wat: 0
+[  276.192910] wat wat wat: 9
+[  276.192912] Count 123
+[  276.192914] About to switch
+[  276.192916] About to switch to 11
+[  276.192917] should twerk: 1245770400
+[  276.192918] Switching threads from 9 to 11
+[  276.200892] wat wat wat: 0
+[  276.200894] wat wat wat: 9
+[  276.200896] Count 124
+[  276.200897] About to switch
+[  276.200898] About to switch to 14
+[  276.200899] should twerk: 1245770833
+[  276.200900] Switching threads from 9 to 14
+[  276.212900] wat wat wat: 0
+[  276.212903] wat wat wat: 9
+[  276.212905] Count 125
+[  276.212907] About to switch
+[  276.212908] About to switch to 11
+[  276.212909] should twerk: 1245770400
+[  276.212910] Switching threads from 9 to 11
+[  276.220881] wat wat wat: 0
+[  276.220883] wat wat wat: 9
+[  276.220884] Count 126
+[  276.220886] About to switch
+[  276.220887] About to switch to 14
+[  276.220887] should twerk: 1245770833
+[  276.220888] Switching threads from 9 to 14
+[  276.231685] wat wat wat: 0
+[  276.231687] wat wat wat: 9
+[  276.231689] Count 127
+[  276.231691] About to switch
+[  276.231692] About to switch to 11
+[  276.231693] should twerk: 1245770400
+[  276.231694] Switching threads from 9 to 11
+[  276.240878] wat wat wat: 0
+[  276.240880] wat wat wat: 9
+[  276.240882] Count 128
+[  276.240883] About to switch
+[  276.240884] About to switch to 14
+[  276.240885] should twerk: 1245770833
+[  276.240886] Switching threads from 9 to 14
+[  276.252881] wat wat wat: 0
+[  276.252884] wat wat wat: 9
+[  276.252885] Count 129
+[  276.252887] About to switch
+[  276.252888] About to switch to 11
+[  276.252889] should twerk: 1245770400
+[  276.252890] Switching threads from 9 to 11
+[  276.260874] wat wat wat: 0
+[  276.260876] wat wat wat: 9
+[  276.260877] Count 130
+[  276.260879] About to switch
+[  276.260879] About to switch to 14
+[  276.260880] should twerk: 1245770833
+[  276.260881] Switching threads from 9 to 14
+[  276.272886] wat wat wat: 0
+[  276.272888] wat wat wat: 9
+[  276.272890] Count 131
+[  276.272892] About to switch
+[  276.272893] About to switch to 11
+[  276.272894] should twerk: 1245770400
+[  276.272895] Switching threads from 9 to 11
+[  276.280870] wat wat wat: 0
+[  276.280872] wat wat wat: 9
+[  276.280874] Count 132
+[  276.280876] About to switch
+[  276.280876] About to switch to 14
+[  276.280877] should twerk: 1245770833
+[  276.280878] Switching threads from 9 to 14
+[  276.292871] wat wat wat: 0
+[  276.292874] wat wat wat: 9
+[  276.292875] Count 133
+[  276.292877] About to switch
+[  276.292877] About to switch to 11
+[  276.292878] should twerk: 1245770400
+[  276.292879] Switching threads from 9 to 11
+[  276.300882] wat wat wat: 0
+[  276.300884] wat wat wat: 9
+[  276.300886] Count 134
+[  276.300888] About to switch
+[  276.300889] About to switch to 14
+[  276.300890] should twerk: 1245770833
+[  276.300891] Switching threads from 9 to 14
+[  276.312869] wat wat wat: 0
+[  276.312871] wat wat wat: 9
+[  276.312872] Count 135
+[  276.312874] About to switch
+[  276.312875] About to switch to 11
+[  276.312876] should twerk: 1245770400
+[  276.312877] Switching threads from 9 to 11
+[  276.320869] wat wat wat: 0
+[  276.320871] wat wat wat: 9
+[  276.320873] Count 136
+[  276.320874] About to switch
+[  276.320875] About to switch to 14
+[  276.320876] should twerk: 1245770833
+[  276.320877] Switching threads from 9 to 14
+[  276.332871] wat wat wat: 0
+[  276.332873] wat wat wat: 9
+[  276.332875] Count 137
+[  276.332877] About to switch
+[  276.332878] About to switch to 11
+[  276.332879] should twerk: 1245770400
+[  276.332879] Switching threads from 9 to 11
+[  276.340864] wat wat wat: 0
+[  276.340866] wat wat wat: 9
+[  276.340867] Count 138
+[  276.340869] About to switch
+[  276.340870] About to switch to 14
+[  276.340871] should twerk: 1245770833
+[  276.340871] Switching threads from 9 to 14
+[  276.352080] wat wat wat: 0
+[  276.352082] wat wat wat: 9
+[  276.352084] Count 139
+[  276.352085] About to switch
+[  276.352086] About to switch to 11
+[  276.352087] should twerk: 1245770400
+[  276.352088] Switching threads from 9 to 11
+[  276.360870] wat wat wat: 0
+[  276.360872] wat wat wat: 9
+[  276.360874] Count 140
+[  276.360876] About to switch
+[  276.360877] About to switch to 14
+[  276.360877] should twerk: 1245770833
+[  276.360878] Switching threads from 9 to 14
+[  276.372877] wat wat wat: 0
+[  276.372880] wat wat wat: 9
+[  276.372882] Count 141
+[  276.372884] About to switch
+[  276.372885] About to switch to 11
+[  276.372886] should twerk: 1245770400
+[  276.372887] Switching threads from 9 to 11
+[  276.380913] wat wat wat: 0
+[  276.380915] wat wat wat: 9
+[  276.380916] Count 142
+[  276.380917] About to switch
+[  276.380918] About to switch to 14
+[  276.380919] should twerk: 1245770833
+[  276.380920] Switching threads from 9 to 14
+[  276.392879] wat wat wat: 0
+[  276.392882] wat wat wat: 9
+[  276.392884] Count 143
+[  276.392887] About to switch
+[  276.392888] About to switch to 11
+[  276.392889] should twerk: 1245770400
+[  276.392890] Switching threads from 9 to 11
+[  276.400864] wat wat wat: 0
+[  276.400866] wat wat wat: 9
+[  276.400868] Count 144
+[  276.400870] About to switch
+[  276.400871] About to switch to 14
+[  276.400872] should twerk: 1245770833
+[  276.400873] Switching threads from 9 to 14
+[  276.412868] wat wat wat: 0
+[  276.412870] wat wat wat: 9
+[  276.412872] Count 145
+[  276.412874] About to switch
+[  276.412875] About to switch to 11
+[  276.412876] should twerk: 1245770400
+[  276.412877] Switching threads from 9 to 11
+[  276.420857] wat wat wat: 0
+[  276.420859] wat wat wat: 9
+[  276.420861] Count 146
+[  276.420863] About to switch
+[  276.420864] About to switch to 14
+[  276.420865] should twerk: 1245770833
+[  276.420866] Switching threads from 9 to 14
+[  276.432866] wat wat wat: 0
+[  276.432869] wat wat wat: 9
+[  276.432872] Count 147
+[  276.432873] About to switch
+[  276.432875] About to switch to 11
+[  276.432875] should twerk: 1245770400
+[  276.432876] Switching threads from 9 to 11
+[  276.440955] wat wat wat: 0
+[  276.440957] wat wat wat: 9
+[  276.440958] Count 148
+[  276.440960] About to switch
+[  276.440961] About to switch to 14
+[  276.440961] should twerk: 1245770833
+[  276.440962] Switching threads from 9 to 14
+[  276.452652] wat wat wat: 0
+[  276.452654] wat wat wat: 9
+[  276.452656] Count 149
+[  276.452657] About to switch
+[  276.452658] About to switch to 11
+[  276.452659] should twerk: 1245770400
+[  276.452660] Switching threads from 9 to 11
+[  276.460852] wat wat wat: 0
+[  276.460854] wat wat wat: 9
+[  276.460856] Count 150
+[  276.460858] About to switch
+[  276.460859] About to switch to 14
+[  276.460859] should twerk: 1245770833
+[  276.460860] Switching threads from 9 to 14
+[  276.472859] wat wat wat: 0
+[  276.472861] wat wat wat: 9
+[  276.472863] Count 151
+[  276.472865] About to switch
+[  276.472866] About to switch to 11
+[  276.472867] should twerk: 1245770400
+[  276.472868] Switching threads from 9 to 11
+[  276.480849] wat wat wat: 0
+[  276.480851] wat wat wat: 9
+[  276.480853] Count 152
+[  276.480854] About to switch
+[  276.480855] About to switch to 14
+[  276.480856] should twerk: 1245770833
+[  276.480857] Switching threads from 9 to 14
+[  276.492853] wat wat wat: 0
+[  276.492855] wat wat wat: 9
+[  276.492857] Count 153
+[  276.492859] About to switch
+[  276.492860] About to switch to 11
+[  276.492861] should twerk: 1245770400
+[  276.492862] Switching threads from 9 to 11
+[  276.500874] wat wat wat: 0
+[  276.500877] wat wat wat: 9
+[  276.500886] Count 154
+[  276.500888] About to switch
+[  276.500889] About to switch to 14
+[  276.500890] should twerk: 1245770833
+[  276.500891] Switching threads from 9 to 14
+[  276.512849] wat wat wat: 0
+[  276.512851] wat wat wat: 9
+[  276.512853] Count 155
+[  276.512855] About to switch
+[  276.512856] About to switch to 11
+[  276.512857] should twerk: 1245770400
+[  276.512858] Switching threads from 9 to 11
+[  276.520844] wat wat wat: 0
+[  276.520846] wat wat wat: 9
+[  276.520847] Count 156
+[  276.520849] About to switch
+[  276.520850] About to switch to 14
+[  276.520851] should twerk: 1245770833
+[  276.520852] Switching threads from 9 to 14
+[  276.532856] wat wat wat: 0
+[  276.532859] wat wat wat: 9
+[  276.532861] Count 157
+[  276.532863] About to switch
+[  276.532864] About to switch to 11
+[  276.532865] should twerk: 1245770400
+[  276.532866] Switching threads from 9 to 11
+[  276.540844] wat wat wat: 0
+[  276.540846] wat wat wat: 9
+[  276.540847] Count 158
+[  276.540849] About to switch
+[  276.540850] About to switch to 14
+[  276.540851] should twerk: 1245770833
+[  276.540852] Switching threads from 9 to 14
+[  276.552846] wat wat wat: 0
+[  276.552848] wat wat wat: 9
+[  276.552850] Count 159
+[  276.552852] About to switch
+[  276.552853] About to switch to 11
+[  276.552854] should twerk: 1245770400
+[  276.552855] Switching threads from 9 to 11
+[  276.560895] wat wat wat: 0
+[  276.560898] wat wat wat: 9
+[  276.560900] Count 160
+[  276.560901] About to switch
+[  276.560903] About to switch to 14
+[  276.560903] should twerk: 1245770833
+[  276.560904] Switching threads from 9 to 14
+[  276.572917] wat wat wat: 0
+[  276.572920] wat wat wat: 9
+[  276.572922] Count 161
+[  276.572925] About to switch
+[  276.572926] About to switch to 11
+[  276.572927] should twerk: 1245770400
+[  276.572928] Switching threads from 9 to 11
+[  276.580839] wat wat wat: 0
+[  276.580841] wat wat wat: 9
+[  276.580843] Count 162
+[  276.580844] About to switch
+[  276.580845] About to switch to 14
+[  276.580846] should twerk: 1245770833
+[  276.580847] Switching threads from 9 to 14
+[  276.592838] wat wat wat: 0
+[  276.592840] wat wat wat: 9
+[  276.592842] Count 163
+[  276.592844] About to switch
+[  276.592845] About to switch to 11
+[  276.592846] should twerk: 1245770400
+[  276.592847] Switching threads from 9 to 11
+[  276.600887] wat wat wat: 0
+[  276.600889] wat wat wat: 9
+[  276.600891] Count 164
+[  276.600893] About to switch
+[  276.600894] About to switch to 14
+[  276.600895] should twerk: 1245770833
+[  276.600896] Switching threads from 9 to 14
+[  276.612845] wat wat wat: 0
+[  276.612847] wat wat wat: 9
+[  276.612849] Count 165
+[  276.612851] About to switch
+[  276.612852] About to switch to 11
+[  276.612853] should twerk: 1245770400
+[  276.612854] Switching threads from 9 to 11
+[  276.620844] wat wat wat: 0
+[  276.620846] wat wat wat: 9
+[  276.620848] Count 166
+[  276.620850] About to switch
+[  276.620851] About to switch to 14
+[  276.620852] should twerk: 1245770833
+[  276.620852] Switching threads from 9 to 14
+[  276.632948] wat wat wat: 0
+[  276.632950] wat wat wat: 9
+[  276.632952] Count 167
+[  276.632954] About to switch
+[  276.632955] About to switch to 11
+[  276.632956] should twerk: 1245770400
+[  276.632957] Switching threads from 9 to 11
+[  276.640841] wat wat wat: 0
+[  276.640844] wat wat wat: 9
+[  276.640845] Count 168
+[  276.640847] About to switch
+[  276.640848] About to switch to 14
+[  276.640849] should twerk: 1245770833
+[  276.640850] Switching threads from 9 to 14
+[  276.652474] wat wat wat: 0
+[  276.652477] wat wat wat: 9
+[  276.652478] Count 169
+[  276.652480] About to switch
+[  276.652481] About to switch to 11
+[  276.652482] should twerk: 1245770400
+[  276.652483] Switching threads from 9 to 11
+[  276.660879] wat wat wat: 0
+[  276.660881] wat wat wat: 9
+[  276.660883] Count 170
+[  276.660884] About to switch
+[  276.660886] About to switch to 14
+[  276.660887] should twerk: 1245770833
+[  276.660888] Switching threads from 9 to 14
+[  276.672829] wat wat wat: 0
+[  276.672831] wat wat wat: 9
+[  276.672833] Count 171
+[  276.672834] About to switch
+[  276.672835] About to switch to 11
+[  276.672836] should twerk: 1245770400
+[  276.672837] Switching threads from 9 to 11
+[  276.680844] wat wat wat: 0
+[  276.680848] wat wat wat: 9
+[  276.680850] Count 172
+[  276.680852] About to switch
+[  276.680853] About to switch to 14
+[  276.680854] should twerk: 1245770833
+[  276.680855] Switching threads from 9 to 14
+[  276.690800] wat wat wat: 0
+[  276.690803] wat wat wat: 9
+[  276.690804] Count 173
+[  276.690806] About to switch
+[  276.690808] About to switch to 11
+[  276.690808] should twerk: 1245770400
+[  276.690810] Switching threads from 9 to 11
+[  276.700825] wat wat wat: 0
+[  276.700827] wat wat wat: 9
+[  276.700829] Count 174
+[  276.700830] About to switch
+[  276.700831] About to switch to 14
+[  276.700832] should twerk: 1245770833
+[  276.700833] Switching threads from 9 to 14
+[  276.712821] wat wat wat: 0
+[  276.712823] wat wat wat: 9
+[  276.712824] Count 175
+[  276.712826] About to switch
+[  276.712827] About to switch to 11
+[  276.712827] should twerk: 1245770400
+[  276.712828] Switching threads from 9 to 11
+[  276.720819] wat wat wat: 0
+[  276.720821] wat wat wat: 9
+[  276.720823] Count 176
+[  276.720824] About to switch
+[  276.720825] About to switch to 14
+[  276.720826] should twerk: 1245770833
+[  276.720827] Switching threads from 9 to 14
+[  276.732822] wat wat wat: 0
+[  276.732824] wat wat wat: 9
+[  276.732826] Count 177
+[  276.732828] About to switch
+[  276.732829] About to switch to 11
+[  276.732830] should twerk: 1245770400
+[  276.732831] Switching threads from 9 to 11
+[  276.740825] wat wat wat: 0
+[  276.740828] wat wat wat: 9
+[  276.740829] Count 178
+[  276.740831] About to switch
+[  276.740832] About to switch to 14
+[  276.740833] should twerk: 1245770833
+[  276.740834] Switching threads from 9 to 14
+[  276.752871] wat wat wat: 0
+[  276.752873] wat wat wat: 9
+[  276.752875] Count 179
+[  276.752877] About to switch
+[  276.752878] About to switch to 11
+[  276.752879] should twerk: 1245770400
+[  276.752880] Switching threads from 9 to 11
+[  276.760826] wat wat wat: 0
+[  276.760828] wat wat wat: 9
+[  276.760830] Count 180
+[  276.760831] About to switch
+[  276.760832] About to switch to 14
+[  276.760833] should twerk: 1245770833
+[  276.760834] Switching threads from 9 to 14
+[  276.772828] wat wat wat: 0
+[  276.772831] wat wat wat: 9
+[  276.772833] Count 181
+[  276.772835] About to switch
+[  276.772836] About to switch to 11
+[  276.772837] should twerk: 1245770400
+[  276.772838] Switching threads from 9 to 11
+[  276.780889] wat wat wat: 0
+[  276.780891] wat wat wat: 9
+[  276.780893] Count 182
+[  276.780895] About to switch
+[  276.780896] About to switch to 14
+[  276.780897] should twerk: 1245770833
+[  276.780897] Switching threads from 9 to 14
+[  276.792862] wat wat wat: 0
+[  276.792864] wat wat wat: 9
+[  276.792866] Count 183
+[  276.792868] About to switch
+[  276.792869] About to switch to 11
+[  276.792870] should twerk: 1245770400
+[  276.792870] Switching threads from 9 to 11
+[  276.800815] wat wat wat: 0
+[  276.800817] wat wat wat: 9
+[  276.800827] Count 184
+[  276.800828] About to switch
+[  276.800829] About to switch to 14
+[  276.800830] should twerk: 1245770833
+[  276.800831] Switching threads from 9 to 14
+[  276.812820] wat wat wat: 0
+[  276.812822] wat wat wat: 9
+[  276.812824] Count 185
+[  276.812826] About to switch
+[  276.812827] About to switch to 11
+[  276.812828] should twerk: 1245770400
+[  276.812829] Switching threads from 9 to 11
+[  276.820863] wat wat wat: 0
+[  276.820865] wat wat wat: 9
+[  276.820867] Count 186
+[  276.820869] About to switch
+[  276.820870] About to switch to 14
+[  276.820871] should twerk: 1245770833
+[  276.820872] Switching threads from 9 to 14
+[  276.832899] wat wat wat: 0
+[  276.832902] wat wat wat: 9
+[  276.832903] Count 187
+[  276.832905] About to switch
+[  276.832906] About to switch to 11
+[  276.832907] should twerk: 1245770400
+[  276.832908] Switching threads from 9 to 11
+[  276.841203] wat wat wat: 0
+[  276.841207] wat wat wat: 9
+[  276.841209] Count 188
+[  276.841211] About to switch
+[  276.841212] About to switch to 14
+[  276.841213] should twerk: 1245770833
+[  276.841214] Switching threads from 9 to 14
+[  276.851764] wat wat wat: 0
+[  276.851767] wat wat wat: 9
+[  276.851769] Count 189
+[  276.851771] About to switch
+[  276.851772] About to switch to 11
+[  276.851773] should twerk: 1245770400
+[  276.851774] Switching threads from 9 to 11
+[  276.860813] wat wat wat: 0
+[  276.860815] wat wat wat: 9
+[  276.860817] Count 190
+[  276.860819] About to switch
+[  276.860820] About to switch to 14
+[  276.860821] should twerk: 1245770833
+[  276.860822] Switching threads from 9 to 14
+[  276.872810] wat wat wat: 0
+[  276.872812] wat wat wat: 9
+[  276.872814] Count 191
+[  276.872816] About to switch
+[  276.872817] About to switch to 11
+[  276.872818] should twerk: 1245770400
+[  276.872819] Switching threads from 9 to 11
+[  276.879939] wat wat wat: 0
+[  276.879942] wat wat wat: 9
+[  276.879943] Count 192
+[  276.879945] About to switch
+[  276.879946] About to switch to 14
+[  276.879947] should twerk: 1245770833
+[  276.879948] Switching threads from 9 to 14
+[  276.890487] wat wat wat: 0
+[  276.890490] wat wat wat: 9
+[  276.890492] Count 193
+[  276.890494] About to switch
+[  276.890495] About to switch to 11
+[  276.890496] should twerk: 1245770400
+[  276.890497] Switching threads from 9 to 11
+[  276.900803] wat wat wat: 0
+[  276.900805] wat wat wat: 9
+[  276.900807] Count 194
+[  276.900808] About to switch
+[  276.900809] About to switch to 14
+[  276.900810] should twerk: 1245770833
+[  276.900811] Switching threads from 9 to 14
+[  276.911548] wat wat wat: 0
+[  276.911550] wat wat wat: 9
+[  276.911552] Count 195
+[  276.911554] About to switch
+[  276.911555] About to switch to 11
+[  276.911556] should twerk: 1245770400
+[  276.911557] Switching threads from 9 to 11
+[  276.920807] wat wat wat: 0
+[  276.920809] wat wat wat: 9
+[  276.920811] Count 196
+[  276.920813] About to switch
+[  276.920822] About to switch to 14
+[  276.920823] should twerk: 1245770833
+[  276.920824] Switching threads from 9 to 14
+[  276.932745] wat wat wat: 0
+[  276.932748] wat wat wat: 9
+[  276.932749] Count 197
+[  276.932751] About to switch
+[  276.932752] About to switch to 11
+[  276.932753] should twerk: 1245770400
+[  276.932754] Switching threads from 9 to 11
+[  276.939719] wat wat wat: 0
+[  276.939721] wat wat wat: 9
+[  276.939723] Count 198
+[  276.939724] About to switch
+[  276.939725] About to switch to 14
+[  276.939726] should twerk: 1245770833
+[  276.939727] Switching threads from 9 to 14
+[  276.950261] wat wat wat: 0
+[  276.950263] wat wat wat: 9
+[  276.950264] Count 199
+[  276.950266] About to switch
+[  276.950267] About to switch to 11
+[  276.950268] should twerk: 1245770400
+[  276.950269] Switching threads from 9 to 11
+[  276.960850] wat wat wat: 0
+[  276.960852] wat wat wat: 9
+[  276.960854] Count 200
+[  276.960855] About to switch
+[  276.960857] About to switch to 14
+[  276.960858] should twerk: 1245770833
+[  276.960859] Switching threads from 9 to 14
+[  276.971363] wat wat wat: 0
+[  276.971365] wat wat wat: 9
+[  276.971366] Count 201
+[  276.971368] About to switch
+[  276.971369] About to switch to 11
+[  276.971370] should twerk: 1245770400
+[  276.971371] Switching threads from 9 to 11
+[  276.980795] wat wat wat: 0
+[  276.980797] wat wat wat: 9
+[  276.980798] Count 202
+[  276.980800] About to switch
+[  276.980801] About to switch to 14
+[  276.980801] should twerk: 1245770833
+[  276.980802] Switching threads from 9 to 14
+[  276.992491] wat wat wat: 0
+[  276.992493] wat wat wat: 9
+[  276.992495] Count 203
+[  276.992497] About to switch
+[  276.992498] About to switch to 11
+[  276.992499] should twerk: 1245770400
+[  276.992500] Switching threads from 9 to 11
+[  277.000839] wat wat wat: 0
+[  277.000842] wat wat wat: 9
+[  277.000844] Count 204
+[  277.000845] About to switch
+[  277.000846] About to switch to 14
+[  277.000847] should twerk: 1245770833
+[  277.000848] Switching threads from 9 to 14
+[  277.010075] wat wat wat: 0
+[  277.010077] wat wat wat: 9
+[  277.010079] Count 205
+[  277.010080] About to switch
+[  277.010081] About to switch to 11
+[  277.010082] should twerk: 1245770400
+[  277.010083] Switching threads from 9 to 11
+[  277.020618] wat wat wat: 0
+[  277.020621] wat wat wat: 9
+[  277.020622] Count 206
+[  277.020624] About to switch
+[  277.020625] About to switch to 14
+[  277.020626] should twerk: 1245770833
+[  277.020627] Switching threads from 9 to 14
+[  277.031174] wat wat wat: 0
+[  277.031177] wat wat wat: 9
+[  277.031178] Count 207
+[  277.031180] About to switch
+[  277.031181] About to switch to 11
+[  277.031182] should twerk: 1245770400
+[  277.031183] Switching threads from 9 to 11
+[  277.040795] wat wat wat: 0
+[  277.040797] wat wat wat: 9
+[  277.040799] Count 208
+[  277.040801] About to switch
+[  277.040802] About to switch to 14
+[  277.040802] should twerk: 1245770833
+[  277.040803] Switching threads from 9 to 14
+[  277.052261] wat wat wat: 0
+[  277.052264] wat wat wat: 9
+[  277.052266] Count 209
+[  277.052268] About to switch
+[  277.052270] About to switch to 11
+[  277.052270] should twerk: 1245770400
+[  277.052272] Switching threads from 9 to 11
+[  277.060839] wat wat wat: 0
+[  277.060841] wat wat wat: 9
+[  277.060843] Count 210
+[  277.060845] About to switch
+[  277.060846] About to switch to 14
+[  277.060847] should twerk: 1245770833
+[  277.060848] Switching threads from 9 to 14
+[  277.069824] wat wat wat: 0
+[  277.069826] wat wat wat: 9
+[  277.069828] Count 211
+[  277.069830] About to switch
+[  277.069831] About to switch to 11
+[  277.069831] should twerk: 1245770400
+[  277.069832] Switching threads from 9 to 11
+[  277.080395] wat wat wat: 0
+[  277.080397] wat wat wat: 9
+[  277.080399] Count 212
+[  277.080400] About to switch
+[  277.080401] About to switch to 14
+[  277.080402] should twerk: 1245770833
+[  277.080403] Switching threads from 9 to 14
+[  277.090986] wat wat wat: 0
+[  277.090988] wat wat wat: 9
+[  277.090990] Count 213
+[  277.090992] About to switch
+[  277.090993] About to switch to 11
+[  277.090994] should twerk: 1245770400
+[  277.090996] Switching threads from 9 to 11
+[  277.100784] wat wat wat: 0
+[  277.100786] wat wat wat: 9
+[  277.100788] Count 214
+[  277.100790] About to switch
+[  277.100791] About to switch to 14
+[  277.100792] should twerk: 1245770833
+[  277.100793] Switching threads from 9 to 14
+[  277.112002] wat wat wat: 0
+[  277.112005] wat wat wat: 9
+[  277.112006] Count 215
+[  277.112008] About to switch
+[  277.112009] About to switch to 11
+[  277.112010] should twerk: 1245770400
+[  277.112011] Switching threads from 9 to 11
+[  277.120824] wat wat wat: 0
+[  277.120827] wat wat wat: 9
+[  277.120829] Count 216
+[  277.120830] About to switch
+[  277.120831] About to switch to 14
+[  277.120832] should twerk: 1245770833
+[  277.120833] Switching threads from 9 to 14
+[  277.132911] wat wat wat: 0
+[  277.132914] wat wat wat: 9
+[  277.132916] Count 217
+[  277.132918] About to switch
+[  277.132919] About to switch to 11
+[  277.132920] should twerk: 1245770400
+[  277.132921] Switching threads from 9 to 11
+[  277.140100] wat wat wat: 0
+[  277.140102] wat wat wat: 9
+[  277.140112] Count 218
+[  277.140113] About to switch
+[  277.140114] About to switch to 14
+[  277.140115] should twerk: 1245770833
+[  277.140116] Switching threads from 9 to 14
+[  277.150663] wat wat wat: 0
+[  277.150666] wat wat wat: 9
+[  277.150667] Count 219
+[  277.150669] About to switch
+[  277.150670] About to switch to 11
+[  277.150671] should twerk: 1245770400
+[  277.150672] Switching threads from 9 to 11
+[  277.160831] wat wat wat: 0
+[  277.160834] wat wat wat: 9
+[  277.160835] Count 220
+[  277.160837] About to switch
+[  277.160838] About to switch to 14
+[  277.160839] should twerk: 1245770833
+[  277.160840] Switching threads from 9 to 14
+[  277.171477] wat wat wat: 0
+[  277.171480] wat wat wat: 9
+[  277.171481] Count 221
+[  277.171483] About to switch
+[  277.171484] About to switch to 11
+[  277.171485] should twerk: 1245770400
+[  277.171486] Switching threads from 9 to 11
+[  277.180773] wat wat wat: 0
+[  277.180775] wat wat wat: 9
+[  277.180784] Count 222
+[  277.180786] About to switch
+[  277.180787] About to switch to 14
+[  277.180788] should twerk: 1245770833
+[  277.180788] Switching threads from 9 to 14
+[  277.191071] wat wat wat: 0
+[  277.191074] wat wat wat: 9
+[  277.191076] Count 223
+[  277.191078] About to switch
+[  277.191079] About to switch to 11
+[  277.191080] should twerk: 1245770400
+[  277.191081] Switching threads from 9 to 11
+[  277.199882] wat wat wat: 0
+[  277.199884] wat wat wat: 9
+[  277.199886] Count 224
+[  277.199887] About to switch
+[  277.199888] About to switch to 14
+[  277.199889] should twerk: 1245770833
+[  277.199890] Switching threads from 9 to 14
+[  277.210435] wat wat wat: 0
+[  277.210439] wat wat wat: 9
+[  277.210441] Count 225
+[  277.210443] About to switch
+[  277.210445] About to switch to 11
+[  277.210446] should twerk: 1245770400
+[  277.210447] Switching threads from 9 to 11
+[  277.220781] wat wat wat: 0
+[  277.220783] wat wat wat: 9
+[  277.220785] Count 226
+[  277.220787] About to switch
+[  277.220788] About to switch to 14
+[  277.220789] should twerk: 1245770833
+[  277.220790] Switching threads from 9 to 14
+[  277.231538] wat wat wat: 0
+[  277.231540] wat wat wat: 9
+[  277.231542] Count 227
+[  277.231543] About to switch
+[  277.231544] About to switch to 11
+[  277.231545] should twerk: 1245770400
+[  277.231546] Switching threads from 9 to 11
+[  277.240774] wat wat wat: 0
+[  277.240777] wat wat wat: 9
+[  277.240778] Count 228
+[  277.240780] About to switch
+[  277.240781] About to switch to 14
+[  277.240782] should twerk: 1245770833
+[  277.240783] Switching threads from 9 to 14
+[  277.252670] wat wat wat: 0
+[  277.252672] wat wat wat: 9
+[  277.252674] Count 229
+[  277.252676] About to switch
+[  277.252677] About to switch to 11
+[  277.252678] should twerk: 1245770400
+[  277.252679] Switching threads from 9 to 11
+[  277.259698] wat wat wat: 0
+[  277.259700] wat wat wat: 9
+[  277.259701] Count 230
+[  277.259703] About to switch
+[  277.259704] About to switch to 14
+[  277.259705] should twerk: 1245770833
+[  277.259705] Switching threads from 9 to 14
+[  277.270256] wat wat wat: 0
+[  277.270259] wat wat wat: 9
+[  277.270261] Count 231
+[  277.270262] About to switch
+[  277.270263] About to switch to 11
+[  277.270264] should twerk: 1245770400
+[  277.270265] Switching threads from 9 to 11
+[  277.280772] wat wat wat: 0
+[  277.280775] wat wat wat: 9
+[  277.280776] Count 232
+[  277.280778] About to switch
+[  277.280779] About to switch to 14
+[  277.280780] should twerk: 1245770833
+[  277.280781] Switching threads from 9 to 14
+[  277.291388] wat wat wat: 0
+[  277.291390] wat wat wat: 9
+[  277.291392] Count 233
+[  277.291394] About to switch
+[  277.291395] About to switch to 11
+[  277.291396] should twerk: 1245770400
+[  277.291397] Switching threads from 9 to 11
+[  277.300761] wat wat wat: 0
+[  277.300763] wat wat wat: 9
+[  277.300765] Count 234
+[  277.300766] About to switch
+[  277.300767] About to switch to 14
+[  277.300768] should twerk: 1245770833
+[  277.300769] Switching threads from 9 to 14
+[  277.312406] wat wat wat: 0
+[  277.312408] wat wat wat: 9
+[  277.312410] Count 235
+[  277.312411] About to switch
+[  277.312412] About to switch to 11
+[  277.312413] should twerk: 1245770400
+[  277.312414] Switching threads from 9 to 11
+[  277.320801] wat wat wat: 0
+[  277.320803] wat wat wat: 9
+[  277.320805] Count 236
+[  277.320806] About to switch
+[  277.320807] About to switch to 14
+[  277.320808] should twerk: 1245770833
+[  277.320809] Switching threads from 9 to 14
+[  277.329974] wat wat wat: 0
+[  277.329977] wat wat wat: 9
+[  277.329978] Count 237
+[  277.329980] About to switch
+[  277.329981] About to switch to 11
+[  277.329982] should twerk: 1245770400
+[  277.329983] Switching threads from 9 to 11
+[  277.340508] wat wat wat: 0
+[  277.340510] wat wat wat: 9
+[  277.340512] Count 238
+[  277.340514] About to switch
+[  277.340515] About to switch to 14
+[  277.340516] should twerk: 1245770833
+[  277.340517] Switching threads from 9 to 14
+[  277.351042] wat wat wat: 0
+[  277.351044] wat wat wat: 9
+[  277.351046] Count 239
+[  277.351048] About to switch
+[  277.351049] About to switch to 11
+[  277.351050] should twerk: 1245770400
+[  277.351051] Switching threads from 9 to 11
+[  277.360757] wat wat wat: 0
+[  277.360759] wat wat wat: 9
+[  277.360761] Count 240
+[  277.360762] About to switch
+[  277.360763] About to switch to 14
+[  277.360764] should twerk: 1245770833
+[  277.360765] Switching threads from 9 to 14
+[  277.372142] wat wat wat: 0
+[  277.372144] wat wat wat: 9
+[  277.372146] Count 241
+[  277.372147] About to switch
+[  277.372148] About to switch to 11
+[  277.372149] should twerk: 1245770400
+[  277.372150] Switching threads from 9 to 11
+[  277.380806] wat wat wat: 0
+[  277.380808] wat wat wat: 9
+[  277.380810] Count 242
+[  277.380811] About to switch
+[  277.380812] About to switch to 14
+[  277.380813] should twerk: 1245770833
+[  277.380814] Switching threads from 9 to 14
+[  277.389749] wat wat wat: 0
+[  277.389751] wat wat wat: 9
+[  277.389752] Count 243
+[  277.389754] About to switch
+[  277.389755] About to switch to 11
+[  277.389755] should twerk: 1245770400
+[  277.389756] Switching threads from 9 to 11
+[  277.400288] wat wat wat: 0
+[  277.400290] wat wat wat: 9
+[  277.400292] Count 244
+[  277.400293] About to switch
+[  277.400294] About to switch to 14
+[  277.400295] should twerk: 1245770833
+[  277.400296] Switching threads from 9 to 14
+[  277.410828] wat wat wat: 0
+[  277.410830] wat wat wat: 9
+[  277.410832] Count 245
+[  277.410833] About to switch
+[  277.410834] About to switch to 11
+[  277.410835] should twerk: 1245770400
+[  277.410836] Switching threads from 9 to 11
+[  277.420743] wat wat wat: 0
+[  277.420745] wat wat wat: 9
+[  277.420747] Count 246
+[  277.420748] About to switch
+[  277.420749] About to switch to 14
+[  277.420750] should twerk: 1245770833
+[  277.420751] Switching threads from 9 to 14
+[  277.431912] wat wat wat: 0
+[  277.431914] wat wat wat: 9
+[  277.431916] Count 247
+[  277.431917] About to switch
+[  277.431918] About to switch to 11
+[  277.431919] should twerk: 1245770400
+[  277.431920] Switching threads from 9 to 11
+[  277.440739] wat wat wat: 0
+[  277.440741] wat wat wat: 9
+[  277.440743] Count 248
+[  277.440744] About to switch
+[  277.440745] About to switch to 14
+[  277.440746] should twerk: 1245770833
+[  277.440747] Switching threads from 9 to 14
+[  277.452745] wat wat wat: 0
+[  277.452747] wat wat wat: 9
+[  277.452748] Count 249
+[  277.452750] About to switch
+[  277.452751] About to switch to 11
+[  277.452752] should twerk: 1245770400
+[  277.452753] Switching threads from 9 to 11
+[  277.460022] wat wat wat: 0
+[  277.460024] wat wat wat: 9
+[  277.460026] Count 250
+[  277.460027] About to switch
+[  277.460028] About to switch to 14
+[  277.460029] should twerk: 1245770833
+[  277.460030] Switching threads from 9 to 14
+[  277.470565] wat wat wat: 0
+[  277.470567] wat wat wat: 9
+[  277.470569] Count 251
+[  277.470570] About to switch
+[  277.470571] About to switch to 11
+[  277.470572] should twerk: 1245770400
+[  277.470573] Switching threads from 9 to 11
+[  277.480733] wat wat wat: 0
+[  277.480735] wat wat wat: 9
+[  277.480736] Count 252
+[  277.480738] About to switch
+[  277.480738] About to switch to 14
+[  277.480739] should twerk: 1245770833
+[  277.480740] Switching threads from 9 to 14
+[  277.491652] wat wat wat: 0
+[  277.491654] wat wat wat: 9
+[  277.491656] Count 253
+[  277.491657] About to switch
+[  277.491658] About to switch to 11
+[  277.491659] should twerk: 1245770400
+[  277.491660] Switching threads from 9 to 11
+[  277.500732] wat wat wat: 0
+[  277.500734] wat wat wat: 9
+[  277.500736] Count 254
+[  277.500737] About to switch
+[  277.500738] About to switch to 14
+[  277.500739] should twerk: 1245770833
+[  277.500740] Switching threads from 9 to 14
+[  277.512818] wat wat wat: 0
+[  277.512823] wat wat wat: 9
+[  277.512825] Count 255
+[  277.512828] About to switch
+[  277.512830] About to switch to 11
+[  277.512831] should twerk: 1245770400
+[  277.512833] Switching threads from 9 to 11
+[  277.519791] wat wat wat: 0
+[  277.519795] wat wat wat: 9
+[  277.519797] Count 256
+[  277.519800] About to switch
+[  277.519802] About to switch to 14
+[  277.519802] should twerk: 1245770833
+[  277.519804] Switching threads from 9 to 14
+[  277.530354] wat wat wat: 0
+[  277.530359] wat wat wat: 9
+[  277.530361] Count 257
+[  277.530364] About to switch
+[  277.530366] About to switch to 11
+[  277.530367] should twerk: 1245770400
+[  277.530368] Switching threads from 9 to 11
+[  277.540756] wat wat wat: 0
+[  277.540760] wat wat wat: 9
+[  277.540762] Count 258
+[  277.540764] About to switch
+[  277.540766] About to switch to 14
+[  277.540767] should twerk: 1245770833
+[  277.540768] Switching threads from 9 to 14
+[  277.551410] wat wat wat: 0
+[  277.551413] wat wat wat: 9
+[  277.551415] Count 259
+[  277.551418] About to switch
+[  277.551419] About to switch to 11
+[  277.551420] should twerk: 1245770400
+[  277.551422] Switching threads from 9 to 11
+[  277.560815] wat wat wat: 0
+[  277.560822] wat wat wat: 9
+[  277.560824] Count 260
+[  277.560828] About to switch
+[  277.560830] About to switch to 14
+[  277.560831] should twerk: 1245770833
+[  277.560833] Switching threads from 9 to 14
+[  277.572532] wat wat wat: 0
+[  277.572537] wat wat wat: 9
+[  277.572541] Count 261
+[  277.572544] About to switch
+[  277.572547] About to switch to 11
+[  277.572549] should twerk: 1245770400
+[  277.572551] Switching threads from 9 to 11
+[  277.579554] wat wat wat: 0
+[  277.579559] wat wat wat: 9
+[  277.579561] Count 262
+[  277.579564] About to switch
+[  277.579566] About to switch to 14
+[  277.579567] should twerk: 1245770833
+[  277.579568] Switching threads from 9 to 14
+[  277.590124] wat wat wat: 0
+[  277.590133] wat wat wat: 9
+[  277.590135] Count 263
+[  277.590138] About to switch
+[  277.590140] About to switch to 11
+[  277.590141] should twerk: 1245770400
+[  277.590143] Switching threads from 9 to 11
+[  277.600626] wat wat wat: 0
+[  277.600630] wat wat wat: 9
+[  277.600632] Count 264
+[  277.600634] About to switch
+[  277.600635] About to switch to 14
+[  277.600636] should twerk: 1245770833
+[  277.600637] Switching threads from 9 to 14
+[  277.611192] wat wat wat: 0
+[  277.611196] wat wat wat: 9
+[  277.611197] Count 265
+[  277.611200] About to switch
+[  277.611201] About to switch to 11
+[  277.611202] should twerk: 1245770400
+[  277.611204] Switching threads from 9 to 11
+[  277.620735] wat wat wat: 0
+[  277.620738] wat wat wat: 9
+[  277.620740] Count 266
+[  277.620742] About to switch
+[  277.620744] About to switch to 14
+[  277.620745] should twerk: 1245770833
+[  277.620746] Switching threads from 9 to 14
+[  277.632312] wat wat wat: 0
+[  277.632316] wat wat wat: 9
+[  277.632318] Count 267
+[  277.632320] About to switch
+[  277.632322] About to switch to 11
+[  277.632323] should twerk: 1245770400
+[  277.632324] Switching threads from 9 to 11
+[  277.640727] wat wat wat: 0
+[  277.640729] wat wat wat: 9
+[  277.640731] Count 268
+[  277.640733] About to switch
+[  277.640734] About to switch to 14
+[  277.640735] should twerk: 1245770833
+[  277.640736] Switching threads from 9 to 14
+[  277.649804] wat wat wat: 0
+[  277.649806] wat wat wat: 9
+[  277.649808] Count 269
+[  277.649810] About to switch
+[  277.649811] About to switch to 11
+[  277.649812] should twerk: 1245770400
+[  277.649813] Switching threads from 9 to 11
+[  277.660341] wat wat wat: 0
+[  277.660343] wat wat wat: 9
+[  277.660345] Count 270
+[  277.660347] About to switch
+[  277.660348] About to switch to 14
+[  277.660349] should twerk: 1245770833
+[  277.660350] Switching threads from 9 to 14
+[  277.670876] wat wat wat: 0
+[  277.670878] wat wat wat: 9
+[  277.670879] Count 271
+[  277.670881] About to switch
+[  277.670882] About to switch to 11
+[  277.670883] should twerk: 1245770400
+[  277.670884] Switching threads from 9 to 11
+[  277.680718] wat wat wat: 0
+[  277.680721] wat wat wat: 9
+[  277.680723] Count 272
+[  277.680725] About to switch
+[  277.680726] About to switch to 14
+[  277.680727] should twerk: 1245770833
+[  277.680728] Switching threads from 9 to 14
+[  277.691981] wat wat wat: 0
+[  277.691983] wat wat wat: 9
+[  277.691985] Count 273
+[  277.691987] About to switch
+[  277.691988] About to switch to 11
+[  277.691989] should twerk: 1245770400
+[  277.691990] Switching threads from 9 to 11
+[  277.700715] wat wat wat: 0
+[  277.700717] wat wat wat: 9
+[  277.700719] Count 274
+[  277.700721] About to switch
+[  277.700722] About to switch to 14
+[  277.700723] should twerk: 1245770833
+[  277.700724] Switching threads from 9 to 14
+[  277.709580] wat wat wat: 0
+[  277.709582] wat wat wat: 9
+[  277.709583] Count 275
+[  277.709585] About to switch
+[  277.709586] About to switch to 11
+[  277.709587] should twerk: 1245770400
+[  277.709588] Switching threads from 9 to 11
+[  277.720112] wat wat wat: 0
+[  277.720114] wat wat wat: 9
+[  277.720116] Count 276
+[  277.720118] About to switch
+[  277.720119] About to switch to 14
+[  277.720119] should twerk: 1245770833
+[  277.720120] Switching threads from 9 to 14
+[  277.730679] wat wat wat: 0
+[  277.730681] wat wat wat: 9
+[  277.730683] Count 277
+[  277.730684] About to switch
+[  277.730685] About to switch to 11
+[  277.730686] should twerk: 1245770400
+[  277.730687] Switching threads from 9 to 11
+[  277.740708] wat wat wat: 0
+[  277.740710] wat wat wat: 9
+[  277.740712] Count 278
+[  277.740713] About to switch
+[  277.740714] About to switch to 14
+[  277.740715] should twerk: 1245770833
+[  277.740716] Switching threads from 9 to 14
+[  277.751760] wat wat wat: 0
+[  277.751763] wat wat wat: 9
+[  277.751765] Count 279
+[  277.751767] About to switch
+[  277.751768] About to switch to 11
+[  277.751769] should twerk: 1245770400
+[  277.751770] Switching threads from 9 to 11
+[  277.760728] wat wat wat: 0
+[  277.760731] wat wat wat: 9
+[  277.760733] Count 280
+[  277.760735] About to switch
+[  277.760737] About to switch to 14
+[  277.760738] should twerk: 1245770833
+[  277.760739] Switching threads from 9 to 14
+[  277.772758] wat wat wat: 0
+[  277.772762] wat wat wat: 9
+[  277.772764] Count 281
+[  277.772767] About to switch
+[  277.772769] About to switch to 11
+[  277.772770] should twerk: 1245770400
+[  277.772771] Switching threads from 9 to 11
+[  277.810464] wat wat wat: 0
+[  277.810469] wat wat wat: 9
+[  277.810471] Count 282
+[  277.810474] About to switch
+[  277.810476] About to switch to 14
+[  277.810477] should twerk: 1245770833
+[  277.810478] Switching threads from 9 to 14
+[  277.820779] wat wat wat: 0
+[  277.820783] wat wat wat: 9
+[  277.820785] Count 283
+[  277.820788] About to switch
+[  277.820789] About to switch to 11
+[  277.820790] should twerk: 1245770400
+[  277.820792] Switching threads from 9 to 11
+[  277.832700] wat wat wat: 0
+[  277.832702] wat wat wat: 9
+[  277.832704] Count 284
+[  277.832706] About to switch
+[  277.832707] About to switch to 14
+[  277.832708] should twerk: 1245770833
+[  277.832709] Switching threads from 9 to 14
+[  277.839855] wat wat wat: 0
+[  277.839857] wat wat wat: 9
+[  277.839859] Count 285
+[  277.839861] About to switch
+[  277.839862] About to switch to 11
+[  277.839863] should twerk: 1245770400
+[  277.839864] Switching threads from 9 to 11
+[  277.850197] wat wat wat: 0
+[  277.850200] wat wat wat: 9
+[  277.850201] Count 286
+[  277.850203] About to switch
+[  277.850204] About to switch to 14
+[  277.850205] should twerk: 1245770833
+[  277.850206] Switching threads from 9 to 14
+[  277.860477] wat wat wat: 0
+[  277.860480] wat wat wat: 9
+[  277.860482] Count 287
+[  277.860484] About to switch
+[  277.860485] About to switch to 11
+[  277.860486] should twerk: 1245770400
+[  277.860487] Switching threads from 9 to 11
+[  277.870799] wat wat wat: 0
+[  277.870801] wat wat wat: 9
+[  277.870803] Count 288
+[  277.870804] About to switch
+[  277.870805] About to switch to 14
+[  277.870830] should twerk: 1245770833
+[  277.870831] Switching threads from 9 to 14
+[  277.880792] wat wat wat: 0
+[  277.880795] wat wat wat: 9
+[  277.880796] Count 289
+[  277.880798] About to switch
+[  277.880799] About to switch to 11
+[  277.880800] should twerk: 1245770400
+[  277.880801] Switching threads from 9 to 11
+[  277.891492] wat wat wat: 0
+[  277.891494] wat wat wat: 9
+[  277.891496] Count 290
+[  277.891498] About to switch
+[  277.891499] About to switch to 14
+[  277.891499] should twerk: 1245770833
+[  277.891501] Switching threads from 9 to 14
+[  277.900698] wat wat wat: 0
+[  277.900700] wat wat wat: 9
+[  277.900702] Count 291
+[  277.900704] About to switch
+[  277.900705] About to switch to 11
+[  277.900706] should twerk: 1245770400
+[  277.900707] Switching threads from 9 to 11
+[  277.909586] wat wat wat: 0
+[  277.909591] wat wat wat: 9
+[  277.909593] Count 292
+[  277.909595] About to switch
+[  277.909596] About to switch to 14
+[  277.909597] should twerk: 1245770833
+[  277.909599] Switching threads from 9 to 14
+[  277.920706] wat wat wat: 0
+[  277.920710] wat wat wat: 9
+[  277.920712] Count 293
+[  277.920714] About to switch
+[  277.920716] About to switch to 11
+[  277.920717] should twerk: 1245770400
+[  277.920718] Switching threads from 9 to 11
+[  277.932696] wat wat wat: 0
+[  277.932700] wat wat wat: 9
+[  277.932702] Count 294
+[  277.932704] About to switch
+[  277.932705] About to switch to 14
+[  277.932706] should twerk: 1245770833
+[  277.932707] Switching threads from 9 to 14
+[  277.939672] wat wat wat: 0
+[  277.939674] wat wat wat: 9
+[  277.939676] Count 295
+[  277.939677] About to switch
+[  277.939678] About to switch to 11
+[  277.939679] should twerk: 1245770400
+[  277.939680] Switching threads from 9 to 11
+[  277.949987] wat wat wat: 0
+[  277.949989] wat wat wat: 9
+[  277.949991] Count 296
+[  277.949992] About to switch
+[  277.949993] About to switch to 14
+[  277.949994] should twerk: 1245770833
+[  277.949995] Switching threads from 9 to 14
+[  277.960311] wat wat wat: 0
+[  277.960313] wat wat wat: 9
+[  277.960315] Count 297
+[  277.960316] About to switch
+[  277.960317] About to switch to 11
+[  277.960318] should twerk: 1245770400
+[  277.960319] Switching threads from 9 to 11
+[  277.970642] wat wat wat: 0
+[  277.970644] wat wat wat: 9
+[  277.970646] Count 298
+[  277.970648] About to switch
+[  277.970649] About to switch to 14
+[  277.970650] should twerk: 1245770833
+[  277.970651] Switching threads from 9 to 14
+[  277.980676] wat wat wat: 0
+[  277.980678] wat wat wat: 9
+[  277.980680] Count 299
+[  277.980681] About to switch
+[  277.980682] About to switch to 11
+[  277.980683] should twerk: 1245770400
+[  277.980684] Switching threads from 9 to 11
+[  277.991294] wat wat wat: 0
+[  277.991296] wat wat wat: 9
+[  277.991298] Count 300
+[  277.991299] About to switch
+[  277.991300] About to switch to 14
+[  277.991301] should twerk: 1245770833
+[  277.991302] Switching threads from 9 to 14
+[  278.000683] <<<Core 0, thread 3: Exiting system.>>>
+[  278.004555] LLBooter: Core 0 called sched_exit. Switching back to alpha.
+[  278.004561] FAILURE: making a Linux system call (#54) in Composite.
+[  278.004582] cos: Halting Composite.  Current thread: 1 in spd 0
+[  278.004680] cos: warning - found unfreed composite spd, 0 w/ refcnt 1
+[  278.004681] cos: warning - found unfreed composite spd, 1 w/ refcnt 5
+[  278.004682] cos: warning - found unfreed composite spd, 4 w/ refcnt 1
+[  278.004683] cos: warning - found unfreed composite spd, 6 w/ refcnt 6
+[  278.004684] cos: warning - found unfreed composite spd, 11 w/ refcnt 1
+[  278.017746] 
+[  278.017747] Core 0 Measurements:
+[  278.017750] cos:   205098 : normal component invocations
+[  278.017751] cos:        5 : bootstrapping upcalls
+[  278.017752] cos:        0 : self (effectless) thread switch
+[  278.017753] cos:        0 : switch thread call with outdated info
+[  278.017754] cos:      335 : cooperative thread switch
+[  278.017755] cos:      299 : thread switch to preempted thd
+[  278.017756] cos:      301 : interrupt with attempted async_inv made
+[  278.017756] cos:      301 : immediately executed async_inv upcalls
+[  278.017758] cos:        0 : delayed async_inv upcall execution (e.g. less urg)
+[  278.017759] cos:        0 : incriment pending async_invs (delay ainv)
+[  278.017759] cos:        0 : completed async_invs -> upcall scheduler
+[  278.017760] cos:        0 : async_inv upcall scheduler -> exec pending
+[  278.017761] cos:      302 : async_inv upcall scheduler -> tailcall completion
+[  278.017762] cos:        0 : completed async_invs -> schedule preempted thd
+[  278.017763] cos:        0 : completed async_invs -> execute pending upcall thd
+[  278.017764] cos:        0 : async_inv should be made, but delayed due to net xmit
+[  278.017765] cos:      302 : async_inv upcalls finished
+[  278.017766] cos:      301 : interrupted user-level
+[  278.017767] cos:        0 : interrupted kern-level
+[  278.017768] cos:      301 : interrupted cos thread
+[  278.017769] cos:        0 : interrupted other thread
+[  278.017770] cos:        0 : interrupt in between the sti and sysexit on syscall ret
+[  278.017771] cos:        2 : composite page fault
+[  278.017772] cos:        9 : linux page fault
+[  278.017772] cos:      150 : unknown fault
+[  278.017773] cos:        0 : mpd merge
+[  278.017774] cos:        0 : mpd split
+[  278.017775] cos:       12 : mpd alloc
+[  278.017775] cos:        0 : mpd subordinate
+[  278.017776] cos:        0 : mpd split mpd reuse
+[  278.017777] cos:        7 : mpd free
+[  278.017778] cos:   205135 : mpd refcnt increase
+[  278.017779] cos:   205121 : mpd refcnt decrease
+[  278.017780] cos:   205123 : mpd ipc refcnt increase
+[  278.017781] cos:   205109 : mpd ipc refcnt decrease
+[  278.017781] cos:       38 : page table allocation
+[  278.017782] cos:       27 : page table free
+[  278.017783] cos:     4888 : memory page grant
+[  278.017784] cos:     3096 : memory page revoke
+[  278.017785] cos:        0 : atomic operation rollback
+[  278.017786] cos:        0 : atomic stale lock request
+[  278.017787] cos:        8 : atomic lock request
+[  278.017787] cos:        8 : atomic unlock request
+[  278.017788] cos:        0 : received a network packet
+[  278.017789] cos:        0 : make an async_inv for a network packet
+[  278.017790] cos:        0 : network async_inv resulted in data being transferred
+[  278.017791] cos:        0 : network async_inv failed: ring buffer full
+[  278.017792] cos:        0 : networking packet transmit
+[  278.017793] cos:        0 : pending notification HACK
+[  278.017794] cos:        0 : attempted switching to inactive upcall
+[  278.017795] cos:        0 : update event state to PENDING
+[  278.017796] cos:      301 : update event state to ACTIVE
+[  278.017796] cos:      302 : update event state to READY
+[  278.017797] cos:      643 : break preemption chain
+[  278.017798] cos:        0 : idle: linux idle sleep
+[  278.017799] cos:        0 : idle: linux idle wake and run
+[  278.017800] cos:        0 : idle: linux wakeup call
+[  278.017801] cos:        0 : idle: recursive wakeup call
+[  278.017802] cos:        0 : child scheduler: attempted schedule with pending cevts
+[  278.017803] cos:        0 : scheduler: attempted schedule with pending event
+[  278.017804] cos:   delay between an async_inv and when upcall is executed : avg: 0/0, max: 0, min: -1
+[  278.017806] cos: delay between an async_inv and when upcall is terminated : avg: 0/0, max: 0, min: -1
+[  278.017807] cos: delay between uc term/pend and pending upcall completion : avg: 0/0, max: 0, min: -1
+[  278.017809] 
+[  278.017809] cos: Faults:
+[  278.017813] 
+[  278.017813] cos: Most recent events @ current t 13297971560332.
+[  278.017814] 
+[  278.017814] cos: Core 0 most recent events (head 3, pre 2).
+[  278.017816] cos:3:normal (non-syscall/isdle interrupting) upcall processed (11, 6) @ 13297908107670
+[  278.017818] cos:4:tailcall inv and switch to specified thread (6, 9) @ 13297908110606
+[  27878.017819] cos:5:switch_thread (6, 9) @ 13297908111274
+[  278.017820]  cos:6:switch_thread (9, 14) @ 13297908135608
+[  278.017821] cos:7:upcallsall activated and made immediately (w/ preempted thd) (14, 6) @ 13297930566571
+[  278.017823] cos:0:normal (non-syscall/idle interrupting) upcall processeded (14, 6) @ 13297930566922
+[  278.017824] cos:1:switch_thread (6, 3)       @ 13297930570144
+[  278.017825] cos:2:switch_thread (3, 1) @ 13297939846284

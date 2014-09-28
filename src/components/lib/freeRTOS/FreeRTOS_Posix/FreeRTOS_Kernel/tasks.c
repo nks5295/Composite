@@ -523,8 +523,8 @@ tskTCB * pxNewTCB;
 
 		if( xSchedulerRunning != pdFALSE )
 		{
-			/* If the created task is of a higher priority than the current task
-			then it should run now. */
+			//If the created task is of a higher priority than the current task
+			//then it should run now.
 			if( pxCurrentTCB->uxPriority < uxPriority )
 			{
 				portYIELD_WITHIN_API();
@@ -2324,7 +2324,3 @@ void vTaskExitCritical( void )
 
 #endif
 /*-----------------------------------------------------------*/
-
-
-
-

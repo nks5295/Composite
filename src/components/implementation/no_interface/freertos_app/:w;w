@@ -112,14 +112,12 @@ xQueueSend(xQueueHandle xQueue, const void * pvItemToQueue, portTickType xTicksT
 }
 
 int
-xQueueReceive(xQueueHandle xQueue, void *pvBuffer, portTickType xTicksToWait)
+xQueueRecieve(xQueueHandle xQueue, void *pvBuffer, portTickType xTicksToWait)
 {
-        int ret;
         assert((int) xQueue >= 0 && pvBuffer);
-        unsigned short int buff = k_rb->prod;
-        ret = frt_xQueueReceive((int) xQueue, (int)buff, (int)xTicksToWait);
+        unsigned short int buff = k_rb->prod + sizeof(struct rb_item_head);
         rb_remove(k_rb, pvBuffer, sizeof(int));
-        return ret;
+        return 0;
 }
 
 #endif

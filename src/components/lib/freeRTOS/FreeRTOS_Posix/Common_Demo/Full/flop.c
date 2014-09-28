@@ -249,6 +249,7 @@ short sError = pdFALSE;
 
 	for( ;; )
 	{
+                freertos_print("not even working\n");
 		dTotal1 = 0.0;
 		dTotal2 = 0.0;
 

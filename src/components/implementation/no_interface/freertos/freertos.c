@@ -360,14 +360,7 @@ static volatile int a = 1, b = 1, c = 1, i = 0, wat = -1, halp = 0;
 
                 if (( i = cos_switch_thread(wat, 0))) printc("Switch: %d\n", i);
 
-                while(1) {
-                        if (halp) {
-                                halp = 0;
-                                printc("THD: %d\n", cos_get_thd_id());
-                                freertos_switch_thread(11, 0);
-                        }
-                        timer_tick();
-                }
+                timer_tick();
         } else if (c) {
                 c = 0;
                 printc("first sched thd\n");
