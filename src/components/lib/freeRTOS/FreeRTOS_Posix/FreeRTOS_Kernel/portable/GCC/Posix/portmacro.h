@@ -102,12 +102,16 @@ extern "C" {
 #define portSTACK_TYPE	unsigned portCHAR
 #define portBASE_TYPE	int
 
+typedef portSTACK_TYPE StackType_t;
+typedef portBASE_TYPE BaseType_t;
+typedef unsigned portBASE_TYPE UBaseType_t;
+
 #if( configUSE_16_BIT_TICKS == 1 )
-	typedef unsigned portSHORT portTickType;
-	#define portMAX_DELAY ( portTickType ) 0xffff
+	typedef unsigned portSHORT TickType;
+	#define portMAX_DELAY ( TickType ) 0xffff
 #else
-	typedef unsigned portLONG portTickType;
-	#define portMAX_DELAY ( portTickType ) 0xffffffff
+	typedef unsigned portLONG TickType;
+	#define portMAX_DELAY ( TickType ) 0xffffffff
 #endif
 
 /*-----------------------------------------------------------*/	

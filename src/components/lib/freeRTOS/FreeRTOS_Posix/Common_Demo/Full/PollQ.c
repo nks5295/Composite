@@ -33,9 +33,9 @@
     FreeRTOS is distributed in the hope that it will be useful, but WITHOUT
     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
-    more details. You should have received a copy of the GNU General Public 
-    License and the FreeRTOS license exception along with FreeRTOS; if not it 
-    can be viewed here: http://www.freertos.org/a00114.html and also obtained 
+    more details. You should have received a copy of the GNU General Public
+    License and the FreeRTOS license exception along with FreeRTOS; if not it
+    can be viewed here: http://www.freertos.org/a00114.html and also obtained
     by writing to Richard Barry, contact details for whom are available on the
     FreeRTOS WEB site.
 
@@ -53,24 +53,24 @@
 
 
 /**
- * This is a very simple queue test.  See the BlockQ. c documentation for a more 
+ * This is a very simple queue test.  See the BlockQ. c documentation for a more
  * comprehensive version.
  *
- * Creates two tasks that communicate over a single queue.  One task acts as a 
- * producer, the other a consumer.  
+ * Creates two tasks that communicate over a single queue.  One task acts as a
+ * producer, the other a consumer.
  *
- * The producer loops for three iteration, posting an incrementing number onto the 
- * queue each cycle.  It then delays for a fixed period before doing exactly the 
+ * The producer loops for three iteration, posting an incrementing number onto the
+ * queue each cycle.  It then delays for a fixed period before doing exactly the
  * same again.
  *
- * The consumer loops emptying the queue.  Each item removed from the queue is 
- * checked to ensure it contains the expected value.  When the queue is empty it 
+ * The consumer loops emptying the queue.  Each item removed from the queue is
+ * checked to ensure it contains the expected value.  When the queue is empty it
  * blocks for a fixed period, then does the same again.
  *
- * All queue access is performed without blocking.  The consumer completely empties 
- * the queue each time it runs so the producer should never find the queue full.  
+ * All queue access is performed without blocking.  The consumer completely empties
+ * the queue each time it runs so the producer should never find the queue full.
  *
- * An error is flagged if the consumer obtains an unexpected value or the producer 
+ * An error is flagged if the consumer obtains an unexpected value or the producer
  * find the queue is full.
  *
  * \page PollQC pollQ.c
@@ -158,7 +158,7 @@ static void lowPrioRdtscTask( void *pvParameters )
 {
 	// I HATE THEIR PROGRAMMING STYLE.
 	freertos_print("Started tsc task\n");
-	for( ;; ) 
+	for( ;; )
 	{
 		//		freertos_print("Running tsc task\n");
 		rdtscll(lastTSCval);
@@ -183,7 +183,7 @@ static void vPolledQueueProducer( void *pvParameters )
 	pxQueue = ( xQueueHandle * ) pvParameters;
 
 	for( ;; )
-	{		
+	{
 		rdtscll(tsc);
 		if (tsc > lastTSCval && lastTSCval > 0) {
 			total_interrupt_latency += (tsc - lastTSCval);
@@ -205,7 +205,7 @@ static void vPolledQueueProducer( void *pvParameters )
 #ifdef FREERTOS_MQ_TEST
 static void vPolledQueueProducerMQTest ( void *pvParameters )
 {
-	
+
 	xQueueHandle *pxQueue;
 	const portTickType xDelay = ( portTickType ) 200 / portTICK_RATE_MS;
 	const char * const pcTaskStartMsg = "Polled queue producer started.\r\n";
@@ -219,7 +219,7 @@ static void vPolledQueueProducerMQTest ( void *pvParameters )
 	pxQueue = ( xQueueHandle * ) pvParameters;
 
 	for( ;; )
-	{		
+	{
 
 		for( usLoop = 0; usLoop < usNumToProduce; ++usLoop )
 		{
@@ -245,7 +245,7 @@ static void vPolledQueueProducerMQTest ( void *pvParameters )
 			}
 		}
 
-		/* Wait before we start posting again to ensure the consumer runs and 
+		/* Wait before we start posting again to ensure the consumer runs and
 		empties the queue. */
 		vTaskDelay( xDelay );
 	}
@@ -266,7 +266,7 @@ static void vPolledQueueConsumer( void *pvParameters )
 	pxQueue = ( xQueueHandle * ) pvParameters;
 
 	for( ;; )
-	{		
+	{
 		/* Loop until the queue is empty. */
 		while( uxQueueMessagesWaiting( *pxQueue ) )
 		{
@@ -276,11 +276,11 @@ static void vPolledQueueConsumer( void *pvParameters )
 				if (cur_tsc < usData) continue;
 
 				latency = cur_tsc - usData;
-				
+
 				total_latency += latency;
 				latency_measurements++;
 				++sPollingConsumerCount;
-				
+
 
 				if (latency_measurements % 50 == 0 && latency_measurements != 0) {
 					freertos_print("Average latency for producer consumer queue: %llu\n", total_latency / latency_measurements);
@@ -289,7 +289,7 @@ static void vPolledQueueConsumer( void *pvParameters )
 			}
 		}
 
-		/* Now the queue is empty we block, allowing the producer to place more 
+		/* Now the queue is empty we block, allowing the producer to place more
 		items in the queue. */
 		vTaskDelay( xDelay );
 	}
@@ -305,7 +305,7 @@ static short sLastPollingConsumerCount = 0, sLastPollingProducerCount = 0;
 portBASE_TYPE xReturn;
 
 	if( ( sLastPollingConsumerCount == sPollingConsumerCount ) ||
-		( sLastPollingProducerCount == sPollingProducerCount ) 
+		( sLastPollingProducerCount == sPollingProducerCount )
 	  )
 	{
 		xReturn = pdFALSE;

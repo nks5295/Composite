@@ -159,7 +159,7 @@ static void vWat (void)
          printc("About to take sem\n");
          for(i; i < 1000000; i++) {
                  rdtscll(a);
-                 xSemaphoreTake(xSemaphore, (portTickType) 0);
+                 xSemaphoreTake(xSemaphore, (TickType) 0);
                  rdtscll(b);
                  take+= (b-a);
                  rdtscll(a);

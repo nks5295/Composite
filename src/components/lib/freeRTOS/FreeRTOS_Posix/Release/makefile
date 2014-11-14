@@ -14,8 +14,8 @@ RM := rm -rf
 -include FreeRTOS_Kernel/portable/MemMang/subdir.mk
 -include FreeRTOS_Kernel/portable/GCC/Posix/subdir.mk
 #-include FileIO/subdir.mk
--include Common_Demo/Minimal/subdir.mk
--include Common_Demo/Full/subdir.mk
+#-include Common_Demo/Minimal/subdir.mk
+#-include Common_Demo/Full/subdir.mk
 #-include AsyncIO/subdir.mk
 -include objects.mk
 
