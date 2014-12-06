@@ -72,11 +72,94 @@ vTaskDelete(xTaskHandle xTask)
         frt_vTaskDelete((int)xTask);
 }
 
+// What about task priority set and get?
+
 void
 vTaskSuspend(xTaskHandle xTaskToSuspend)
 {
         frt_vTaskSuspend((int)xTaskToSuspend);
 }
+
+void
+vTaskDelay(portTickType xTicksToDelay)
+{
+        frt_vTaskDelay((int)xTicksToDelay);
+}
+
+/*
+void
+vTaskDelayUntil(portTickType *pxPreviousWakeTime, portTickTime xTimeIncrement)
+{
+        frt_vTaskDelayUntil((int *)pxPreviousWakeTime, (int)xTimeIncrement);
+}
+*/
+
+void
+vTaskResume(xTaskHandle xTaskToResume)
+{
+        frt_vTaskDelay((int)xTaskToResume);
+}
+
+BaseType_t
+xTaskResumeFromISR(xTaskHandle xTaskToResume)
+{
+        return frt_xTaskResumeFromISR((int)xTaskToResume);
+}
+
+xTaskHandle
+xTaskGetCurrentTaskHandle(void)
+{
+        return frt_xTaskGetCurrentTaskHandle();
+}
+
+xTaskHandle
+xTaskGetIdleTaskHandle(void)
+{
+        return frt_xTaskGetIdleTaskHandle();
+}
+
+UBaseType_t
+uxTaskGetStackHighWaterMark(xTaskHandle xTask)
+{
+        return frt_uxTaskGetStackHighWaterMark((int)xTask);
+}
+
+/*
+ eTaskState
+ eTaskGetState(xTaskHandle xTask)
+ {
+        return frt_eTaskGetState((int)xTask);
+ }
+ */
+
+// Can't do pointers, returns a char*
+/*
+char*
+pcTaskGetName(xTaskHandle xTaskToQuery)
+{
+        return frt_pcTaskGetName((int)xTaskToQuery);
+}
+*/
+
+TickType
+xTaskGetTickCount(void)
+{
+        return frt_xTaskGetTickCount();
+}
+
+TickType
+xTaskGetTickCountFromISR(void)
+{
+        return frt_xTaskGetTickCountFromISR();
+}
+
+BaseType_t
+xTaskGetSchedulerState(void)
+{
+        return frt_xTaskGetSchedulerState();
+}
+
+
 //Queues
 
 int

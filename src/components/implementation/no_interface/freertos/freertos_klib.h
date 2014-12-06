@@ -178,6 +178,109 @@ frt_vTaskSuspend(int xTaskToSuspend)
         vTaskSuspend((xTaskHandle) frt_obj_array[xTaskToSuspend].obj);
 }
 
+void
+frt_vTaskDelay(int xTicksToDelay)
+{
+        assert(xTicksToDelay >= 0);
+
+        vTaskDelay((TickType) frt_obj_array[xTicksToDelay].obj);
+}
+
+// how do i do pionters here
+/*
+void
+frt_vTaskDelayUntil(int *pxPrevoiusWakeTime, int xTimeIncrement)
+{
+}
+*/
+
+void
+frt_vTaskResume(int xTaskToResume)
+{
+        assert(frt_obj_array[xTaskToResume].type == FRT_OBJ_TASK);
+
+        vTaskResume((xTaskHandle) frt_obj_array[xTaskToResume].obj);
+}
+
+int
+frt_xTaskResumeFromISR(int xTaskToResume)
+{
+        assert(frt_obj_array[xTaskToResume].type == FRT_OBJ_TASK);
+
+        return (int) xTaskResumeFromISR(frt_obj_array[xTaskToResume].obj);
+}
+
+// Pointers issue here again
+/*
+unsigned int
+uxTaskGetSystemState(...)
+{
+}
+*/
+
+int
+frt_xTaskGetCurrentTaskHandle(void)
+{
+        return (int) xTaskGetCurrentTaskHandle();
+}
+
+int
+frt_xTaskGetIdleTaskHandle(void)
+{
+        return (int) xTaskGetIdleTaskHandle();
+}
+
+unsigned int
+frt_uxTaskGetStackHighWaterMark(int xTask)
+{
+        if (xTask == NULL) return (unsigned int) uxTaskGetStackHighWaterMark((xTaskHandle) xTask);
+
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+        return (unsigned int) uxTaskGetStackHighWaterMark(frt_obj_array[xTask].obj);
+}
+
+// What to do with enumerated type?
+/*
+eTaskState
+frt_eTaskGetState(int xTask)
+{
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+
+        return (eTaskState) eTaskGetState(frt_obj_array[xTask].obj);
+}
+*/
+
+// returns a char* pointer issue
+/*
+char*
+frt_pcTaskGetName(int xTaskToQuery)
+{
+        if (xTaskToQuery == NULL) return (char *) pcTaskGetName((xTaskHandle) xTaskToQuery);
+
+        assert(frt_obj_array[xTaskToQuery].type == FRT_OBJ_TASK);
+        return (char *) pcTaskGetName(frt_obj_array[xTaskToQuery].obj);
+}
+*/
+
+int
+frt_xTaskGetTickCount(void)
+{
+        return (int) xTaskGetTickCount();
+}
+
+int
+frt_xTaskGetTickCountFromISR(void)
+{
+        return (int) xTaskGetTickCountFromISR();
+}
+
+int
+frt_xTaskGetSchedulerState(void)
+{
+        return (int) xTaskGetSchedulerState();
+}
+
+
 /*******
  * FreeRTOS Queue API
 *******/
