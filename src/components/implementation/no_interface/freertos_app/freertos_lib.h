@@ -159,6 +159,41 @@ xTaskGetSchedulerState(void)
         return frt_xTaskGetSchedulerState();
 }
 
+//How to pointer?
+/*
+void
+vTaskGetRunTimeStats(char *pcWriteBuffer)
+{
+        frt_vTaskGetRunTimeStats(pcWriteBuffer);
+}
+*/
+
+//Function pointers
+/*
+void
+vTaskSetApplicationTaskTag(xTaskHandle xTask, TODO pxTagValue)
+{
+        frt_vTaskSetApplicationTaskTag(xTask, pxTagValue);
+}
+*/
+
+// Still pointers
+/*
+TODO
+xTaskGetApplicationTaskTag(xTaskHandle xTask)
+{
+        frt_xTaskGetApplicationTaskTag(xTask);
+}
+*/
+
+// Pointers...
+/*
+xTaskHandle
+xTaskCallApplicationTaskHook( xTaskHandle xTask, void *pvParameter)
+{
+    return frt_xTaskCallApplicationTaskHook(xTask, pvParameter);
+}
+*/
 
 //Queues
 
