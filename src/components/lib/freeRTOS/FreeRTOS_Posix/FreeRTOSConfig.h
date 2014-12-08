@@ -95,10 +95,15 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelete             	1
 #define INCLUDE_vTaskCleanUpResources   	1
 #define INCLUDE_vTaskSuspend            	1
-#define INCLUDE_vTaskDelayUntil				1
-#define INCLUDE_vTaskDelay					1
-#define INCLUDE_uxTaskGetStackHighWaterMark 0 /* Do not use this option on the PC port. */
+#define INCLUDE_vTaskDelayUntil			1
+#define INCLUDE_vTaskDelay			1
+//#define INCLUDE_uxTaskGetStackHighWaterMark 0 /* Do not use this option on the PC port. */
+#define INCLUDE_uxTaskGetStackHighWaterMark     1
 #define INCLUDE_xTaskGetSchedulerState		1
+#define INCLUDE_xTaskGetIdleTaskHandle          1
+#define INCLUDE_xTaskGetCurrentTaskHandle       1
+#define INCLUDE_vTaskIncrementTick              1
+#define INCLUDE_vStartPolledQueueTasks          1
 
 extern void vMainQueueSendPassed( void );
 #define traceQUEUE_SEND( pxQueue ) vMainQueueSendPassed()

@@ -8,6 +8,7 @@
 #define MAX_FRT_THDS 10
 
 typedef int portBASE_TYPE;
+typedef unsigned int UBaseType_t;
 typedef long portTickType;
 typedef void* xQueueHandle;
 typedef xQueueHandle SemaphoreHandle_t;
@@ -100,7 +101,7 @@ vTaskResume(xTaskHandle xTaskToResume)
         frt_vTaskDelay((int)xTaskToResume);
 }
 
-BaseType_t
+portBASE_TYPE
 xTaskResumeFromISR(xTaskHandle xTaskToResume)
 {
         return frt_xTaskResumeFromISR((int)xTaskToResume);
@@ -141,19 +142,19 @@ pcTaskGetName(xTaskHandle xTaskToQuery)
 }
 */
 
-TickType
+portTickType
 xTaskGetTickCount(void)
 {
         return frt_xTaskGetTickCount();
 }
 
-TickType
+portTickType
 xTaskGetTickCountFromISR(void)
 {
         return frt_xTaskGetTickCountFromISR();
 }
 
-BaseType_t
+portBASE_TYPE
 xTaskGetSchedulerState(void)
 {
         return frt_xTaskGetSchedulerState();
@@ -195,6 +196,33 @@ xTaskCallApplicationTaskHook( xTaskHandle xTask, void *pvParameter)
 }
 */
 
+UBaseType_t
+uxTaskGetNumberOfTasks(void)
+{
+        return frt_uxTaskGetNumberOfTasks();
+}
+
+// char * pointer
+/*
+void
+vTaskList(char *pcWriteBuffer)
+{
+}
+*/
+
+// char * pointer
+/*
+void
+frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
+{
+}
+*/
+
+unsigned long
+ulTaskEndTrace(void)
+{
+        return frt_ulTaskEndTrace();
+}
 //Queues
 
 int
