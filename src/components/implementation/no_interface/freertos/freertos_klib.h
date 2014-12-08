@@ -280,6 +280,57 @@ frt_xTaskGetSchedulerState(void)
         return (int) xTaskGetSchedulerState();
 }
 
+// How do I pointer?
+/*
+void
+frt_vTaskGetRunTimeStats(char *pcWriteBuffer)
+{
+        vTaskGetRunTimeStats(pcWriteBuffer);
+}
+*/
+
+// More (function) pointers :(
+/*
+void
+frt_vTaskSetApplicationTaskTag(int xTask, TODO pxTagValue)
+{
+        if (xTask == NULL) {
+                vTaskSetApplicationTaskTag( (xTaskHandle) xTask, pxTagValue);
+                return;
+        }
+ 
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+        vTaskSetApplicationTaskTag( (xTaskHandle) frt_obj_array[xTask].obj, pxTagValue);
+        // TODO probably need to case the function pointer above to something
+        // but what?
+}
+*/
+
+// Pointers :)
+/*
+TODO
+frt_xTaskGetApplicationTaskTag(int xTask){
+        // TODO the two return statements probably need casts
+        if (xTask == NULL) return xTaskGetApplicationTaskTag( (xTaskHandle) xTask);
+        
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+        return xTaskGetApplicationTaskTag( (xTaskHandle) frt_obj_array[xTask].obj);
+}
+*/
+
+// Hhow to pointer?
+// http://xkcd.com/138/
+/*
+int
+frt_xTaskCallApplicationTaskHook(int xTask, void *pvParameter)
+{
+        if (xTask == NULL) return (int) xTaskCallApplicationTaskHook( (xTaskHandle) xTask, pvParameter);
+
+        assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
+        return (int) xTaskCallApplicationTaskHook( (xTaskHandle) xTask, pvParameter);
+}
+*/
+
 unsigned int
 frt_uxTaskGetNumberOfTasks(void)
 {
