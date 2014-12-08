@@ -73,8 +73,6 @@ vTaskDelete(xTaskHandle xTask)
         frt_vTaskDelete((int)xTask);
 }
 
-// What about task priority set and get?
-
 void
 vTaskSuspend(xTaskHandle xTaskToSuspend)
 {
@@ -87,6 +85,7 @@ vTaskDelay(portTickType xTicksToDelay)
         frt_vTaskDelay((int)xTicksToDelay);
 }
 
+// TODO: Pointers
 /*
 void
 vTaskDelayUntil(portTickType *pxPreviousWakeTime, portTickTime xTimeIncrement)
@@ -125,6 +124,7 @@ uxTaskGetStackHighWaterMark(xTaskHandle xTask)
         return frt_uxTaskGetStackHighWaterMark((int)xTask);
 }
 
+// TODO: Pointers
 /*
  eTaskState
  eTaskGetState(xTaskHandle xTask)
@@ -133,7 +133,7 @@ uxTaskGetStackHighWaterMark(xTaskHandle xTask)
  }
  */
 
-// Can't do pointers, returns a char*
+// TODO: Can't do pointers, returns a char*
 /*
 char*
 pcTaskGetName(xTaskHandle xTaskToQuery)
@@ -160,49 +160,13 @@ xTaskGetSchedulerState(void)
         return frt_xTaskGetSchedulerState();
 }
 
-//How to pointer?
-/*
-void
-vTaskGetRunTimeStats(char *pcWriteBuffer)
-{
-        frt_vTaskGetRunTimeStats(pcWriteBuffer);
-}
-*/
-
-//Function pointers
-/*
-void
-vTaskSetApplicationTaskTag(xTaskHandle xTask, TODO pxTagValue)
-{
-        frt_vTaskSetApplicationTaskTag(xTask, pxTagValue);
-}
-*/
-
-// Still pointers
-/*
-TODO
-xTaskGetApplicationTaskTag(xTaskHandle xTask)
-{
-        frt_xTaskGetApplicationTaskTag(xTask);
-}
-*/
-
-// Pointers...
-/*
-xTaskHandle
-xTaskCallApplicationTaskHook( xTaskHandle xTask, void *pvParameter)
-{
-    return frt_xTaskCallApplicationTaskHook(xTask, pvParameter);
-}
-*/
-
 UBaseType_t
 uxTaskGetNumberOfTasks(void)
 {
         return frt_uxTaskGetNumberOfTasks();
 }
 
-// char * pointer
+// TODO: char * pointer
 /*
 void
 vTaskList(char *pcWriteBuffer)
@@ -210,7 +174,7 @@ vTaskList(char *pcWriteBuffer)
 }
 */
 
-// char * pointer
+// TODO: char * pointer
 /*
 void
 frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
@@ -223,6 +187,42 @@ ulTaskEndTrace(void)
 {
         return frt_ulTaskEndTrace();
 }
+
+// TODO: How to pointer?
+/*
+void
+vTaskGetRunTimeStats(char *pcWriteBuffer)
+{
+        frt_vTaskGetRunTimeStats(pcWriteBuffer);
+}
+*/
+
+// TODO: TaskHookFunction_t seems like its a function pointer
+/*
+void
+vTaskSetApplicationTaskTag(xTaskHandle xTask, TaskHookFunction_t pxTagValue)
+{
+        frt_vTaskSetApplicationTaskTag(xTask, pxTagValue);
+}
+*/
+
+// TODO: Still pointers
+/*
+xTaskGetApplicationTaskTag(xTaskHandle xTask)
+{
+        frt_xTaskGetApplicationTaskTag(xTask);
+}
+*/
+
+// TODO: Pointers...
+/*
+xTaskHandle
+xTaskCallApplicationTaskHook(xTaskHandle xTask, void *pvParameter)
+{
+    return frt_xTaskCallApplicationTaskHook(xTask, pvParameter);
+}
+*/
+
 //Queues
 
 int

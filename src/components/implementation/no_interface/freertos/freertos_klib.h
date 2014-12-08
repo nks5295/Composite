@@ -186,7 +186,7 @@ frt_vTaskDelay(int xTicksToDelay)
         vTaskDelay((TickType) frt_obj_array[xTicksToDelay].obj);
 }
 
-// how do i do pionters here
+// TODO: how do i do pionters here
 /*
 void
 frt_vTaskDelayUntil(int *pxPrevoiusWakeTime, int xTimeIncrement)
@@ -210,7 +210,7 @@ frt_xTaskResumeFromISR(int xTaskToResume)
         return (int) xTaskResumeFromISR((xTaskHandle) frt_obj_array[xTaskToResume].obj);
 }
 
-// Pointers issue here again
+// TODO: Pointers issue here again
 /*
 unsigned int
 uxTaskGetSystemState(...)
@@ -239,7 +239,7 @@ frt_uxTaskGetStackHighWaterMark(int xTask)
         return (unsigned int) uxTaskGetStackHighWaterMark(frt_obj_array[xTask].obj);
 }
 
-// What to do with enumerated type?
+// TODO: What to do with enumerated type?
 /*
 eTaskState
 frt_eTaskGetState(int xTask)
@@ -250,7 +250,7 @@ frt_eTaskGetState(int xTask)
 }
 */
 
-// returns a char* pointer issue
+// TODO: returns a char* pointer issue
 /*
 char*
 frt_pcTaskGetName(int xTaskToQuery)
@@ -280,7 +280,35 @@ frt_xTaskGetSchedulerState(void)
         return (int) xTaskGetSchedulerState();
 }
 
-// How do I pointer?
+unsigned int
+frt_uxTaskGetNumberOfTasks(void)
+{
+        return (unsigned int) uxTaskGetNumberOfTasks();
+}
+
+// TODO: char * pointer
+/*
+void
+frt_vTaskList(char *pcWriteBuffer)
+{
+}
+*/
+
+// TODO: char * pointer
+/*
+void
+frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
+{
+}
+*/
+
+unsigned long
+frt_ulTaskEndTrace(void)
+{
+        return (unsigned long) ulTaskEndTrace();
+}
+
+// TODO: How do I pointer?
 /*
 void
 frt_vTaskGetRunTimeStats(char *pcWriteBuffer)
@@ -289,36 +317,36 @@ frt_vTaskGetRunTimeStats(char *pcWriteBuffer)
 }
 */
 
-// More (function) pointers :(
+// TODO: More (function) pointers :(
+// TaskHookFunction_t seems as if its a function pointer
 /*
 void
-frt_vTaskSetApplicationTaskTag(int xTask, TODO pxTagValue)
+frt_vTaskSetApplicationTaskTag(int xTask, TaskHookFunction_t pxTagValue)
 {
         if (xTask == NULL) {
                 vTaskSetApplicationTaskTag( (xTaskHandle) xTask, pxTagValue);
                 return;
         }
- 
+
         assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
         vTaskSetApplicationTaskTag( (xTaskHandle) frt_obj_array[xTask].obj, pxTagValue);
-        // TODO probably need to case the function pointer above to something
+        // probably need to case the function pointer above to something
         // but what?
 }
 */
 
-// Pointers :)
+// TODO: Pointers :)
 /*
-TODO
 frt_xTaskGetApplicationTaskTag(int xTask){
-        // TODO the two return statements probably need casts
+        // the two return statements probably need casts
         if (xTask == NULL) return xTaskGetApplicationTaskTag( (xTaskHandle) xTask);
-        
+
         assert(frt_obj_array[xTask].type == FRT_OBJ_TASK);
         return xTaskGetApplicationTaskTag( (xTaskHandle) frt_obj_array[xTask].obj);
 }
 */
 
-// Hhow to pointer?
+// TODO: how to pointer?
 // http://xkcd.com/138/
 /*
 int
@@ -331,34 +359,6 @@ frt_xTaskCallApplicationTaskHook(int xTask, void *pvParameter)
 }
 */
 
-unsigned int
-frt_uxTaskGetNumberOfTasks(void)
-{
-        return (unsigned int) uxTaskGetNumberOfTasks();
-}
-
-// char * pointer
-/*
-void
-frt_vTaskList(char *pcWriteBuffer)
-{
-}
-*/
-
-// char * pointer
-/*
-void
-frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
-{
-}
-*/
-
-unsigned long
-frt_ulTaskEndTrace(void)
-{
-        return 0;
-        //return (unsigned long) ulTaskEndTrace();
-}
 /*******
  * FreeRTOS Queue API
 *******/
