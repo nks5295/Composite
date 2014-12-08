@@ -207,7 +207,7 @@ frt_xTaskResumeFromISR(int xTaskToResume)
 {
         assert(frt_obj_array[xTaskToResume].type == FRT_OBJ_TASK);
 
-        return (int) xTaskResumeFromISR(frt_obj_array[xTaskToResume].obj);
+        return (int) xTaskResumeFromISR((xTaskHandle) frt_obj_array[xTaskToResume].obj);
 }
 
 // Pointers issue here again
@@ -280,7 +280,34 @@ frt_xTaskGetSchedulerState(void)
         return (int) xTaskGetSchedulerState();
 }
 
+unsigned int
+frt_uxTaskGetNumberOfTasks(void)
+{
+        return (unsigned int) uxTaskGetNumberOfTasks();
+}
 
+// char * pointer
+/*
+void
+frt_vTaskList(char *pcWriteBuffer)
+{
+}
+*/
+
+// char * pointer
+/*
+void
+frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
+{
+}
+*/
+
+unsigned long
+frt_ulTaskEndTrace(void)
+{
+        return 0;
+        //return (unsigned long) ulTaskEndTrace();
+}
 /*******
  * FreeRTOS Queue API
 *******/
