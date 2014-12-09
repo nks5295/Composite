@@ -1,7 +1,7 @@
 /*
     FreeRTOS V7.3.0 - Copyright (C) 2012 Real Time Engineers Ltd.
 
-    FEATURES AND PORTS ARE ADDED TO FREERTOS ALL THE TIME.  PLEASE VISIT
+    FEATURES AND PORTS ARE ADDED TO FREERTOS ALL THE TIME.  PLEASE VISIT 
     http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
 
     ***************************************************************************
@@ -42,7 +42,7 @@
     FreeRTOS WEB site.
 
     1 tab == 4 spaces!
-
+    
     ***************************************************************************
      *                                                                       *
      *    Having a problem?  Start by reading the FAQ "My application does   *
@@ -52,24 +52,24 @@
      *                                                                       *
     ***************************************************************************
 
-
-    http://www.FreeRTOS.org - Documentation, training, latest versions, license
-    and contact details.
-
+    
+    http://www.FreeRTOS.org - Documentation, training, latest versions, license 
+    and contact details.  
+    
     http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
     including FreeRTOS+Trace - an indispensable productivity tool.
 
-    Real Time Engineers ltd license FreeRTOS to High Integrity Systems, who sell
-    the code with commercial support, indemnification, and middleware, under
+    Real Time Engineers ltd license FreeRTOS to High Integrity Systems, who sell 
+    the code with commercial support, indemnification, and middleware, under 
     the OpenRTOS brand: http://www.OpenRTOS.com.  High Integrity Systems also
-    provide a safety engineered and independently SIL3 certified version under
+    provide a safety engineered and independently SIL3 certified version under 
     the SafeRTOS brand: http://www.SafeRTOS.com.
 */
 
 /*
 Changes from V1.2.3
 
-	+ portCPU_CLOSK_HZ definition changed to 8MHz base 10, previously it
+	+ portCPU_CLOSK_HZ definition changed to 8MHz base 10, previously it 
 	  base 16.
 */
 
@@ -84,7 +84,7 @@ extern "C" {
 #include <jw_freertos.h>
 
 /*-----------------------------------------------------------
- * Port specific definitions.
+ * Port specific definitions.  
  *
  * The settings in this file configure FreeRTOS correctly for the
  * given hardware and compiler.
@@ -106,17 +106,17 @@ typedef portSTACK_TYPE StackType_t;
 typedef portBASE_TYPE BaseType_t;
 typedef unsigned portBASE_TYPE UBaseType_t;
 
+// Neel Shah
+// I added TickType_t to assure that v5's functions still work
 #if( configUSE_16_BIT_TICKS == 1 )
-        typedef unsigned portSHORT TickType_t;
-        typedef unsigned portSHORT TickType;
+	typedef unsigned portSHORT TickType;
 	#define portMAX_DELAY ( TickType ) 0xffff
 #else
-        typedef unsigned portLONG TickType_t;
 	typedef unsigned portLONG TickType;
 	#define portMAX_DELAY ( TickType ) 0xffffffff
 #endif
 
-/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/	
 
 /* Critical section management. */
 extern void vPortDisableInterrupts(void);
@@ -130,7 +130,7 @@ extern void vPortEnableInterrupts(void);
 
 /* Architecture specifics. */
 #define portSTACK_GROWTH			( -1 )
-#define portTICK_RATE_MS			( ( portTickType ) 1000 / configTICK_RATE_HZ )
+#define portTICK_RATE_MS			( ( portTickType ) 1000 / configTICK_RATE_HZ )		
 #define portBYTE_ALIGNMENT			1
 #define portNOP()					asm volatile ( "nop" );
 /*-----------------------------------------------------------*/

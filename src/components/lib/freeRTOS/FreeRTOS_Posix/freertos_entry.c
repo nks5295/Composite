@@ -195,6 +195,7 @@ int freeRTOS_entry( void )
         /* vStartCheckpointTask(); */
         //xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 //        xTaskCreate( vWat, "wat", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY + 1, NULL );
+        // Neel Shah
         //vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY ); // removing this since we don't need it no moe for v8
 /* 	vCreateBlockTimeTasks(); */
  	//vStartSemaphoreTasks( mainSEMAPHORE_TASK_PRIORITY ); 
