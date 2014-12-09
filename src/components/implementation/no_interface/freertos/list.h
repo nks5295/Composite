@@ -103,18 +103,21 @@ ll_size(struct linked_list *ll)
         return ll->size;
 }
 
-struct list_node*
+unsigned int
 ll_remove_first(struct linked_list *ll)
 {
-        if (ll == NULL || ll->size == 0) return NULL;
+        if (ll == NULL || ll->size == 0) return -1;
 
+        unsigned int timerid_ret;
         struct list_node *temp = ll->head;
 
         ll->head = ll->head->next;
 
-        temp->next = NULL;
+        timerid_ret = temp->timerid;
 
-        return temp;
+        free(temp);
+
+        return timerid_ret;
 }
 
 struct list_node*
