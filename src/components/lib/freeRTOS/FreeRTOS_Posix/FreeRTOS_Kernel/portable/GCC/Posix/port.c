@@ -171,7 +171,7 @@ void vPortYield( void )
 void vPortYieldFromTick( void )
 {
 	/* Save context, increment tick (vtaskincrementtick()), switch context, restore context */
-	xTaskIncrementTick();
+	vTaskIncrementTick();
 	freertos_clear_pending_events();
 	//Need to fix!
         freertos_print("About to switch\n");

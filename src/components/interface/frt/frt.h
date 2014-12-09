@@ -27,7 +27,7 @@ int frt_xTaskGetSchedulerState(void);
 unsigned int frt_uxTaskGetNumberOfTasks(void);
 //void frt_vTaskList(char *pcWriteBuffer);
 //void frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize);
-//unsigned long frt_ulTaskEndTrace(void); // removed this since it was gone v7.1 ->
+unsigned long frt_ulTaskEndTrace(void);
 int frt_xQueueCreate(int uxQueueLength, int uxItemSize, int ptr, spdid_t spd);
 int frt_xQueueSend(int xQueue, int item, int xTicksToWait);
 int frt_xQueueReceive(int xQueue, int buff, int xTicksToWait);
