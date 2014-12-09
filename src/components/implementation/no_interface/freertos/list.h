@@ -107,9 +107,10 @@ ll_remove_first(struct linked_list *ll)
         if (ll == NULL || ll->size == 0) return NULL;
 
         struct list_node *temp = ll->head;
-        temp->next = NULL;
 
         ll->head = ll->head->next;
+
+        temp->next = NULL;
 
         return temp;
 }
