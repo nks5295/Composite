@@ -182,11 +182,14 @@ frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
 }
 */
 
+// removed this since it was removed since freeRTOS v7.1
+/*
 unsigned long
 ulTaskEndTrace(void)
 {
         return frt_ulTaskEndTrace();
 }
+*/
 
 // TODO: How to pointer?
 /*

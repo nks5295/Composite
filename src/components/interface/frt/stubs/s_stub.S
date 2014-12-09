@@ -34,7 +34,7 @@ cos_asm_server_stub(frt_xTaskGetSchedulerState)
 cos_asm_server_stub(frt_uxTaskGetNumberOfTasks)
 //cos_asm_server_stub(frt_vTaskList)
 //cos_asm_server_stub(frt_vTaskStartTrace)
-cos_asm_server_stub(frt_ulTaskEndTrace)
+//cos_asm_server_stub(frt_ulTaskEndTrace) // removed this since it was gone v7.1 ->
 cos_asm_server_stub(frt_xQueueCreate)
 cos_asm_server_stub(frt_xQueueSend)
 cos_asm_server_stub(frt_xQueueReceive)
