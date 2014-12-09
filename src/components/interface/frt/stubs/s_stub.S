@@ -16,9 +16,8 @@ cos_asm_server_stub(frt_vTaskDelete)
 cos_asm_server_stub(frt_uxTaskPriorityGet)
 cos_asm_server_stub(frt_vTaskPrioritySet)
 cos_asm_server_stub(frt_vTaskSuspend)
-<<<<<<< HEAD
 cos_asm_server_stub(frt_vTaskDelay)
-// Neel Shah added the task stuff below
+// Neel Shah added the tasks stuff from here below to queue
 //cos_asm_server_stub(frt_vTaskDelayUntil)
 cos_asm_server_stub(frt_vTaskResume)
 cos_asm_server_stub(frt_xTaskResumeFromISR)
@@ -39,8 +38,6 @@ cos_asm_server_stub(frt_uxTaskGetNumberOfTasks)
 //cos_asm_server_stub(frt_vTaskList)
 //cos_asm_server_stub(frt_vTaskStartTrace)
 //cos_asm_server_stub(frt_ulTaskEndTrace) // removed this since it was gone v7.1 ->
-=======
->>>>>>> 359429378b683f76f3d12c2a516f36988b9990e0
 cos_asm_server_stub(frt_xQueueCreate)
 cos_asm_server_stub(frt_xQueueSend)
 cos_asm_server_stub(frt_xQueueReceive)

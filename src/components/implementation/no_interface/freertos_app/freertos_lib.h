@@ -8,6 +8,7 @@
 #define MAX_FRT_THDS 10
 
 typedef int portBASE_TYPE;
+typedef unsigned int UBaseType_t;
 typedef long portTickType;
 typedef void* xQueueHandle;
 typedef xQueueHandle SemaphoreHandle_t;
@@ -89,7 +90,6 @@ vTaskSuspend(xTaskHandle xTaskToSuspend)
 {
         frt_vTaskSuspend((int)xTaskToSuspend);
 }
-<<<<<<< HEAD
 
 void
 vTaskDelay(portTickType xTicksToDelay)
@@ -97,7 +97,7 @@ vTaskDelay(portTickType xTicksToDelay)
         frt_vTaskDelay((int)xTicksToDelay);
 }
 
-// Neel Shah
+// Neel Shah added tasks function from here down to queue functions
 // TODO: Pointers
 /*
 void
@@ -107,42 +107,36 @@ vTaskDelayUntil(portTickType *pxPreviousWakeTime, portTickTime xTimeIncrement)
 }
 */
 
-// Neel Shah
 void
 vTaskResume(xTaskHandle xTaskToResume)
 {
         frt_vTaskDelay((int)xTaskToResume);
 }
 
-// Neel Shah
 portBASE_TYPE
 xTaskResumeFromISR(xTaskHandle xTaskToResume)
 {
         return frt_xTaskResumeFromISR((int)xTaskToResume);
 }
 
-// Neel Shah
 xTaskHandle
 xTaskGetCurrentTaskHandle(void)
 {
         return frt_xTaskGetCurrentTaskHandle();
 }
 
-// Neel Shah
 xTaskHandle
 xTaskGetIdleTaskHandle(void)
 {
         return frt_xTaskGetIdleTaskHandle();
 }
 
-// Neel Shah
 UBaseType_t
 uxTaskGetStackHighWaterMark(xTaskHandle xTask)
 {
         return frt_uxTaskGetStackHighWaterMark((int)xTask);
 }
 
-// Neel Shah
 // TODO: Pointers
 /*
  eTaskState
@@ -152,7 +146,6 @@ uxTaskGetStackHighWaterMark(xTaskHandle xTask)
  }
  */
 
-// Neel Shah
 // TODO: Can't do pointers, returns a char*
 /*
 char*
@@ -162,35 +155,30 @@ pcTaskGetName(xTaskHandle xTaskToQuery)
 }
 */
 
-// Neel Shah
 portTickType
 xTaskGetTickCount(void)
 {
         return frt_xTaskGetTickCount();
 }
 
-// Neel Shah
 portTickType
 xTaskGetTickCountFromISR(void)
 {
         return frt_xTaskGetTickCountFromISR();
 }
 
-// Neel Shah
 portBASE_TYPE
 xTaskGetSchedulerState(void)
 {
         return frt_xTaskGetSchedulerState();
 }
 
-// Neel Shah
 UBaseType_t
 uxTaskGetNumberOfTasks(void)
 {
         return frt_uxTaskGetNumberOfTasks();
 }
 
-// Neel Shah
 // TODO: char * pointer
 /*
 void
@@ -199,7 +187,6 @@ vTaskList(char *pcWriteBuffer)
 }
 */
 
-// Neel Shah
 // TODO: char * pointer
 /*
 void
@@ -208,7 +195,6 @@ frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
 }
 */
 
-// Neel Shah
 // removed this since it was removed since freeRTOS v7.1
 /*
 unsigned long
@@ -218,7 +204,6 @@ ulTaskEndTrace(void)
 }
 */
 
-// Neel Shah
 // TODO: How to pointer?
 /*
 void
@@ -228,7 +213,6 @@ vTaskGetRunTimeStats(char *pcWriteBuffer)
 }
 */
 
-// Neel Shah
 // TODO: TaskHookFunction_t seems like its a function pointer
 /*
 void
@@ -238,7 +222,6 @@ vTaskSetApplicationTaskTag(xTaskHandle xTask, TaskHookFunction_t pxTagValue)
 }
 */
 
-// Neel Shah
 // TODO: Still pointers
 /*
 xTaskGetApplicationTaskTag(xTaskHandle xTask)
@@ -247,7 +230,6 @@ xTaskGetApplicationTaskTag(xTaskHandle xTask)
 }
 */
 
-// Neel Shah
 // TODO: Pointers...
 /*
 xTaskHandle
@@ -257,8 +239,6 @@ xTaskCallApplicationTaskHook(xTaskHandle xTask, void *pvParameter)
 }
 */
 
-=======
->>>>>>> 359429378b683f76f3d12c2a516f36988b9990e0
 //Queues
 
 int

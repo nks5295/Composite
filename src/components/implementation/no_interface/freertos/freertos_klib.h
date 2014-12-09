@@ -143,7 +143,7 @@ frt_xTaskCreate (const char *const pcName, unsigned short usStackDepth, void *pv
 }
 
 void
-frt_vTaskDelete(int xTask)
+frt_vTaskDelete (int xTask)
 {
         printc("In vTaskDelete\n");
         if (xTask == NULL) vTaskDelete((xTaskHandle) xTask);
@@ -178,7 +178,6 @@ frt_vTaskSuspend(int xTaskToSuspend)
         vTaskSuspend((xTaskHandle) frt_obj_array[xTaskToSuspend].obj);
 }
 
-<<<<<<< HEAD
 void
 frt_vTaskDelay(int xTicksToDelay)
 {
@@ -187,7 +186,7 @@ frt_vTaskDelay(int xTicksToDelay)
         vTaskDelay((TickType) frt_obj_array[xTicksToDelay].obj);
 }
 
-// Neel Shah
+// Neel Shah added tasks functions from here down to queue api
 // TODO: how do i do pionters here
 /*
 void
@@ -196,7 +195,6 @@ frt_vTaskDelayUntil(int *pxPrevoiusWakeTime, int xTimeIncrement)
 }
 */
 
-// Neel Shah
 void
 frt_vTaskResume(int xTaskToResume)
 {
@@ -205,7 +203,6 @@ frt_vTaskResume(int xTaskToResume)
         vTaskResume((xTaskHandle) frt_obj_array[xTaskToResume].obj);
 }
 
-// Neel Shah
 int
 frt_xTaskResumeFromISR(int xTaskToResume)
 {
@@ -214,7 +211,6 @@ frt_xTaskResumeFromISR(int xTaskToResume)
         return (int) xTaskResumeFromISR((xTaskHandle) frt_obj_array[xTaskToResume].obj);
 }
 
-// Neel Shah
 // TODO: Pointers issue here again
 /*
 unsigned int
@@ -223,21 +219,18 @@ uxTaskGetSystemState(...)
 }
 */
 
-// Neel Shah
 int
 frt_xTaskGetCurrentTaskHandle(void)
 {
         return (int) xTaskGetCurrentTaskHandle();
 }
 
-// Neel Shah
 int
 frt_xTaskGetIdleTaskHandle(void)
 {
         return (int) xTaskGetIdleTaskHandle();
 }
 
-// Neel Shah
 unsigned int
 frt_uxTaskGetStackHighWaterMark(int xTask)
 {
@@ -247,7 +240,6 @@ frt_uxTaskGetStackHighWaterMark(int xTask)
         return (unsigned int) uxTaskGetStackHighWaterMark(frt_obj_array[xTask].obj);
 }
 
-// Neel Shah
 // TODO: What to do with enumerated type?
 /*
 eTaskState
@@ -259,7 +251,6 @@ frt_eTaskGetState(int xTask)
 }
 */
 
-// Neel Shah
 // TODO: returns a char* pointer issue
 /*
 char*
@@ -272,35 +263,30 @@ frt_pcTaskGetName(int xTaskToQuery)
 }
 */
 
-// Neel Shah
 int
 frt_xTaskGetTickCount(void)
 {
         return (int) xTaskGetTickCount();
 }
 
-// Neel Shah
 int
 frt_xTaskGetTickCountFromISR(void)
 {
         return (int) xTaskGetTickCountFromISR();
 }
 
-// Neel Shah
 int
 frt_xTaskGetSchedulerState(void)
 {
         return (int) xTaskGetSchedulerState();
 }
 
-// Neel Shah
 unsigned int
 frt_uxTaskGetNumberOfTasks(void)
 {
         return (unsigned int) uxTaskGetNumberOfTasks();
 }
 
-// Neel Shah
 // TODO: char * pointer
 /*
 void
@@ -309,7 +295,6 @@ frt_vTaskList(char *pcWriteBuffer)
 }
 */
 
-// Neel Shah
 // TODO: char * pointer
 /*
 void
@@ -318,7 +303,6 @@ frt_vTaskStartTrace(char *pcBuffer, unsigned long ulBufferSize)
 }
 */
 
-// Neel Shah
 // removed this since it was removed in freeRTOS v7.1
 /*
 unsigned long
@@ -328,7 +312,6 @@ frt_ulTaskEndTrace(void)
 }
 */
 
-// Neel Shah
 // TODO: How do I pointer?
 /*
 void
@@ -338,7 +321,6 @@ frt_vTaskGetRunTimeStats(char *pcWriteBuffer)
 }
 */
 
-// Neel Shah
 // TODO: More (function) pointers :(
 // TaskHookFunction_t seems as if its a function pointer
 /*
@@ -357,7 +339,6 @@ frt_vTaskSetApplicationTaskTag(int xTask, TaskHookFunction_t pxTagValue)
 }
 */
 
-// Neel Shah
 // TODO: Pointers :)
 /*
 frt_xTaskGetApplicationTaskTag(int xTask){
@@ -369,7 +350,6 @@ frt_xTaskGetApplicationTaskTag(int xTask){
 }
 */
 
-// Neel Shah
 // TODO: how to pointer?
 // http://xkcd.com/138/
 /*
@@ -383,8 +363,6 @@ frt_xTaskCallApplicationTaskHook(int xTask, void *pvParameter)
 }
 */
 
-=======
->>>>>>> 359429378b683f76f3d12c2a516f36988b9990e0
 /*******
  * FreeRTOS Queue API
 *******/
