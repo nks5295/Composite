@@ -6,6 +6,8 @@ int frt_xSemaphoreTake(int xSemaphore, int xTicksToWait);
 int frt_xSemaphoreGive(int xSemaphore);
 int frt_xTaskCreate(const char * const pcName, unsigned short usStackDepth, void *pvParameters, int uxPriority);
 void frt_vTaskDelete(int xTask);
+int frt_uxTaskPriorityGet(int xTask);
+void frt_vTaskPrioritySet(int xTask, int uxNewPriority);
 void frt_vTaskSuspend(int xTaskToSuspend);
 void frt_vTaskDelay(int xTicksToDelay);
 //void frt_vTaskDelayUntil(int *pxPreviousWakeTime, int xTimeIncrement);

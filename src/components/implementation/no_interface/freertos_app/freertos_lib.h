@@ -73,6 +73,18 @@ vTaskDelete(xTaskHandle xTask)
         frt_vTaskDelete((int)xTask);
 }
 
+int
+uxTaskPriorityGet(xTaskHandle xTask)
+{
+        return frt_uxTaskPriorityGet((int)xTask);
+}
+
+void
+vTaskPrioritySet(xTaskHandle xTask, int uxNewPriority)
+{
+        frt_vTaskPrioritySet((int)xTask, (int)uxNewPriority);
+}
+
 void
 vTaskSuspend(xTaskHandle xTaskToSuspend)
 {
