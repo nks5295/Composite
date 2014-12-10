@@ -8,6 +8,7 @@
 #define MAX_FRT_THDS 10
 
 typedef int portBASE_TYPE;
+typedef unsigned int UBaseType_t;
 typedef long portTickType;
 typedef void* xQueueHandle;
 typedef xQueueHandle SemaphoreHandle_t;
