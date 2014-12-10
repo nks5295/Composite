@@ -100,7 +100,6 @@
 #include "queue.h"
 #include "semphr.h"
 #include "croutine.h"
-#include "timers.h"
 #include <jw_freertos.h>
 /* #include "partest.h" */
 
@@ -145,29 +144,19 @@
 
 extern volatile int thread_extern_spd;
 
-TimerHandle_t timtam;
-
 extern void print(char *str);
-
-TimerCallbackFunction_t
-timerCallback(TimerHandle_t pxTimer)
-{
-        printc("I'M ALIVE AND A TIMER!!! XSX\n");
-        xTimerStart(pxTimer, 0);
-}
 
 static void vWat (void)
 {
-        /*
         int a = 0, b = 0, give=0, take=0, i = 0;
         xSemaphoreHandle xSemaphore;
-        freertos_print("eeeessss gud: %d, spdid = %d\n", (int) freertos_get_thread_id(), (int) freertos_spd_id());
+        freertos_print("eeeessss gud: %d, spdid = %d\n", freertos_get_thread_id(), freertos_spd_id());
         rdtscll(a);
         vSemaphoreCreateBinary(xSemaphore);
         rdtscll(b);
-        freertos_print("Sem %d created with %d cycles used\n", (int) xSemaphore, (b - a));
+        freertos_print("Sem %d created with %d cycles used\n", xSemaphore, (b - a));
 
-         freertos_print("About to take sem\n");
+         printc("About to take sem\n");
          for(i; i < 1000000; i++) {
                  rdtscll(a);
                  xSemaphoreTake(xSemaphore, (TickType) 0);
@@ -182,9 +171,6 @@ static void vWat (void)
          take = take / i;
          printc("Native Give avg = %d\n", give);
          printc("Native Take avg = %d\n", take);
-*/
-        timtam = xTimerCreate("testtim", 10, pdFALSE, (void*) 1337, (TimerCallbackFunction_t)timerCallback);
-        xTimerStart(timtam, 0);
 
 
         taskYIELD();
@@ -196,7 +182,7 @@ void vMainQueueSendPassed( void )
 	//	uxQueueSendPassedCount++; return;
 }
 
-portBASE_TYPE xTaskSpdCreate( TaskFunction_t pxTaskCode, const char * const pcName, unsigned short usStackDepth, void *pvParameters, unsigned portBASE_TYPE uxPriority, xTaskHandle *pxCreatedTask)
+portBASE_TYPE xTaskSpdCreate( pdTASK_CODE pxTaskCode, const char * const pcName, unsigned short usStackDepth, void *pvParameters, unsigned portBASE_TYPE uxPriority, xTaskHandle *pxCreatedTask)
 {
         thread_extern_spd = 1;
         return xTaskCreate(pxTaskCode, pcName, usStackDepth, pvParameters, uxPriority, pxCreatedTask);
@@ -204,12 +190,12 @@ portBASE_TYPE xTaskSpdCreate( TaskFunction_t pxTaskCode, const char * const pcNa
 
 int freeRTOS_entry( void )
 {
-        /* CREATE ALL THE DEMO APPLICATION TASKS. */
+	/* CREATE ALL THE DEMO APPLICATION TASKS. */
 	//vStartMathTasks( tskIDLE_PRIORITY ); 
         /* vStartCheckpointTask(); */
         //xTaskCreate( vWat, "Print", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY, NULL );
 //        xTaskCreate( vWat, "wat", configMINIMAL_STACK_SIZE, NULL, mainPRINT_TASK_PRIORITY + 1, NULL );
-        //vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
+        //vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY ); // removing this since we don't need it no moe for v8
 /* 	vCreateBlockTimeTasks(); */
  	//vStartSemaphoreTasks( mainSEMAPHORE_TASK_PRIORITY ); 
 /* 	vStartMultiEventTasks(); */
