@@ -106,8 +106,6 @@ typedef portSTACK_TYPE StackType_t;
 typedef portBASE_TYPE BaseType_t;
 typedef unsigned portBASE_TYPE UBaseType_t;
 
-// Neel Shah
-// I added TickType_t to assure that v5's functions still work
 #if( configUSE_16_BIT_TICKS == 1 )
 	typedef unsigned portSHORT TickType;
 	#define portMAX_DELAY ( TickType ) 0xffff

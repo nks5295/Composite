@@ -162,8 +162,6 @@ void vPortYield( void )
 }
 /*-----------------------------------------------------------*/
 
-// Neel Shah
-// I changed line 176 to xTaskIncrementTick() since the name changed in v8
 /*
  * Context switch function used by the tick.  This must be identical to 
  * vPortYield() from the call to vTaskSwitchContext() onwards.  The only
